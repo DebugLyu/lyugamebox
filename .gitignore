@@ -1,0 +1,4 @@
+# .gitignore
+/temp
+/build/web-mobile
+/library/imports
