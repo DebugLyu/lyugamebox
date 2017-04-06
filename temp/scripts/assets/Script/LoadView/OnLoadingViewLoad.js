@@ -4,10 +4,8 @@ cc._RFpush(module, '5020ft7XfBMkaS/6eWVsUHS', 'OnLoadingViewLoad');
 
 "use strict";
 
-var common = require("Common");
-var msgbox = require("Msgbox");
-var notice = require("Notice");
-
+var ProtoBuf = require("protobuf");
+var etc = require("etc");
 cc.Class({
     extends: cc.Component,
 
@@ -39,9 +37,23 @@ cc.Class({
             cvs.fitWidth = true;
         }
         this.loadingBar.totalLength = this.loadingBar.node.width;
-        common.init();
-        msgbox.getInstance(); //初始化弹窗
-        notice.getInstance().init();
+
+        cc.ll = {};
+        // 初始化网络
+        cc.ll.net = require("Lwebsocket");
+        cc.ll.net.init();
+
+        // cc.ll.common = require("Common");
+
+        cc.loader.loadRes("gamebox", function (err, arr) {
+            cc.ll.pb = ProtoBuf.protoFromString(arr);
+        });
+        // common.init();
+        //cc.ll.msgbox;//初始化弹窗
+        cc.ll.msgbox = require("Msgbox");
+        cc.ll.notice = require("Notice");
+        cc.ll.notice.init();
+
         this._loadingList = ["loading", "erguotou", "login", "main", "profab", "res_common"];
         this.onLoadNext();
     },

@@ -25,7 +25,7 @@ cc.Class({
         var callback = function (){
             console.log("aaaaaaaaaaaaaaaaaaa");
         }
-        notice.getInstance().addMsg (2,"继续11游戏么？",callback)
+        cc.ll.notice.addMsg (2,"继续11游戏么？",callback)
     },
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {

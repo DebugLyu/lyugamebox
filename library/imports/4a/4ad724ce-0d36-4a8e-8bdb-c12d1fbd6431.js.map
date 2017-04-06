@@ -4,9 +4,8 @@
     "unknown"
   ],
   "names": [
-    "common",
+    "etc",
     "require",
-    "msgbox",
     "cc",
     "Class",
     "extends",
@@ -17,20 +16,28 @@
     "type",
     "Prefab",
     "onLoad",
+    "okfunc",
+    "errorfunc",
+    "callback",
+    "ll",
+    "notice",
+    "addMsg",
+    "net",
     "connect",
+    "ip",
+    "port",
     "onNormalLoginClick",
-    "getNetworkState",
+    "state",
     "bg",
     "find",
     "creatlayer",
     "instantiate",
     "parent",
-    "setPosition",
-    "connectWithFunc"
+    "setPosition"
   ],
-  "mappings": ";;AAAA,IAAIA,SAASC,QAAQ,QAAR,CAAb;AACA,IAAIC,SAASD,QAAQ,QAAR,CAAb;;AAEAE,GAAGC,KAAH,CAAS;AACLC,aAASF,GAAGG,SADP;;AAGLC,gBAAY;AACRC,2BAAkB;AACdC,qBAAS,IADK;AAEdC,kBAAMP,GAAGQ;AAFK;AADV,KAHP;;AAULC,YAAQ,kBAAY;AAChBZ,eAAOa,OAAP;AACH,KAZI;;AAcLC,wBAAmB,8BAAU;AACzB;AACA,YAAId,OAAOe,eAAP,MAA4B,CAAhC,EAAkC;AAC9B,gBAAIC,KAAKb,GAAGc,IAAH,CAAQ,SAAR,CAAT;AACA,gBAAIC,aAAaf,GAAGgB,WAAH,CAAe,KAAKX,iBAApB,CAAjB;AACAU,uBAAWE,MAAX,GAAoBJ,EAApB;AACAE,uBAAWG,WAAX,CAAuB,CAAvB,EAAyB,CAAzB;AACH,SALD,MAKK;AACDrB,mBAAOsB,eAAP,CAAwB,oBAAxB,EAA8C,IAA9C;AACH;AACJ;AAxBI,CAAT",
+  "mappings": ";;AAAA,IAAIA,MAAMC,QAAQ,KAAR,CAAV;AACAC,GAAGC,KAAH,CAAS;AACLC,aAASF,GAAGG,SADP;;AAGLC,gBAAY;AACRC,2BAAkB;AACdC,qBAAS,IADK;AAEdC,kBAAMP,GAAGQ;AAFK;AADV,KAHP;;AAULC,YAAQ,kBAAY;AAChB;AACA,YAAIC,SAAS,SAATA,MAAS,GAAU,CAEtB,CAFD;AAGA,YAAIC,YAAY,SAAZA,SAAY,GAAW;AACvB,gBAAIC,WAAW,SAAXA,QAAW,GAAU,CAExB,CAFD;AAGAZ,eAAGa,EAAH,CAAMC,MAAN,CAAaC,MAAb,CAAqB,CAArB,EAAuB,QAAvB,EAAgCH,QAAhC;AACH,SALD;AAMAZ,WAAGa,EAAH,CAAMG,GAAN,CAAUC,OAAV,CAAmBnB,IAAIoB,EAAvB,EAA2BpB,IAAIqB,IAA/B,EAAqCT,MAArC,EAA6CC,SAA7C;AACH,KAtBI;;AAwBLS,wBAAmB,8BAAU;AACzB;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,YAAKpB,GAAGa,EAAH,CAAMG,GAAN,CAAUK,KAAV,IAAmB,CAAxB,EAA4B;AACxB,gBAAIC,KAAKtB,GAAGuB,IAAH,CAAQ,SAAR,CAAT;AACA,gBAAIC,aAAaxB,GAAGyB,WAAH,CAAe,KAAKpB,iBAApB,CAAjB;AACAmB,uBAAWE,MAAX,GAAoBJ,EAApB;AACAE,uBAAWG,WAAX,CAAuB,CAAvB,EAAyB,CAAzB;AACH;AACJ;AAxCI,CAAT",
   "file": "unknown",
   "sourcesContent": [
-    "var common = require('Common');\nvar msgbox = require('Msgbox')\n\ncc.Class({\n    extends: cc.Component,\n    \n    properties: {\n        prefabNormalLogin:{\n            default: null,\n            type: cc.Prefab,\n        },\n    },\n\n    onLoad: function () {\n        common.connect();\n    },\n\n    onNormalLoginClick:function(){\n        // var scene = cc.director.getScene();\n        if (common.getNetworkState() == 2){\n            var bg = cc.find(\"BgLayer\");\n            let creatlayer = cc.instantiate(this.prefabNormalLogin);  \n            creatlayer.parent = bg;\n            creatlayer.setPosition(0,0);\n        }else{\n            common.connectWithFunc( \"onNormalLoginClick\", this );\n        }\n    },\n});"
+    "var etc = require(\"etc\");\ncc.Class({\n    extends: cc.Component,\n    \n    properties: {\n        prefabNormalLogin:{\n            default: null,\n            type: cc.Prefab,\n        },\n    },\n\n    onLoad: function () {\n        // common.connect();\n        var okfunc = function(){\n\n        }\n        var errorfunc = function() {\n            var callback = function(){\n\n            }\n            cc.ll.notice.addMsg (2,\"网络连接错误\",callback)\n        }\n        cc.ll.net.connect( etc.ip, etc.port, okfunc, errorfunc );\n    },\n\n    onNormalLoginClick:function(){\n        // var scene = cc.director.getScene();\n        // if (common.getNetworkState() == 2){\n        //     var bg = cc.find(\"BgLayer\");\n        //     let creatlayer = cc.instantiate(this.prefabNormalLogin);  \n        //     creatlayer.parent = bg;\n        //     creatlayer.setPosition(0,0);\n        // }else{\n        //     common.connectWithFunc( \"onNormalLoginClick\", this );\n        // }\n        if ( cc.ll.net.state == 2 ) {\n            var bg = cc.find(\"BgLayer\");\n            let creatlayer = cc.instantiate(this.prefabNormalLogin);  \n            creatlayer.parent = bg;\n            creatlayer.setPosition(0,0);\n        }\n    },\n});"
   ]
 }

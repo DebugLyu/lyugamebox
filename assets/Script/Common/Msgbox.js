@@ -1,24 +1,18 @@
 var msgcode = require( 'Msgcode' )
-var msg = (function(){
-    
-    var instance = null;
-    function getInstance(){
-        if(instance === null){
-            instance = new MsgBox()
-        }
-        return instance;
-    }
-    function MsgBox(){
-        this.bg = null;
-        //常驻背景到内存中
-        cc.game.addPersistRootNode(this.bg);
-        this.addMsg = function(msg){
-            if( this.bg === null ){
-                this.bg = cc.find("MsgBoxLayer");
-                if( this.bg === null )return;
+
+var Msgbox = cc.Class({
+    // extends: cc.Component,
+    properties: {
+
+    },
+    statics: {
+        bg : cc.find("MsgBoxLayer"),
+        addMsg : function( msg ) {
+            if ( this.bg === null ){
+                return;
             }
-            if( typeof(msg) == "number" ){
-                msg = msgcode[msg];
+            if( typeof( msg ) == "number" ){
+                msg = msgcode[ msg ];
             }
             var msgnode = new cc.Node();
             msgnode.color = cc.color(0, 255, 68, 255);
@@ -38,11 +32,7 @@ var msg = (function(){
             
             msgnode.runAction(act1);
             msgnode.runAction(act2);
-        }
-    }
-     return {
-        getInstance: getInstance
-    }
-})();
-
-module.exports = msg;
+        },
+    },
+});
+module.exports = Msgbox;

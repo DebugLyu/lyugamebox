@@ -23,6 +23,6 @@ cc.Class({
         var callback = function callback() {
             console.log("aaaaaaaaaaaaaaaaaaa");
         };
-        notice.getInstance().addMsg(2, "继续11游戏么？", callback);
+        cc.ll.notice.addMsg(2, "继续11游戏么？", callback);
     }
 });

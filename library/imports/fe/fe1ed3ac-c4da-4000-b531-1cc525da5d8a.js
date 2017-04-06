@@ -133,7 +133,7 @@ cc.Class({
             case TuiBingConfig.State.Stop:
                 {
                     this.initBanker();
-                    msgbox.getInstance().addMsg(msgcode.TUIBING_STATE_STOP);
+                    cc.ll.msgbox.addMsg(msgcode.TUIBING_STATE_STOP);
                 }break;
             case TuiBingConfig.State.Begin:
                 {};
@@ -141,19 +141,19 @@ cc.Class({
                 {};
             case TuiBingConfig.State.Begin_Check_Keep:
                 {
-                    msgbox.getInstance().addMsg(msgcode.TUIBING_STATE_BEGIN);
+                    cc.ll.msgbox.addMsg(msgcode.TUIBING_STATE_BEGIN);
                 }break;
             case TuiBingConfig.State.WaitOpen:
                 {
-                    msgbox.getInstance().addMsg(msgcode.TUIBING_STATE_WAITOPEN);
+                    cc.ll.msgbox.addMsg(msgcode.TUIBING_STATE_WAITOPEN);
                 }break;
             case TuiBingConfig.State.Openning:
                 {
-                    msgbox.getInstance().addMsg(msgcode.TUIBING_STATE_OPENNING);
+                    cc.ll.msgbox.addMsg(msgcode.TUIBING_STATE_OPENNING);
                 }break;
             case TuiBingConfig.State.Reward:
                 {
-                    msgbox.getInstance().addMsg(msgcode.TUIBING_STATE_REWARD);
+                    cc.ll.msgbox.addMsg(msgcode.TUIBING_STATE_REWARD);
                 }break;
         }
     },
@@ -216,12 +216,12 @@ cc.Class({
         }
         var maxgold = pMgr.main_role.gold;
         if (maxgold < 1000) {
-            msgbox.getInstance().addMsg(msgcode.GOLD_NOT_ENOUGH);
+            cc.ll.msgbox.addMsg(msgcode.GOLD_NOT_ENOUGH);
             return;
         }
 
         if (this._select_gold == 0) {
-            msgbox.getInstance().addMsg(msgcode.TUIBING_SELECT_GOLD);
+            cc.ll.msgbox.addMsg(msgcode.TUIBING_SELECT_GOLD);
             return;
         }
 
@@ -230,14 +230,14 @@ cc.Class({
         }
 
         if (this._select_gold > this._can_bet_gold) {
-            msgbox.getInstance().addMsg(msgcode.TUIBING_MORETHAN_BANKER);
+            cc.ll.msgbox.addMsg(msgcode.TUIBING_MORETHAN_BANKER);
             return;
         }
 
         var p = new packet("ReqTuiBingBet");
         p.lpack.pos = parseInt(pos);
         p.lpack.gold = this._select_gold;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     },
 
     onSelectGold: function onSelectGold(event, gold) {

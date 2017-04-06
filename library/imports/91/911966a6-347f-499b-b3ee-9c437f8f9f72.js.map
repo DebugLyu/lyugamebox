@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [
+    "cc",
+    "Class",
+    "extends",
+    "Component",
+    "statics",
+    "ip",
+    "port"
+  ],
+  "mappings": ";;AAAAA,GAAGC,KAAH,CAAS;AACRC,UAASF,GAAGG,SADJ;AAERC,UAAS;AACRC,MAAK,eADG;AAERC,QAAO;AAFC;AAFD,CAAT",
+  "file": "unknown",
+  "sourcesContent": [
+    "cc.Class({\n\textends: cc.Component,\n\tstatics: {\n\t\tip : \"194.168.0.179\",\n\t\tport : 8001,\n\t},\n});"
+  ]
+}

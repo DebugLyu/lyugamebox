@@ -52,7 +52,7 @@ cc.Class({
 
     onBackClicked: function onBackClicked() {
         var p = new packet("ReqLeaveRoom");
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
 
         sSceneMgr.onChangeScene("mainview");
     },
@@ -60,28 +60,28 @@ cc.Class({
     onBeBankerClicked: function onBeBankerClicked() {
         var p = new packet("ReqBeBanker");
         p.lpack.type = 1;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     },
 
     onFastBeBankerClicked: function onFastBeBankerClicked() {
         var p = new packet("ReqBeBanker");
         p.lpack.type = 2;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     },
 
     onAddGoldBtnClicked: function onAddGoldBtnClicked() {
         var p = new packet("ReqAddGold");
         p.lpack.gold = 100000;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     },
 
     onUnBankerBtnClick: function onUnBankerBtnClick() {
         var p = new packet("ReqTuiBingUnbanker");
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     },
 
     onLeaveQueueBtnClick: function onLeaveQueueBtnClick() {
         var p = new packet("ReqTuibingLeaveQueue");
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     }
 });

@@ -1,13 +1,10 @@
 "use strict";
 
-var common = require("Common");
 var packet = require("Lpackage");
-var msgbox = require("Msgbox");
 var msgcode = require('Msgcode');
 var pMgr = require("PlayerManager").getInstance();
 var player = require('Player');
 var sSceneMgr = require("SceneManager");
-var notice = require("Notice");
 var TuiBingConfig = require("TuiBingConfig");
 
 var onLogin = function onLogin(pack) {
@@ -17,29 +14,14 @@ var onLogin = function onLogin(pack) {
         var pPlayer = new player();
         pPlayer.login(obj);
     } else {
-        var msg = "";
-        switch (result) {
-            case 1:
-                {
-                    msg = msgcode.ACCOUNT_NOT_EXISTENT;
-                }break;
-            case 2:
-                {
-                    msg = msgcode.PASSWORD_ERROR;
-                }break;
-            case 3:
-                {
-                    msg = msgcode.HAS_ONLINE;
-                }break;
-        }
-        msgbox.getInstance().addMsg(msg);
+        cc.ll.msgbox.addMsg(result);
     }
 };
 
 var onRegister = function onRegister(pack) {
     var result = pack.result;
     if (result != 0) {
-        msgbox.getInstance().addMsg(result);
+        cc.ll.msgbox.addMsg(result);
     }
 };
 
@@ -48,28 +30,28 @@ var onEnterRoom = function onEnterRoom(pack) {
     if (result == 0) {
         sSceneMgr.onChangeScene("tuibingview");
     } else {
-        msgbox.getInstance().addMsg(result);
+        cc.ll.msgbox.addMsg(result);
     }
 };
 
 var onBeBanker = function onBeBanker(pack) {
     var result = pack.result;
     if (result != 0) {
-        msgbox.getInstance().addMsg(result);
+        cc.ll.msgbox.addMsg(result);
     }
 };
 
 var onTuibingUnbanker = function onTuibingUnbanker(pack) {
     var result = pack.result;
     if (result != 0) {
-        msgbox.getInstance().addMsg(result);
+        cc.ll.msgbox.addMsg(result);
     }
 };
 
 var onTuibingLeaveQueue = function onTuibingLeaveQueue(pack) {
     var result = pack.result;
     if (result != 0) {
-        msgbox.getInstance().addMsg(result);
+        cc.ll.msgbox.addMsg(result);
     }
 };
 
@@ -93,7 +75,7 @@ var onTuiBingGameState = function onTuiBingGameState(pack) {
         gamelogic.onGameStateChange(state);
     }
     if (state == TuiBingConfig.State.WaitOpen) {
-        notice.getInstance().removeMsg(998);
+        cc.ll.notice.removeMsg(998);
     }
 };
 
@@ -114,7 +96,7 @@ var onTuiBingBet = function onTuiBingBet(pack) {
             gamelogic.onGoldAction(id, pos, gold);
         }
     } else {
-        msgbox.getInstance().addMsg(result);
+        cc.ll.msgbox.addMsg(result);
     }
 };
 
@@ -123,31 +105,31 @@ var onKeepBanker = function onKeepBanker(pack) {
         var p = new packet("ReqKeepBanker");
         p.lpack.iskeep = 0;
         p.lpack.gold = 200000;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     };
     var endcallback = function endcallback() {
         //下庄
         var p = new packet("ReqKeepBanker");
         p.lpack.iskeep = 1;
         p.lpack.gold = 0;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     };
-    notice.getInstance().addMsg(1, msgcode.TUIBING_KEEP_BANKER, begincallback, endcallback, 998);
+    cc.ll.notice.addMsg(1, msgcode.TUIBING_KEEP_BANKER, begincallback, endcallback, 998);
 };
 
 var onBankerBegin = function onBankerBegin(pack) {
     var begincallback = function begincallback() {
         var p = new packet("ReqTuiBingBegin");
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     };
     var endcallback = function endcallback() {
         //下庄
         var p = new packet("ReqKeepBanker");
         p.lpack.iskeep = 1;
         p.lpack.gold = 0;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     };
-    notice.getInstance().addMsg(1, msgcode.TUIBING_BANKER_BEGIN, begincallback, endcallback, 998);
+    cc.ll.notice.addMsg(1, msgcode.TUIBING_BANKER_BEGIN, begincallback, endcallback, 998);
 };
 
 var onTuiBingBetGold = function onTuiBingBetGold(pack) {
@@ -176,7 +158,7 @@ var onCloseClient = function onCloseClient(pack) {
         var okcallback = function okcallback(argument) {
             sSceneMgr.onChangeScene("loginview");
         };
-        notice.getInstance().addMsg(2, msgcode.NETWORK_OTHER_LOGIN, okcallback);
+        cc.ll.notice.addMsg(2, msgcode.NETWORK_OTHER_LOGIN, okcallback);
     }
 };
 
@@ -197,7 +179,7 @@ var onTuibingBankerInfo = function onTuibingBankerInfo(pack) {
 var onResKeepBanker = function onResKeepBanker(pack) {
     var result = pack.result;
     if (result != 0) {
-        msgbox.getInstance().addMsg(result);
+        cc.ll.msgbox.addMsg(result);
     }
 };
 
@@ -221,14 +203,18 @@ var FuncMap = {
     "ResTuibingLeaveQueue": onTuibingLeaveQueue
 };
 
-var msgdispatch = {
-    dispatch: function dispatch(head, buffer) {
-        var func = FuncMap[head];
-        if (func !== null) {
-            var p = new packet(head);
-            p.unpack(buffer);
-            func(p.msg);
+var msgdispatch = cc.Class({
+    // extends: cc.Component,
+    name: "MsgDispatch",
+    statics: {
+        dispatch: function dispatch(head, buffer) {
+            var func = FuncMap[head];
+            if (func !== null) {
+                var p = new packet(head);
+                p.unpack(buffer);
+                func(p.msg);
+            }
         }
     }
-};
+});
 module.exports = msgdispatch;

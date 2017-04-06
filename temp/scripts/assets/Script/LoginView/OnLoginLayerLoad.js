@@ -2,6 +2,8 @@
 cc._RFpush(module, 'e0614uwHwZLa4P7h4B3rj6/', 'OnLoginLayerLoad');
 // Script/LoginView/OnLoginLayerLoad.js
 
+'use strict';
+
 // OnLoginLayerLoad.js
 var common = require('Common');
 var msgbox = require('Msgbox');
@@ -9,21 +11,21 @@ var msgcode = require('Msgcode');
 var packet = require('Lpackage');
 
 cc.Class({
-    'extends': cc.Component,
+    extends: cc.Component,
 
     properties: {
         prefabNormalRegister: {
-            'default': null,
+            default: null,
             type: cc.Prefab
         },
 
         accountBox: {
-            'default': null,
+            default: null,
             type: cc.EditBox
         },
 
         passwordBox: {
-            'default': null,
+            default: null,
             type: cc.EditBox
         },
 
@@ -53,7 +55,7 @@ cc.Class({
         var account = this.accountBox.string;
         var password = this.passwordBox.string;
         if (account.length > 12 || account.length < 6) {
-            msgbox.getInstance().addMsg(msgcode.ACCOUNT_TOO_LONG);
+            cc.ll.msgbox.addMsg(msgcode.ACCOUNT_TOO_LONG);
             return;
         }
         if (this.rememberCheckBox.isChecked) {
@@ -63,7 +65,7 @@ cc.Class({
         var p = new packet("Reqlogin");
         p.lpack.account = account;
         p.lpack.password = password;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     }
 });
 

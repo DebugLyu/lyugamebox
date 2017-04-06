@@ -39,7 +39,7 @@ cc.Class({
     onGameBtnClick: function () {
         var p = new packet( "ReqEnterRoom" );
         p.lpack.roomid = 99;
-        common.send( p.pack() );
+        cc.ll.net.send( p.pack() );
     },
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {

@@ -2,13 +2,15 @@
 cc._RFpush(module, 'f2553GhWZJLI6BwqcQyprJL', 'OnMainViewLoad');
 // Script/MainView/OnMainViewLoad.js
 
+'use strict';
+
 var common = require('Common');
 var pMgr = require("PlayerManager").getInstance();
 var msgbox = require('Msgbox');
 var packet = require('Lpackage');
 
 cc.Class({
-    'extends': cc.Component,
+    extends: cc.Component,
 
     properties: {
         // foo: {
@@ -23,11 +25,11 @@ cc.Class({
         // ...
 
         NameLabel: {
-            'default': null,
+            default: null,
             type: cc.Label
         },
         GoldLabel: {
-            'default': null,
+            default: null,
             type: cc.Label
         }
     },
@@ -43,12 +45,8 @@ cc.Class({
     onGameBtnClick: function onGameBtnClick() {
         var p = new packet("ReqEnterRoom");
         p.lpack.roomid = 99;
-        common.send(p.pack());
+        cc.ll.net.send(p.pack());
     }
 });
-// called every frame, uncomment this function to activate update callback
-// update: function (dt) {
-
-// },
 
 cc._RFpop();

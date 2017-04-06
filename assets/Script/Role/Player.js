@@ -29,6 +29,7 @@ var p = function(){
 	}
 	
 	var firstChoose = new cc.Event.EventCustom("GoldChange", false)
+	
 	this.onGoldChanged = function( gold ){
 		this.gold = gold;
 		firstChoose.setUserData(this.gold);

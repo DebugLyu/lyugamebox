@@ -1,3 +1,14 @@
+cc.Class({
+    statics: {
+        pb : null,
+        init : function(){
+            cc.loader.loadRes("gamebox", function (err, arr){
+                pb = ProtoBuf.protoFromString(arr); 
+            });
+        },
+    },
+});
+
 var lsockte = require("Lwebsocket")
 var ProtoBuf = require("protobuf")
 var notice = require("Notice")
@@ -73,7 +84,7 @@ var cmm = (function(){
  		reLogin: function() {
  			if ( _link_times > 3 ){
  				_link_times = 0;
-				notice.getInstance().addMsg(2,msgcode.NETWORK_UNCONNECT,null,null,908);
+				cc.ll.notice.addMsg(2,msgcode.NETWORK_UNCONNECT,null,null,908);
 				return;
 			}
  			var scenename = cc.director.getScene().name;
@@ -101,9 +112,9 @@ var cmm = (function(){
  				}else if (type == 2) {
 					self.connectWithFunc( "reloginToMainView", self )
  				}
- 				notice.getInstance().removeMsg( 908 );
+ 				cc.ll.notice.removeMsg( 908 );
  			}
- 			notice.getInstance().addMsg(2,msg,callback,null,908);
+ 			cc.ll.notice.addMsg(2,msg,callback,null,908);
  		}
  	};
     return Return;    //生成公有静态元素

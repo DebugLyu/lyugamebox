@@ -39,17 +39,17 @@ cc.Class({
 
         if (account.length > 12 || account.length < 6 ||
             passowrd.length > 12 || passowrd.length < 6 ) {
-            msgbox.getInstance().addMsg(msgcode.ACCOUNT_TOO_LONG);
+            cc.ll.msgbox.addMsg(msgcode.ACCOUNT_TOO_LONG);
             return;
         }
         if (passowrd != passowrd2) {
-            msgbox.getInstance().addMsg(msgcode.PASSWORD_NOT_SAME);
+            cc.ll.msgbox.addMsg(msgcode.PASSWORD_NOT_SAME);
             return;
         }
         var p = new packet( "ReqRegister" );
         p.lpack.account = account;
         p.lpack.password = passowrd;
-        common.send( p.pack() );
+        cc.ll.net.send( p.pack() );
         cc.sys.localStorage.setItem('account', account);
         cc.sys.localStorage.setItem('password', password);
     },

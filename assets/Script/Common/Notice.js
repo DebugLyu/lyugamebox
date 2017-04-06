@@ -1,21 +1,19 @@
-var NoticeBox = (function(){
-    
-    var instance = null;
-    function getInstance(){
-        if(instance === null){
-            instance = new NoticeBox();
-        }
-        return instance;
-    }
-    var pfab = null;
-    function NoticeBox(){
-        this.init = function(){
+var msgcode = require( 'Msgcode' )
+
+var NoticeBox = cc.Class({
+    // extends: cc.Component,
+    properties: {
+
+    },
+    statics: {
+        pfab : null,
+        init : function() {
+            var self = this;
             cc.loader.loadRes("profab/Notice", function (err, prefab) {
-                pfab = prefab;
+                self.pfab = prefab;
             });
-        };
-        
-        this.addMsg = function(type, msg, okfunc, cancelfunc, tag){
+        },
+        addMsg : function(type, msg, okfunc, cancelfunc, tag){
             var node = cc.instantiate(pfab);
 
             var msgnode = node.getChildByName("NoticeBg").getChildByName("NoticeLabel");
@@ -49,16 +47,11 @@ var NoticeBox = (function(){
                 okbtn.x = 0;
             }
             cc.director.getScene().addChild(node,99,tag);
-        };
+        },
 
-        this.removeMsg = function(tag){
+        removeMsg : function(tag){
             cc.director.getScene().removeChildByTag( tag )
-        };
-        
-    }
-     return {
-        getInstance: getInstance
-    }
-})();
-
+        },
+    },
+});
 module.exports = NoticeBox;

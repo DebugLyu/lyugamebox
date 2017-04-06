@@ -1,50 +1,300 @@
-2017-04-06T03:56:50.003Z - normal: Load ~/.CocosCreator/settings.json
-2017-04-06T03:56:50.008Z - normal: checking language setting...
-2017-04-06T03:56:50.009Z - normal: Language: zh
-2017-04-06T03:56:50.443Z - success: protocol editor-framework registered
-2017-04-06T03:56:50.443Z - success: protocol app registered
-2017-04-06T03:56:50.444Z - success: protocol theme registered
-2017-04-06T03:56:50.444Z - success: protocol profile registered
-2017-04-06T03:56:50.444Z - success: protocol packages registered
-2017-04-06T03:56:50.447Z - success: protocol unpack registerred
-2017-04-06T03:56:50.447Z - success: protocol disable-commonjs registerred
-2017-04-06T03:56:51.441Z - normal: failed to connect login server... skipping login
-2017-04-06T03:56:51.444Z - normal: Check project /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox
-2017-04-06T03:56:51.446Z - normal: Initializing Cocos2d
-2017-04-06T03:56:51.693Z - normal: Initializing Asset Database
-2017-04-06T03:56:51.732Z - success: protocol uuid registerred
-2017-04-06T03:56:51.732Z - success: protocol db registerred
-2017-04-06T03:56:51.733Z - success: protocol thumbnail registerred
-2017-04-06T03:56:51.733Z - normal: Loading editor/builtin packages
-2017-04-06T03:56:51.893Z - success: assets loaded
-2017-04-06T03:56:51.900Z - success: builder loaded
-2017-04-06T03:56:51.911Z - success: hierarchy loaded
-2017-04-06T03:56:51.917Z - success: inspector loaded
-2017-04-06T03:56:51.919Z - success: keystore loaded
-2017-04-06T03:56:51.926Z - success: node-library loaded
-2017-04-06T03:56:51.929Z - success: preferences loaded
-2017-04-06T03:56:51.950Z - success: project-importer loaded
-2017-04-06T03:56:51.954Z - success: project-settings loaded
-2017-04-06T03:56:51.958Z - success: ui-kit loaded
-2017-04-06T03:56:51.963Z - success: ui-grid loaded
-2017-04-06T03:56:51.972Z - success: scene loaded
-2017-04-06T03:56:51.974Z - success: sprite-editor loaded
-2017-04-06T03:56:52.019Z - success: store loaded
-2017-04-06T03:56:52.026Z - success: timeline loaded
-2017-04-06T03:56:52.026Z - normal: Loading builtin packages
-2017-04-06T03:56:52.031Z - success: anysdk loaded
-2017-04-06T03:56:52.035Z - success: asset-db-debugger loaded
-2017-04-06T03:56:52.036Z - success: code-editor loaded
-2017-04-06T03:56:52.037Z - success: color-picker loaded
-2017-04-06T03:56:52.043Z - success: console loaded
-2017-04-06T03:56:52.048Z - success: package-manager loaded
-2017-04-06T03:56:52.053Z - success: tester loaded
-2017-04-06T03:56:52.057Z - success: ui-kit-preview-extra loaded
-2017-04-06T03:56:52.061Z - success: ui-kit-preview loaded
-2017-04-06T03:56:52.066Z - success: ui-tree loaded
-2017-04-06T03:56:52.111Z - normal: Initializing project /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox
-2017-04-06T03:56:52.113Z - normal: Loading packages
-2017-04-06T03:56:52.118Z - normal: Watching packages
-2017-04-06T03:56:52.132Z - normal: Run Application
-2017-04-06T03:56:52.757Z - success: preview server running at http://localhost:7456
-2017-04-06T03:56:56.971Z - normal: 1.4.2
+2017-04-06T07:41:02.620Z - normal: Load ~/.CocosCreator/settings.json
+2017-04-06T07:41:02.624Z - normal: checking language setting...
+2017-04-06T07:41:02.625Z - normal: Language: zh
+2017-04-06T07:41:03.041Z - success: protocol editor-framework registered
+2017-04-06T07:41:03.042Z - success: protocol app registered
+2017-04-06T07:41:03.042Z - success: protocol theme registered
+2017-04-06T07:41:03.042Z - success: protocol profile registered
+2017-04-06T07:41:03.042Z - success: protocol packages registered
+2017-04-06T07:41:03.045Z - success: protocol unpack registerred
+2017-04-06T07:41:03.045Z - success: protocol disable-commonjs registerred
+2017-04-06T07:41:03.369Z - normal: connected!
+2017-04-06T07:41:03.372Z - normal: Check project /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox
+2017-04-06T07:41:03.374Z - normal: Initializing Cocos2d
+2017-04-06T07:41:03.584Z - normal: Initializing Asset Database
+2017-04-06T07:41:03.606Z - success: protocol uuid registerred
+2017-04-06T07:41:03.606Z - success: protocol db registerred
+2017-04-06T07:41:03.606Z - success: protocol thumbnail registerred
+2017-04-06T07:41:03.606Z - normal: Loading editor/builtin packages
+2017-04-06T07:41:03.715Z - success: assets loaded
+2017-04-06T07:41:03.720Z - success: builder loaded
+2017-04-06T07:41:03.725Z - success: hierarchy loaded
+2017-04-06T07:41:03.731Z - success: inspector loaded
+2017-04-06T07:41:03.732Z - success: keystore loaded
+2017-04-06T07:41:03.737Z - success: node-library loaded
+2017-04-06T07:41:03.738Z - success: preferences loaded
+2017-04-06T07:41:03.754Z - success: project-importer loaded
+2017-04-06T07:41:03.758Z - success: project-settings loaded
+2017-04-06T07:41:03.762Z - success: ui-kit loaded
+2017-04-06T07:41:03.772Z - success: ui-grid loaded
+2017-04-06T07:41:03.778Z - success: scene loaded
+2017-04-06T07:41:03.779Z - success: sprite-editor loaded
+2017-04-06T07:41:03.824Z - success: store loaded
+2017-04-06T07:41:03.831Z - success: timeline loaded
+2017-04-06T07:41:03.831Z - normal: Loading builtin packages
+2017-04-06T07:41:03.837Z - success: anysdk loaded
+2017-04-06T07:41:03.840Z - success: asset-db-debugger loaded
+2017-04-06T07:41:03.842Z - success: code-editor loaded
+2017-04-06T07:41:03.842Z - success: color-picker loaded
+2017-04-06T07:41:03.847Z - success: console loaded
+2017-04-06T07:41:03.852Z - success: package-manager loaded
+2017-04-06T07:41:03.856Z - success: tester loaded
+2017-04-06T07:41:03.860Z - success: ui-kit-preview-extra loaded
+2017-04-06T07:41:03.864Z - success: ui-kit-preview loaded
+2017-04-06T07:41:03.869Z - success: ui-tree loaded
+2017-04-06T07:41:03.915Z - normal: Initializing project /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox
+2017-04-06T07:41:03.918Z - normal: Loading packages
+2017-04-06T07:41:03.922Z - normal: Watching packages
+2017-04-06T07:41:03.936Z - normal: Run Application
+2017-04-06T07:41:08.362Z - failed: [db-task][init] Failed to import asset /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/assets/Script/NetWork/Lwebsocket.js, message: Compile error: SyntaxError: unknown: Unexpected token (12:0)
+  10 | },
+  11 | 
+> 12 | var Global = cc.Class({
+     | ^
+  13 |     extends: cc.Component,
+  14 |     properties: {
+  15 |         _ip : "",
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4333:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1705:8)
+    at Parser.pp$2.parseBindingAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3006:12)
+    at Parser.pp$1.parseVarHead (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2299:18)
+    at Parser.pp$1.parseVar (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2282:10)
+    at Parser.pp$1.parseVarStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2115:8)
+    at Parser.pp$1.parseStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1807:19)
+    at Parser.pp$1.parseBlockBody (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2212:21)
+    at Parser.pp$1.parseTopLevel (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1723:8)
+    at Parser.parse (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1617:17)
+2017-04-06T07:41:08.722Z - success: preview server running at http://localhost:7456
+2017-04-06T07:41:08.722Z - normal: Compiling scripts...
+2017-04-06T07:41:12.156Z - normal: 1.4.2
+2017-04-06T07:41:44.020Z - normal: Compiled project javascript file successfully
+2017-04-06T07:41:44.022Z - error: Compile error: Cannot require 'socket-io' from '/Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/temp/scripts/assets/Script/NetWork'. Module not found.
+    at Readable.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/compile-worker.js:1:3554)
+    at emitOne (events.js:96:13)
+    at Readable.emit (events.js:188:7)
+    at Labeled.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/read-only-stream/index.js:28:44)
+    at emitOne (events.js:96:13)
+    at Labeled.emit (events.js:188:7)
+    at Labeled.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/stream-splicer/index.js:130:18)
+    at emitOne (events.js:101:20)
+    at Labeled.emit (events.js:188:7)
+    at Deps.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/stream-splicer/index.js:130:18)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/compiler.js:1:1022
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/compiler.js:1:466
+    at BrowserWindow.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/compiler.js:1:2045)
+    at BrowserWindow.g (events.js:286:16)
+    at emitOne (events.js:101:20)
+    at BrowserWindow.emit (events.js:188:7)
+2017-04-06T07:41:57.516Z - normal: Compiled project javascript file successfully
+2017-04-06T07:41:57.694Z - error: Do not set default value to non-empty object, unless the object defines its own 'clone' function. Set default value of Lwebsocket._reader to null or {}, and initialize in 'onLoad' or 'ctor' please. (just like 'this._reader = {foo: bar};')
+    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:350:22)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:704:17)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:829:9)
+    at Object.require.Lwebsocket (assets/Script/NetWork/Lwebsocket.js:8)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?002:1:262)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?002:1:313
+    at Object.require.Common.Lpackage (assets/Script/Common/Common.js:1)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?002:1:262)
+2017-04-06T07:42:33.456Z - normal: Compiled project javascript file successfully
+2017-04-06T07:42:33.643Z - error: Property 'Lwebsocket._socket' must define at least one of 'default', 'get' or 'set'.
+    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:350:22)
+    at Object.module.exports.preprocessAttrs (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/preprocess-class.js:221:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:698:20)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:829:9)
+    at Object.require.Lwebsocket (assets/Script/NetWork/Lwebsocket.js:8)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?003:1:262)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?003:1:313
+    at Object.require.Common.Lpackage (assets/Script/Common/Common.js:1)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?003:1:262)
+2017-04-06T07:42:33.645Z - error: Do not set default value to non-empty object, unless the object defines its own 'clone' function. Set default value of Lwebsocket._reader to null or {}, and initialize in 'onLoad' or 'ctor' please. (just like 'this._reader = {foo: bar};')
+    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:350:22)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:704:17)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:829:9)
+    at Object.require.Lwebsocket (assets/Script/NetWork/Lwebsocket.js:8)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?003:1:262)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?003:1:313
+    at Object.require.Common.Lpackage (assets/Script/Common/Common.js:1)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?003:1:262)
+2017-04-06T07:42:50.202Z - normal: Compiled project javascript file successfully
+2017-04-06T07:42:50.360Z - error: Do not set default value to non-empty object, unless the object defines its own 'clone' function. Set default value of Lwebsocket._reader to null or {}, and initialize in 'onLoad' or 'ctor' please. (just like 'this._reader = {foo: bar};')
+    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:350:22)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:704:17)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:829:9)
+    at Object.require.Lwebsocket (assets/Script/NetWork/Lwebsocket.js:8)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?004:1:262)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?004:1:313
+    at Object.require.Common.Lpackage (assets/Script/Common/Common.js:1)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?004:1:262)
+2017-04-06T07:44:13.724Z - normal: Compiled project javascript file successfully
+2017-04-06T07:45:22.164Z - normal: Compiled project javascript file successfully
+2017-04-06T07:47:46.381Z - normal: Compiled project javascript file successfully
+2017-04-06T08:10:24.553Z - normal: Compiled project javascript file successfully
+2017-04-06T08:10:24.742Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2017-04-06T08:10:53.294Z - normal: Compiled project javascript file successfully
+2017-04-06T08:10:53.448Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2017-04-06T08:11:18.549Z - normal: Compiled project javascript file successfully
+2017-04-06T08:11:18.701Z - warn: Can not instantiate CCClass 'undefined' with arguments.
+2017-04-06T08:14:18.022Z - normal: Compiled project javascript file successfully
+2017-04-06T08:23:43.104Z - failed: [db-task][sync-changes] Failed to import asset /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/assets/Script/Common/Msgbox.js, message: Compile error: SyntaxError: unknown: Unexpected token, expected , (8:35)
+   6 |     },
+   7 |     statics: {
+>  8 |         bg : cc.find("MsgBoxLayer");
+     |                                    ^
+   9 |         addMsg : function( msg ) {
+  10 |             if ( this.bg === null ){
+  11 |                 return;
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4333:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1705:8)
+    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1693:33)
+    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3882:12)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3639:19)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3414:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3394:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3324:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3301:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3264:19)
+2017-04-06T08:23:43.228Z - failed: [db-task][sync-changes] Failed to import asset /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/assets/Script/Common/Notice.js, message: Compile error: SyntaxError: unknown: Unexpected token, expected , (8:19)
+   6 |     },
+   7 |     statics: {
+>  8 |         pfab : null;
+     |                    ^
+   9 |         init : function() {
+  10 |             var self = this;
+  11 |             cc.loader.loadRes("profab/Notice", function (err, prefab) {
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4333:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1705:8)
+    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1693:33)
+    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3882:12)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3639:19)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3414:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3394:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3324:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3301:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3264:19)
+2017-04-06T08:24:03.578Z - failed: [db-task][sync-changes] Failed to import asset /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/assets/Script/Common/Notice.js, message: Compile error: SyntaxError: unknown: Unexpected token, expected , (49:9)
+  47 |             }
+  48 |             cc.director.getScene().addChild(node,99,tag);
+> 49 |         };
+     |          ^
+  50 | 
+  51 |         removeMsg : function(tag){
+  52 |             cc.director.getScene().removeChildByTag( tag )
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4333:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1705:8)
+    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1693:33)
+    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3882:12)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3639:19)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3414:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3394:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3324:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3301:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3264:19)
+2017-04-06T08:24:23.709Z - normal: Compiled project javascript file successfully
+2017-04-06T08:27:35.090Z - normal: Compiled project javascript file successfully
+2017-04-06T08:29:09.386Z - normal: Compiled project javascript file successfully
+2017-04-06T08:30:06.457Z - normal: Compiled project javascript file successfully
+2017-04-06T08:30:37.288Z - normal: Compiled project javascript file successfully
+2017-04-06T08:33:31.562Z - normal: Compiled project javascript file successfully
+2017-04-06T08:35:01.401Z - normal: Compiled project javascript file successfully
+2017-04-06T08:35:54.559Z - normal: Compiled project javascript file successfully
+2017-04-06T08:37:26.832Z - normal: Compiled project javascript file successfully
+2017-04-06T08:38:46.299Z - normal: Compiled project javascript file successfully
+2017-04-06T08:40:53.697Z - normal: Compiled project javascript file successfully
+2017-04-06T08:41:28.498Z - normal: Compiled project javascript file successfully
+2017-04-06T08:43:41.972Z - normal: Compiled project javascript file successfully
+2017-04-06T08:43:42.509Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T08:47:58.577Z - normal: Compiled project javascript file successfully
+2017-04-06T08:47:59.094Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T08:48:30.767Z - normal: Compiled project javascript file successfully
+2017-04-06T08:48:31.371Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T08:57:16.147Z - normal: Compiled project javascript file successfully
+2017-04-06T08:57:16.761Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T08:58:11.829Z - normal: Compiled project javascript file successfully
+2017-04-06T08:58:12.121Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T08:58:37.274Z - normal: Compiled project javascript file successfully
+2017-04-06T08:58:37.653Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T08:59:49.732Z - normal: Compiled project javascript file successfully
+2017-04-06T08:59:50.217Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:03:09.355Z - normal: Compiled project javascript file successfully
+2017-04-06T09:03:09.586Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:03:09.588Z - warn: Can not use 'editor' attribute, 'Character' not inherits from Components.
+2017-04-06T09:03:30.678Z - normal: Compiled project javascript file successfully
+2017-04-06T09:03:30.884Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:03:30.905Z - error: Unknown type of Character.editorc, property should be defined in 'properties' or 'ctor'
+    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:350:22)
+    at Object.module.exports.validateMethod (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/preprocess-class.js:278:20)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:855:25)
+    at Object.require.test (assets/Script/Common/test.js:2)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?032:1:262)
+    at e (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?032:1:433)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?032:1:451
+2017-04-06T09:03:38.822Z - normal: Compiled project javascript file successfully
+2017-04-06T09:03:39.036Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:03:39.051Z - error: Unknown type of Character1.editorc, property should be defined in 'properties' or 'ctor'
+    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:350:22)
+    at Object.module.exports.validateMethod (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/preprocess-class.js:278:20)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:855:25)
+    at Object.require.test (assets/Script/Common/test.js:2)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?033:1:262)
+    at e (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?033:1:433)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?033:1:451
+2017-04-06T09:04:09.241Z - normal: Compiled project javascript file successfully
+2017-04-06T09:04:09.478Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:05:48.647Z - normal: Compiled project javascript file successfully
+2017-04-06T09:05:48.915Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:06:20.204Z - normal: Compiled project javascript file successfully
+2017-04-06T09:06:20.469Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:06:20.472Z - warn: Should not define constructor for cc.Component test.
+2017-04-06T09:06:20.473Z - warn: Should not specify class name test for Component which defines in project.
+2017-04-06T09:06:47.268Z - normal: Compiled project javascript file successfully
+2017-04-06T09:06:47.956Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:06:47.956Z - warn: Should not define constructor for cc.Component test.
+2017-04-06T09:06:47.957Z - warn: Should not specify class name test for Component which defines in project.
+2017-04-06T09:07:46.406Z - normal: Compiled project javascript file successfully
+2017-04-06T09:07:46.938Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:07:46.967Z - warn: Should not define constructor for cc.Component test.
+2017-04-06T09:07:46.968Z - warn: Should not specify class name test for Component which defines in project.
+2017-04-06T09:09:00.326Z - normal: Compiled project javascript file successfully
+2017-04-06T09:09:00.796Z - warn: Should not define constructor for cc.Component Lpackage.
+2017-04-06T09:09:00.796Z - warn: Should not specify class name Lpackage for Component which defines in project.
+2017-04-06T09:09:00.801Z - warn: Should not define constructor for cc.Component test.
+2017-04-06T09:09:00.801Z - warn: Should not specify class name test for Component which defines in project.
+2017-04-06T09:10:49.477Z - normal: Compiled project javascript file successfully
+2017-04-06T09:10:49.712Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:11:16.926Z - normal: Compiled project javascript file successfully
+2017-04-06T09:11:17.144Z - warn: Should not define constructor for cc.Component Lpackage.
+2017-04-06T09:11:17.144Z - warn: Should not specify class name Lpackage for Component which defines in project.
+2017-04-06T09:32:41.190Z - normal: Compiled project javascript file successfully
+2017-04-06T09:32:41.531Z - warn: Should not define constructor for cc.Component undefined.
+2017-04-06T09:36:33.838Z - normal: Compiled project javascript file successfully
+2017-04-06T09:36:34.209Z - error: ReferenceError: msgbox is not defined
+    at Object.require.Lpackage.bytebuffer: "module.exports = msgbox" (assets/Script/NetWork/Lpackage.js:37)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?043:1:262)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?043:1:313
+    at Object.require.Common.Lpackage (assets/Script/Common/Common.js:16)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?043:1:262)
+    at e (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?043:1:433)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?043:1:451
+2017-04-06T09:37:02.944Z - normal: Compiled project javascript file successfully
+2017-04-06T09:37:03.194Z - error: ReferenceError: msgbox is not defined
+    at Object.require.Lpackage.bytebuffer: "module.exports = msgbox" (assets/Script/NetWork/Lpackage.js:37)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?044:1:262)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?044:1:313
+    at Object.require.Common.Lpackage (assets/Script/Common/Common.js:16)
+    at s (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?044:1:262)
+    at e (file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?044:1:433)
+    at file:///Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox/library/bundle.project.js?044:1:451
+2017-04-06T09:37:44.176Z - normal: Compiled project javascript file successfully
+2017-04-06T09:39:12.984Z - normal: Compiled project javascript file successfully
+2017-04-06T09:43:03.376Z - normal: Compiled project javascript file successfully
+2017-04-06T09:43:49.721Z - normal: Compiled project javascript file successfully
+2017-04-06T09:44:55.325Z - normal: Compiled project javascript file successfully
+2017-04-06T09:48:50.455Z - normal: Compiled project javascript file successfully
+2017-04-06T09:49:56.191Z - normal: Compiled project javascript file successfully
+2017-04-06T09:51:21.476Z - normal: Compiled project javascript file successfully
+2017-04-06T09:54:17.451Z - normal: Compiled project javascript file successfully
+2017-04-06T09:55:10.421Z - normal: Compiled project javascript file successfully
+2017-04-06T09:56:53.922Z - normal: Compiled project javascript file successfully
