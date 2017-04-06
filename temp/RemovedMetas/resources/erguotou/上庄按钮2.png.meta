@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "4891c9b7-b41e-4e00-99ce-6ca8987ea7ce",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "上庄按钮2": {
+      "ver": "1.0.3",
+      "uuid": "bac506bf-961d-4bd9-b659-15d45c34cbdf",
+      "rawTextureUuid": "4891c9b7-b41e-4e00-99ce-6ca8987ea7ce",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 124,
+      "height": 71,
+      "rawWidth": 124,
+      "rawHeight": 71,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

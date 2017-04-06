@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_gold_press",
+    "texture": "4c236ae0-5429-4e76-9219-ce17405c2e45",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      128,
+      65
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      128,
+      65
+    ]
+  }
+}

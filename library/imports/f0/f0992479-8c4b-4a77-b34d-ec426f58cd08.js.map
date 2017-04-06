@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [],
+  "mappings": "AAAA,EAAE,CAAC,KAAK,CAAC;AACL,eAAS,EAAE,CAAC,SAAS;;AAErB,cAAU,EAAE;;;;;;;;;;;AAWR,mBAAW,EAAG,IAAI;AAClB,WAAG,EAAC,CAAC;AACL,aAAK,EAAC,CAAC;KACV;;;AAGD,UAAM,EAAE,kBAAY,EAEnB;;;;;;;AAOD,gBAAY,EAAE,sBAAU,EAAE,EAAE,IAAI,EAAE,IAAI,EAAG;AACrC,YAAI,CAAC,GAAG,GAAG,EAAE,CAAC;AACd,YAAI,CAAC,WAAW,GAAG,IAAI,CAAC;AACxB,YAAI,CAAC,KAAK,GAAG,IAAI,CAAC;AAClB,YAAI,KAAK,GAAG,IAAI,CAAC,YAAY,CAAC,EAAE,CAAC,KAAK,CAAC,CAAC;AACxC,aAAK,CAAC,MAAM,GAAG,IAAI,CAAA;AACnB,YAAG,IAAI,IAAI,CAAC,EAAC;AACT,gBAAI,CAAC,IAAI,CAAC,KAAK,GAAG,IAAI,EAAE,CAAC,KAAK,CAAC,GAAG,EAAE,GAAG,EAAE,GAAG,CAAC,CAAC;SACjD,MAAK,IAAG,IAAI,IAAI,CAAC,EAAC;AACf,gBAAI,CAAC,IAAI,CAAC,KAAK,GAAG,IAAI,EAAE,CAAC,KAAK,CAAC,GAAG,EAAE,GAAG,EAAE,CAAC,CAAC,CAAC;SAC/C;KACJ;CACJ,CAAC,CAAC",
+  "file": "unknown",
+  "sourcesContent": [
+    "cc.Class({\n    extends: cc.Component,\n\n    properties: {\n        // foo: {\n        //    default: null,      // The default value will be used only when the component attaching\n        //                           to a node for the first time\n        //    url: cc.Texture2D,  // optional, default is typeof default\n        //    serializable: true, // optional, default is true\n        //    visible: true,      // optional, default is true\n        //    displayName: 'Foo', // optional\n        //    readonly: false,    // optional, default is false\n        // },\n        // ...\n        _PlayerName : null,\n        _ID:0,\n        _Type:0,\n    },\n\n    // use this for initialization\n    onLoad: function () {\n\n    },\n\n    // called every frame, uncomment this function to activate update callback\n    // update: function (dt) {\n\n    // },\n\n    onChangeName: function( id, name, type ) {\n        this._ID = id;\n        this._PlayerName = name;\n        this._Type = type;\n        var label = this.getComponent(cc.Label);\n        label.string = name\n        if(type == 1){\n            this.node.color = new cc.Color(255, 255, 255);\n        }else if(type == 2){\n            this.node.color = new cc.Color(255, 165, 0);\n        }\n    },\n});\n"
+  ]
+}

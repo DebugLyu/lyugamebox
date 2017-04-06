@@ -1,0 +1,50 @@
+2017-04-06T03:56:50.003Z - normal: Load ~/.CocosCreator/settings.json
+2017-04-06T03:56:50.008Z - normal: checking language setting...
+2017-04-06T03:56:50.009Z - normal: Language: zh
+2017-04-06T03:56:50.443Z - success: protocol editor-framework registered
+2017-04-06T03:56:50.443Z - success: protocol app registered
+2017-04-06T03:56:50.444Z - success: protocol theme registered
+2017-04-06T03:56:50.444Z - success: protocol profile registered
+2017-04-06T03:56:50.444Z - success: protocol packages registered
+2017-04-06T03:56:50.447Z - success: protocol unpack registerred
+2017-04-06T03:56:50.447Z - success: protocol disable-commonjs registerred
+2017-04-06T03:56:51.441Z - normal: failed to connect login server... skipping login
+2017-04-06T03:56:51.444Z - normal: Check project /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox
+2017-04-06T03:56:51.446Z - normal: Initializing Cocos2d
+2017-04-06T03:56:51.693Z - normal: Initializing Asset Database
+2017-04-06T03:56:51.732Z - success: protocol uuid registerred
+2017-04-06T03:56:51.732Z - success: protocol db registerred
+2017-04-06T03:56:51.733Z - success: protocol thumbnail registerred
+2017-04-06T03:56:51.733Z - normal: Loading editor/builtin packages
+2017-04-06T03:56:51.893Z - success: assets loaded
+2017-04-06T03:56:51.900Z - success: builder loaded
+2017-04-06T03:56:51.911Z - success: hierarchy loaded
+2017-04-06T03:56:51.917Z - success: inspector loaded
+2017-04-06T03:56:51.919Z - success: keystore loaded
+2017-04-06T03:56:51.926Z - success: node-library loaded
+2017-04-06T03:56:51.929Z - success: preferences loaded
+2017-04-06T03:56:51.950Z - success: project-importer loaded
+2017-04-06T03:56:51.954Z - success: project-settings loaded
+2017-04-06T03:56:51.958Z - success: ui-kit loaded
+2017-04-06T03:56:51.963Z - success: ui-grid loaded
+2017-04-06T03:56:51.972Z - success: scene loaded
+2017-04-06T03:56:51.974Z - success: sprite-editor loaded
+2017-04-06T03:56:52.019Z - success: store loaded
+2017-04-06T03:56:52.026Z - success: timeline loaded
+2017-04-06T03:56:52.026Z - normal: Loading builtin packages
+2017-04-06T03:56:52.031Z - success: anysdk loaded
+2017-04-06T03:56:52.035Z - success: asset-db-debugger loaded
+2017-04-06T03:56:52.036Z - success: code-editor loaded
+2017-04-06T03:56:52.037Z - success: color-picker loaded
+2017-04-06T03:56:52.043Z - success: console loaded
+2017-04-06T03:56:52.048Z - success: package-manager loaded
+2017-04-06T03:56:52.053Z - success: tester loaded
+2017-04-06T03:56:52.057Z - success: ui-kit-preview-extra loaded
+2017-04-06T03:56:52.061Z - success: ui-kit-preview loaded
+2017-04-06T03:56:52.066Z - success: ui-tree loaded
+2017-04-06T03:56:52.111Z - normal: Initializing project /Users/lyukaiwei/Documents/CocosCreator_proj/lyugamebox
+2017-04-06T03:56:52.113Z - normal: Loading packages
+2017-04-06T03:56:52.118Z - normal: Watching packages
+2017-04-06T03:56:52.132Z - normal: Run Application
+2017-04-06T03:56:52.757Z - success: preview server running at http://localhost:7456
+2017-04-06T03:56:56.971Z - normal: 1.4.2

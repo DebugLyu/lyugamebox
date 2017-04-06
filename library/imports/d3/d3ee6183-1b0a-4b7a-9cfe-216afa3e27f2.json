@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_phone_login_2",
+    "texture": "f06e8ca1-d7af-4139-9946-651161407423",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      209,
+      64
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      209,
+      64
+    ]
+  }
+}

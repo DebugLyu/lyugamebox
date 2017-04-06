@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [
+    "common",
+    "require",
+    "pMgr",
+    "getInstance",
+    "msgbox",
+    "packet",
+    "sSceneMgr",
+    "cc",
+    "Class",
+    "extends",
+    "Component",
+    "properties",
+    "NameLabel",
+    "default",
+    "type",
+    "Label",
+    "GoldLabel",
+    "onLoad",
+    "main_role",
+    "string",
+    "name",
+    "gold",
+    "node",
+    "register",
+    "event",
+    "getUserData",
+    "label",
+    "getComponent",
+    "onBackClicked",
+    "p",
+    "send",
+    "pack",
+    "onChangeScene",
+    "onBeBankerClicked",
+    "lpack",
+    "onFastBeBankerClicked",
+    "onAddGoldBtnClicked",
+    "onUnBankerBtnClick",
+    "onLeaveQueueBtnClick"
+  ],
+  "mappings": ";;AAAA,IAAIA,SAASC,QAAQ,QAAR,CAAb;AACA,IAAIC,OAAOD,QAAQ,eAAR,EAAyBE,WAAzB,EAAX;AACA,IAAIC,SAASH,QAAQ,QAAR,CAAb;AACA,IAAII,SAASJ,QAAS,UAAT,CAAb;AACA,IAAIK,YAAYL,QAAQ,cAAR,CAAhB;;AAEAM,GAAGC,KAAH,CAAS;AACLC,aAASF,GAAGG,SADP;;AAGLC,gBAAY;AACR;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEAC,mBAAW;AACPC,qBAAS,IADF;AAEPC,kBAAMP,GAAGQ;AAFF,SAZH;AAgBRC,mBAAW;AACPH,qBAAS,IADF;AAEPC,kBAAMP,GAAGQ;AAFF;AAhBH,KAHP;;AAyBL;AACAE,YAAQ,kBAAY;AAChB,YAAGf,KAAKgB,SAAL,KAAmB,IAAtB,EAA2B;AACvB,iBAAKN,SAAL,CAAeO,MAAf,GAAwBjB,KAAKgB,SAAL,CAAeE,IAAvC;AACA,iBAAKJ,SAAL,CAAeG,MAAf,GAAwBjB,KAAKgB,SAAL,CAAeG,IAAvC;AACH;;AAED,YAAIC,OAAO,KAAKN,SAAL,CAAeM,IAA1B;AACApB,aAAKgB,SAAL,CAAeK,QAAf,CAAwB,YAAxB,EAAuCD,IAAvC,EAA6C,UAASE,KAAT,EAAe;AACxD,gBAAIH,OAAOG,MAAMC,WAAN,EAAX;AACA,gBAAIC,QAAQJ,KAAKK,YAAL,CAAkBpB,GAAGQ,KAArB,CAAZ;AACAW,kBAAMP,MAAN,GAAeE,IAAf;AACH,SAJD;AAKH,KAtCI;AAuCL;AACA;;AAEA;;AAEAO,mBAAe,yBAAW;AACtB,YAAIC,IAAI,IAAIxB,MAAJ,CAAY,cAAZ,CAAR;AACAL,eAAO8B,IAAP,CAAaD,EAAEE,IAAF,EAAb;;AAEAzB,kBAAU0B,aAAV,CAAwB,UAAxB;AACH,KAjDI;;AAmDLC,uBAAmB,6BAAW;AAC1B,YAAIJ,IAAI,IAAIxB,MAAJ,CAAY,aAAZ,CAAR;AACAwB,UAAEK,KAAF,CAAQpB,IAAR,GAAe,CAAf;AACAd,eAAO8B,IAAP,CAAaD,EAAEE,IAAF,EAAb;AACH,KAvDI;;AAyDLI,2BAAuB,iCAAW;AAC9B,YAAIN,IAAI,IAAIxB,MAAJ,CAAY,aAAZ,CAAR;AACAwB,UAAEK,KAAF,CAAQpB,IAAR,GAAe,CAAf;AACAd,eAAO8B,IAAP,CAAaD,EAAEE,IAAF,EAAb;AACH,KA7DI;;AA+DLK,yBAAqB,+BAAU;AAC3B,YAAIP,IAAI,IAAIxB,MAAJ,CAAY,YAAZ,CAAR;AACAwB,UAAEK,KAAF,CAAQb,IAAR,GAAe,MAAf;AACArB,eAAO8B,IAAP,CAAaD,EAAEE,IAAF,EAAb;AACH,KAnEI;;AAqELM,wBAAqB,8BAAW;AAC5B,YAAIR,IAAI,IAAIxB,MAAJ,CAAY,oBAAZ,CAAR;AACAL,eAAO8B,IAAP,CAAaD,EAAEE,IAAF,EAAb;AACH,KAxEI;;AA0ELO,0BAAuB,gCAAW;AAC9B,YAAIT,IAAI,IAAIxB,MAAJ,CAAY,sBAAZ,CAAR;AACAL,eAAO8B,IAAP,CAAaD,EAAEE,IAAF,EAAb;AACH;AA7EI,CAAT",
+  "file": "unknown",
+  "sourcesContent": [
+    "var common = require('Common')\nvar pMgr = require(\"PlayerManager\").getInstance();\nvar msgbox = require('Msgbox')\nvar packet = require( 'Lpackage' )\nvar sSceneMgr = require(\"SceneManager\")\n\ncc.Class({\n    extends: cc.Component,\n\n    properties: {\n        // foo: {\n        //    default: null,      // The default value will be used only when the component attaching\n        //                           to a node for the first time\n        //    url: cc.Texture2D,  // optional, default is typeof default\n        //    serializable: true, // optional, default is true\n        //    visible: true,      // optional, default is true\n        //    displayName: 'Foo', // optional\n        //    readonly: false,    // optional, default is false\n        // },\n        // ...\n        \n        NameLabel: {\n            default: null,\n            type: cc.Label,\n        },\n        GoldLabel: {\n            default: null,\n            type: cc.Label,\n        },\n    },\n\n    // use this for initialization\n    onLoad: function () {\n        if(pMgr.main_role !== null){\n            this.NameLabel.string = pMgr.main_role.name;\n            this.GoldLabel.string = pMgr.main_role.gold;\n        }\n\n        var node = this.GoldLabel.node;\n        pMgr.main_role.register(\"GoldChange\",  node, function(event){\n            var gold = event.getUserData()     \n            var label = node.getComponent(cc.Label);\n            label.string = gold;\n        })\n    },\n    // called every frame, uncomment this function to activate update callback\n    // update: function (dt) {\n\n    // },\n\n    onBackClicked: function() {\n        var p = new packet( \"ReqLeaveRoom\" );\n        common.send( p.pack() );\n\n        sSceneMgr.onChangeScene(\"mainview\");\n    },\n    \n    onBeBankerClicked: function() {\n        var p = new packet( \"ReqBeBanker\" );\n        p.lpack.type = 1;\n        common.send( p.pack() );        \n    },\n\n    onFastBeBankerClicked: function() {\n        var p = new packet( \"ReqBeBanker\" );\n        p.lpack.type = 2;\n        common.send( p.pack() );        \n    },\n\n    onAddGoldBtnClicked: function(){\n        var p = new packet( \"ReqAddGold\" );\n        p.lpack.gold = 100000;\n        common.send( p.pack() );  \n    },\n\n    onUnBankerBtnClick : function (){\n        var p = new packet( \"ReqTuiBingUnbanker\" );\n        common.send( p.pack() );   \n    },\n\n    onLeaveQueueBtnClick : function() {\n        var p = new packet( \"ReqTuibingLeaveQueue\" );\n        common.send( p.pack() );  \n    },\n});\n"
+  ]
+}

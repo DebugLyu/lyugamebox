@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [],
+  "mappings": ";AACA,IAAI,UAAU,GAAG,OAAO,CAAC,YAAY,CAAC,CAAC;;;AAGvC,IAAI,QAAQ,GAAG,SAAX,QAAQ,CAAa,IAAI,EAAE;AAC9B,KAAI,MAAM,GAAG,OAAO,CAAC,QAAQ,CAAC,CAAC;AAC/B,KAAI,CAAC,IAAI,GAAG,IAAI,CAAC;AACjB,KAAI,KAAK,GAAG,WAAW,GAAG,IAAI,CAAC;AAC/B,KAAI,CAAC,OAAO,GAAG,MAAM,CAAC,KAAK,EAAE,CAAC,KAAK,CAAC,KAAK,CAAC,CAAC;AAC3C,KAAI,CAAC,KAAK,GAAG,IAAI,IAAI,CAAC,OAAO,EAAE,CAAC;;AAEhC,KAAI,CAAC,IAAI,GAAG,YAAU;AACrB,MAAI,GAAG,GAAG,IAAI,UAAU,EAAE,CAAC;AACrB,KAAG,CAAC,UAAU,CAAE,IAAI,CAAC,IAAI,CAAC,MAAM,CAAE,CAAC;AACzC,KAAG,CAAC,WAAW,CAAE,IAAI,CAAC,IAAI,CAAE,CAAC;;AAE7B,KAAG,CAAC,MAAM,CAAE,IAAI,CAAC,KAAK,CAAC,MAAM,EAAE,CAAE,CAAC;AAClC,KAAG,CAAC,IAAI,EAAE,CAAC;AACX,SAAO,GAAG,CAAC,QAAQ,EAAE,CAAC;EACtB,CAAC;;AAEF,KAAI,CAAC,GAAG,GAAG,IAAI,CAAC;AAChB,KAAI,CAAC,MAAM,GAAG,UAAS,MAAM,EAAC;AAC7B,MAAG,MAAM,KAAK,IAAI,EAAC;AAClB,OAAI,CAAC,GAAG,GAAG,IAAI,CAAC,OAAO,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC;GACvC;AACD,SAAO,IAAI,CAAC,GAAG,CAAC;EAChB,CAAC;CACF,CAAA;AACD,MAAM,CAAC,OAAO,GAAG,QAAQ,CAAC",
+  "file": "unknown",
+  "sourcesContent": [
+    "//Lpackage.js\nvar ByteBuffer = require(\"bytebuffer\");\n//var common = require(\"Common\");\n\nvar Lpackage = function( head ){\n\tvar common = require(\"Common\");\n\tthis.head = head;\n\tvar tHead = \"tutorial.\" + head;\n\tthis.builder = common.getPb().build(tHead);\n\tthis.lpack = new this.builder();\n\n\tthis.pack = function(){\n\t\tvar ret = new ByteBuffer();\n        ret.writeShort( this.head.length );\n\t\tret.writeString( this.head );\n\t\t// ret.writeString( \"||\" )\n\t\tret.append( this.lpack.encode() );\n\t\tret.flip();\n\t\treturn ret.toBuffer();\n\t};\n\n\tthis.msg = null;\n\tthis.unpack = function(buffer){\n\t\tif(buffer !== null){\n\t\t\tthis.msg = this.builder.decode(buffer);\n\t\t}\n\t\treturn this.msg;\n\t};\n}\nmodule.exports = Lpackage;"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [
+    "msgcode",
+    "require",
+    "msg",
+    "instance",
+    "getInstance",
+    "MsgBox",
+    "bg",
+    "cc",
+    "game",
+    "addPersistRootNode",
+    "addMsg",
+    "find",
+    "msgnode",
+    "Node",
+    "color",
+    "msglabel",
+    "addComponent",
+    "Label",
+    "string",
+    "fontSize",
+    "setPosition",
+    "height",
+    "parent",
+    "dellabel",
+    "destroy",
+    "act1",
+    "moveBy",
+    "p",
+    "act21",
+    "delayTime",
+    "act22",
+    "fadeOut",
+    "act23",
+    "callFunc",
+    "act2",
+    "sequence",
+    "runAction",
+    "module",
+    "exports"
+  ],
+  "mappings": ";;AAAA,IAAIA,UAAUC,QAAS,SAAT,CAAd;AACA,IAAIC,MAAO,YAAU;;AAEjB,QAAIC,WAAW,IAAf;AACA,aAASC,WAAT,GAAsB;AAClB,YAAGD,aAAa,IAAhB,EAAqB;AACjBA,uBAAW,IAAIE,MAAJ,EAAX;AACH;AACD,eAAOF,QAAP;AACH;AACD,aAASE,MAAT,GAAiB;AACb,aAAKC,EAAL,GAAU,IAAV;AACA;AACAC,WAAGC,IAAH,CAAQC,kBAAR,CAA2B,KAAKH,EAAhC;AACA,aAAKI,MAAL,GAAc,UAASR,GAAT,EAAa;AACvB,gBAAI,KAAKI,EAAL,KAAY,IAAhB,EAAsB;AAClB,qBAAKA,EAAL,GAAUC,GAAGI,IAAH,CAAQ,aAAR,CAAV;AACA,oBAAI,KAAKL,EAAL,KAAY,IAAhB,EAAsB;AACzB;AACD,gBAAI,OAAOJ,GAAP,IAAe,QAAnB,EAA6B;AACzBA,sBAAMF,QAAQE,GAAR,CAAN;AACH;AACD,gBAAIU,UAAU,IAAIL,GAAGM,IAAP,EAAd;AACAD,oBAAQE,KAAR,GAAgBP,GAAGO,KAAH,CAAS,CAAT,EAAY,GAAZ,EAAiB,EAAjB,EAAqB,GAArB,CAAhB;AACA,gBAAIC,WAAWH,QAAQI,YAAR,CAAqBT,GAAGU,KAAxB,CAAf;AACAF,qBAASG,MAAT,GAAkBhB,GAAlB;AACAa,qBAASI,QAAT,GAAoB,EAApB;AACAP,oBAAQQ,WAAR,CAAqB,CAArB,EAAwB,CAAC,KAAKd,EAAL,CAAQe,MAAT,GAAkB,CAAlB,GAAsB,EAA9C;AACAT,oBAAQU,MAAR,GAAiB,KAAKhB,EAAtB;AACA,gBAAIiB,WAAW,SAAXA,QAAW,GAAU;AACrBX,wBAAQY,OAAR;AACH,aAFD;AAGA,gBAAIC,OAAOlB,GAAGmB,MAAH,CAAU,CAAV,EAAanB,GAAGoB,CAAH,CAAK,CAAL,EAAQ,GAAR,CAAb,CAAX;AACA,gBAAIC,QAAQrB,GAAGsB,SAAH,CAAa,GAAb,CAAZ;AACA,gBAAIC,QAAQvB,GAAGwB,OAAH,CAAW,GAAX,CAAZ;AACA,gBAAIC,QAAQzB,GAAG0B,QAAH,CAAaV,QAAb,CAAZ;AACA,gBAAIW,OAAO3B,GAAG4B,QAAH,CAAYP,KAAZ,EAAmBE,KAAnB,EAA0BE,KAA1B,CAAX;;AAEApB,oBAAQwB,SAAR,CAAkBX,IAAlB;AACAb,oBAAQwB,SAAR,CAAkBF,IAAlB;AACH,SA1BD;AA2BH;AACA,WAAO;AACJ9B,qBAAaA;AADT,KAAP;AAGJ,CA5CS,EAAV;;AA8CAiC,OAAOC,OAAP,GAAiBpC,GAAjB",
+  "file": "unknown",
+  "sourcesContent": [
+    "var msgcode = require( 'Msgcode' )\nvar msg = (function(){\n    \n    var instance = null;\n    function getInstance(){\n        if(instance === null){\n            instance = new MsgBox()\n        }\n        return instance;\n    }\n    function MsgBox(){\n        this.bg = null;\n        //常驻背景到内存中\n        cc.game.addPersistRootNode(this.bg);\n        this.addMsg = function(msg){\n            if( this.bg === null ){\n                this.bg = cc.find(\"MsgBoxLayer\");\n                if( this.bg === null )return;\n            }\n            if( typeof(msg) == \"number\" ){\n                msg = msgcode[msg];\n            }\n            var msgnode = new cc.Node();\n            msgnode.color = cc.color(0, 255, 68, 255);\n            var msglabel = msgnode.addComponent(cc.Label);\n            msglabel.string = msg;\n            msglabel.fontSize = 20;\n            msgnode.setPosition( 0, -this.bg.height / 2 + 10  );\n            msgnode.parent = this.bg;\n            var dellabel = function(){\n                msgnode.destroy();\n            };  \n            var act1 = cc.moveBy(1, cc.p(0, 100));\n            var act21 = cc.delayTime(0.5);\n            var act22 = cc.fadeOut(0.5);\n            var act23 = cc.callFunc( dellabel )\n            var act2 = cc.sequence(act21, act22, act23);\n            \n            msgnode.runAction(act1);\n            msgnode.runAction(act2);\n        }\n    }\n     return {\n        getInstance: getInstance\n    }\n})();\n\nmodule.exports = msg;"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "42b4569e-7969-4407-8581-af2dde999d81",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "北门底板": {
+      "ver": "1.0.3",
+      "uuid": "bb4db866-8286-4504-b1a3-7a0c9b4e716a",
+      "rawTextureUuid": "42b4569e-7969-4407-8581-af2dde999d81",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 268,
+      "height": 266,
+      "rawWidth": 268,
+      "rawHeight": 266,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

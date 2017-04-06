@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btnimg_register",
+    "texture": "905a15c0-0ab0-4cca-8a96-9f31d2de3934",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      72,
+      35
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      72,
+      35
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [],
+  "mappings": "AAAA,IAAI,MAAM,GAAG,OAAO,CAAC,QAAQ,CAAC,CAAA;AAC9B,IAAI,IAAI,GAAG,OAAO,CAAC,eAAe,CAAC,CAAC,WAAW,EAAE,CAAC;AAClD,IAAI,MAAM,GAAG,OAAO,CAAC,QAAQ,CAAC,CAAA;AAC9B,IAAI,MAAM,GAAG,OAAO,CAAE,UAAU,CAAE,CAAA;;AAElC,EAAE,CAAC,KAAK,CAAC;AACL,eAAS,EAAE,CAAC,SAAS;;AAErB,cAAU,EAAE;;;;;;;;;;;;AAYR,iBAAS,EAAE;AACP,uBAAS,IAAI;AACb,gBAAI,EAAE,EAAE,CAAC,KAAK;SACjB;AACD,iBAAS,EAAE;AACP,uBAAS,IAAI;AACb,gBAAI,EAAE,EAAE,CAAC,KAAK;SACjB;KACJ;;;AAGD,UAAM,EAAE,kBAAY;AAChB,YAAG,IAAI,CAAC,SAAS,KAAK,IAAI,EAAC;AACvB,gBAAI,CAAC,SAAS,CAAC,MAAM,GAAG,IAAI,CAAC,SAAS,CAAC,IAAI,CAAC;AAC5C,gBAAI,CAAC,SAAS,CAAC,MAAM,GAAG,IAAI,CAAC,SAAS,CAAC,IAAI,CAAC;SAC/C;KACJ;;AAED,kBAAc,EAAE,0BAAY;AACxB,YAAI,CAAC,GAAG,IAAI,MAAM,CAAE,cAAc,CAAE,CAAC;AACrC,SAAC,CAAC,KAAK,CAAC,MAAM,GAAG,EAAE,CAAC;AACpB,cAAM,CAAC,IAAI,CAAE,CAAC,CAAC,IAAI,EAAE,CAAE,CAAC;KAC3B;CAKJ,CAAC,CAAC",
+  "file": "unknown",
+  "sourcesContent": [
+    "var common = require('Common')\nvar pMgr = require(\"PlayerManager\").getInstance();\nvar msgbox = require('Msgbox')\nvar packet = require( 'Lpackage' )\n\ncc.Class({\n    extends: cc.Component,\n\n    properties: {\n        // foo: {\n        //    default: null,      // The default value will be used only when the component attaching\n        //                           to a node for the first time\n        //    url: cc.Texture2D,  // optional, default is typeof default\n        //    serializable: true, // optional, default is true\n        //    visible: true,      // optional, default is true\n        //    displayName: 'Foo', // optional\n        //    readonly: false,    // optional, default is false\n        // },\n        // ...\n        \n        NameLabel: {\n            default: null,\n            type: cc.Label,\n        },\n        GoldLabel: {\n            default: null,\n            type: cc.Label,\n        },\n    },\n\n    // use this for initialization\n    onLoad: function () {\n        if(pMgr.main_role !== null){\n            this.NameLabel.string = pMgr.main_role.name;\n            this.GoldLabel.string = pMgr.main_role.gold;\n        }\n    },\n\n    onGameBtnClick: function () {\n        var p = new packet( \"ReqEnterRoom\" );\n        p.lpack.roomid = 99;\n        common.send( p.pack() );\n    },\n    // called every frame, uncomment this function to activate update callback\n    // update: function (dt) {\n\n    // },\n});\n"
+  ]
+}

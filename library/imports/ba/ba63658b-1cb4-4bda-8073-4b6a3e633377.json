@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_register_bg",
+    "texture": "58214324-e1c4-4969-846b-0b0272a82881",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      484,
+      474
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      484,
+      474
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_sky_bg",
+    "texture": "88991c4f-79ce-4b55-929d-1c905348668c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      268,
+      266
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      268,
+      266
+    ]
+  }
+}

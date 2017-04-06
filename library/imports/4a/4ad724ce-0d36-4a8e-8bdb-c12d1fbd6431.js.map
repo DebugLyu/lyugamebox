@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [
+    "common",
+    "require",
+    "msgbox",
+    "cc",
+    "Class",
+    "extends",
+    "Component",
+    "properties",
+    "prefabNormalLogin",
+    "default",
+    "type",
+    "Prefab",
+    "onLoad",
+    "connect",
+    "onNormalLoginClick",
+    "getNetworkState",
+    "bg",
+    "find",
+    "creatlayer",
+    "instantiate",
+    "parent",
+    "setPosition",
+    "connectWithFunc"
+  ],
+  "mappings": ";;AAAA,IAAIA,SAASC,QAAQ,QAAR,CAAb;AACA,IAAIC,SAASD,QAAQ,QAAR,CAAb;;AAEAE,GAAGC,KAAH,CAAS;AACLC,aAASF,GAAGG,SADP;;AAGLC,gBAAY;AACRC,2BAAkB;AACdC,qBAAS,IADK;AAEdC,kBAAMP,GAAGQ;AAFK;AADV,KAHP;;AAULC,YAAQ,kBAAY;AAChBZ,eAAOa,OAAP;AACH,KAZI;;AAcLC,wBAAmB,8BAAU;AACzB;AACA,YAAId,OAAOe,eAAP,MAA4B,CAAhC,EAAkC;AAC9B,gBAAIC,KAAKb,GAAGc,IAAH,CAAQ,SAAR,CAAT;AACA,gBAAIC,aAAaf,GAAGgB,WAAH,CAAe,KAAKX,iBAApB,CAAjB;AACAU,uBAAWE,MAAX,GAAoBJ,EAApB;AACAE,uBAAWG,WAAX,CAAuB,CAAvB,EAAyB,CAAzB;AACH,SALD,MAKK;AACDrB,mBAAOsB,eAAP,CAAwB,oBAAxB,EAA8C,IAA9C;AACH;AACJ;AAxBI,CAAT",
+  "file": "unknown",
+  "sourcesContent": [
+    "var common = require('Common');\nvar msgbox = require('Msgbox')\n\ncc.Class({\n    extends: cc.Component,\n    \n    properties: {\n        prefabNormalLogin:{\n            default: null,\n            type: cc.Prefab,\n        },\n    },\n\n    onLoad: function () {\n        common.connect();\n    },\n\n    onNormalLoginClick:function(){\n        // var scene = cc.director.getScene();\n        if (common.getNetworkState() == 2){\n            var bg = cc.find(\"BgLayer\");\n            let creatlayer = cc.instantiate(this.prefabNormalLogin);  \n            creatlayer.parent = bg;\n            creatlayer.setPosition(0,0);\n        }else{\n            common.connectWithFunc( \"onNormalLoginClick\", this );\n        }\n    },\n});"
+  ]
+}
