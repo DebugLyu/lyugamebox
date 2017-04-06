@@ -99,8 +99,7 @@
         "node-library",
         "timeline"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "code-editor": {
