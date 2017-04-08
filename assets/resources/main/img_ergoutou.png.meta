@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "e1abb1df-8bb4-454b-b4da-4d371e565d01",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "img_ergoutou": {
+      "ver": "1.0.3",
+      "uuid": "45941167-7163-4eb8-b7b6-d3880599f8a8",
+      "rawTextureUuid": "e1abb1df-8bb4-454b-b4da-4d371e565d01",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 389,
+      "height": 411,
+      "rawWidth": 389,
+      "rawHeight": 411,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

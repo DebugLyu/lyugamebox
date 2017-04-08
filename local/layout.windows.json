@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 300,
+                "height": 294,
                 "type": "panel",
                 "width": 218
               },
@@ -27,7 +27,7 @@
                 "children": [
                   "assets"
                 ],
-                "height": 336,
+                "height": 341.984375,
                 "type": "panel",
                 "width": 218
               }
@@ -134,8 +134,8 @@
       "height": 722
     },
     "sprite-editor": {
-      "x": 630,
-      "y": 72,
+      "x": 505,
+      "y": 45,
       "width": 500,
       "height": 522
     }

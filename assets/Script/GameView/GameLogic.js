@@ -98,8 +98,8 @@ cc.Class({
         this.bankerTimesLabel.string = 0;
         this.betPoolLabel.string = 0;
 
-        this.btnBeBanker.active = true;
-        this.btnUnBanker.active = false;
+        this.btnBeBanker.node.active = true;
+        this.btnUnBanker.node.active = false;
     },
 
     onQueueChanged: function( banker, list ) {
@@ -163,11 +163,11 @@ cc.Class({
     onGoldAction : function ( id, pos, gold ){
         var bgstr = "";
         if (pos == 1) {
-            bgstr = "GameBgLayer/GameBg/SouthBg";
+            bgstr = "Canvas/GameBgLayer/GameBg/SouthBg";
         }else if (pos == 2) {
-            bgstr = "GameBgLayer/GameBg/SkyBg";
+            bgstr = "Canvas/GameBgLayer/GameBg/SkyBg";
         }else if (pos == 3) {
-            bgstr  = "GameBgLayer/GameBg/NorthBg";
+            bgstr  = "Canvas/GameBgLayer/GameBg/NorthBg";
         }
         if (bgstr.length <= 5){
             return;
@@ -213,7 +213,7 @@ cc.Class({
     },
 
     onBetGold : function( event, pos ){
-        if ( self._game_state != 5 ){
+        if ( this._game_state != 5 ){
             return;
         }
         var maxgold = pMgr.main_role.gold;
@@ -268,7 +268,6 @@ cc.Class({
     OpenMajiang: function( node, obj ){
         var self = this;
         var changesprite = function( sprite_node, sprite_name ){
-            console.log("aaaaaaaaaaaaaaaaaaa    " + sprite_name );
             var sprite = sprite_node.getComponent( cc.Sprite );
             var frame = self.MajiangSpriteList.getSpriteFrame( sprite_name );
             // var realUrl = cc.url.raw("resources/erguotou/"+sprite_name+".png");
@@ -341,12 +340,13 @@ cc.Class({
         this.bankerGoldLabel.string = obj.gold;
         this.bankerTimesLabel.string = obj.times;
         if ( pMgr.main_role.id == this._banker_id ){
-            this.btnBeBanker.active = false;
-            this.btnUnBanker.active = true;
+            this.btnBeBanker.node.active = false;
+            this.btnUnBanker.node.active = true;
         }else{
-            this.btnBeBanker.active = true;
-            this.btnUnBanker.active = false;
+            this.btnBeBanker.node.active = true;
+            this.btnUnBanker.node.active = false;
         }
+        this._can_bet_gold = this._banker_gold
     },
 
     canBeBanker : function(){

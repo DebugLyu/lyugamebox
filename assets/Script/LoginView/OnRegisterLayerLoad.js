@@ -1,7 +1,5 @@
 var packet = require( 'Lpackage' );
-var msgbox = require('Msgbox')
 var msgcode = require( 'Msgcode' )
-var common = require('Common');
 
 cc.Class({
     extends: cc.Component,

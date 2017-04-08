@@ -1,6 +1,4 @@
 // OnLoginLayerLoad.js
-var common = require('Common')
-var msgbox = require('Msgbox')
 var msgcode = require( 'Msgcode' )
 var packet = require( 'Lpackage' )
 

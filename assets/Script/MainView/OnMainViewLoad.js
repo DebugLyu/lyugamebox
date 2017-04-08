@@ -1,6 +1,4 @@
-var common = require('Common')
 var pMgr = require("PlayerManager").getInstance();
-var msgbox = require('Msgbox')
 var packet = require( 'Lpackage' )
 
 cc.Class({

@@ -78,13 +78,14 @@
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
+    "_spacingX": 0,
     "_N$string": "张三",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
   },
   {
-    "__type__": "f0992R5jEtKd7NN7EJvWM0I",
+    "__type__": "3bb1ffd/HlFeJGvd/Zg3eQ+",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -101,7 +102,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "8b4ab7c4-6715-4274-a40d-458eced7e110"
+      "__uuid__": "4567500c-6070-442d-8832-edb4a02fd7b3"
     },
     "fileId": "b9a23USDq1CgLQ4FGm9p0SP",
     "sync": false

@@ -22,7 +22,7 @@ var Msgbox = cc.Class({
             var msglabel = msgnode.addComponent(cc.Label);
             msglabel.string = msg;
             msglabel.fontSize = 20;
-            msgnode.setPosition( 0, -this.bg.height / 2 + 10  );
+            msgnode.setPosition( 0, -50 );
             msgnode.parent = this.bg;
             var dellabel = function(){
                 msgnode.destroy();
