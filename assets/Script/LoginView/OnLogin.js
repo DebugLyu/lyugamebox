@@ -1,4 +1,6 @@
-var etc = require("etc");
+var etc = require("etc")
+var msgcode = require( 'Msgcode' )
+
 cc.Class({
     extends: cc.Component,
     
@@ -16,9 +18,14 @@ cc.Class({
         }
         var errorfunc = function() {
             var callback = function(){
-
+                var scenename = cc.director.getScene().name;
+                if( scenename == "" || scenename == "loadingview" || scenename == "loginview"){
+                    return;
+                }
+                var sSceneMgr = require("SceneManager");
+                sSceneMgr.onChangeScene("loginview");
             }
-            cc.ll.notice.addMsg (2,"网络连接错误",callback)
+            cc.ll.notice.addMsg (2,msgcode.NETWORK_UNCONNECT,callback)
         }
         cc.ll.net.connect( etc.ip, etc.port, okfunc, errorfunc );
     },

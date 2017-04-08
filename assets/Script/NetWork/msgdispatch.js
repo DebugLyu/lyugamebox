@@ -54,7 +54,7 @@ var onTuibingLeaveQueue = function( pack ){
 }
 
 var onTuiBingQueueChange = function( pack ) {
-    var node = cc.find("GameBgLayer");
+    var node = cc.find("Canvas/GameBgLayer");
     if( node ){
         var gamelogic = node.getComponent("GameLogic");
         var banker = { 
@@ -67,7 +67,7 @@ var onTuiBingQueueChange = function( pack ) {
 
 var onTuiBingGameState = function( pack ){
     var state = pack.state
-    var node = cc.find("GameBgLayer");
+    var node = cc.find("Canvas/GameBgLayer");
     if( node ){
         var gamelogic = node.getComponent( "GameLogic" );
         gamelogic.onGameStateChange( state )
@@ -88,7 +88,7 @@ var onTuiBingBet = function( pack ) {
     var pos = pack.pos;
     var gold = pack.gold;
     if (result == 0){
-        var node = cc.find("GameBgLayer");
+        var node = cc.find("Canvas/GameBgLayer");
         if( node ){
             var gamelogic = node.getComponent( "GameLogic" );
             gamelogic.onGoldAction( id, pos, gold )
@@ -112,7 +112,7 @@ var onKeepBanker = function( pack ) {
         p.lpack.gold = 0;
         cc.ll.net.send( p.pack() );
     }
-    cc.ll.notice.addMsg (1,msgcode.TUIBING_KEEP_BANKER, begincallback, endcallback, 998);
+    cc.ll.notice.addMsg(1,msgcode.TUIBING_KEEP_BANKER, begincallback, endcallback, 998);
 }
 
 var onBankerBegin = function( pack ) {
@@ -127,12 +127,12 @@ var onBankerBegin = function( pack ) {
         p.lpack.gold = 0;
         cc.ll.net.send( p.pack() );
     }
-    cc.ll.notice.addMsg (1,msgcode.TUIBING_BANKER_BEGIN, begincallback, endcallback, 998)
+    cc.ll.notice.addMsg(1,msgcode.TUIBING_BANKER_BEGIN, begincallback, endcallback, 998)
 }
 
 var onTuiBingBetGold = function( pack ) {
     var gold = pack.gold;
-    var node = cc.find("GameBgLayer");
+    var node = cc.find("Canvas/GameBgLayer");
     if( node ){
         var gamelogic = node.getComponent( "GameLogic" );
         // gamelogic.onGoldAction( gold )
@@ -142,7 +142,7 @@ var onTuiBingBetGold = function( pack ) {
 
 var onDealMajiang = function( pack ) {
     var majiangs = pack.majiangs
-    var node = cc.find("GameBgLayer");
+    var node = cc.find("Canvas/GameBgLayer");
     if( node ){
         var gamelogic = node.getComponent( "GameLogic" );
         // gamelogic.onGoldAction( gold )
@@ -167,7 +167,7 @@ var onTuibingBankerInfo = function( pack ) {
         gold : pack.gold,
         times : pack.times,
     };
-    var node = cc.find("GameBgLayer");
+    var node = cc.find("Canvas/GameBgLayer");
     if( node ){
         var gamelogic = node.getComponent( "GameLogic" );
         gamelogic.onBankerInfo( obj );

@@ -1,5 +1,6 @@
 var pMgr = require("PlayerManager").getInstance()
 var packet = require( 'Lpackage' )
+var ErrorCode = require("errorcode")
 var msgcode = require( 'Msgcode' )
 var TuiBingConfig = require("TuiBingConfig")
 
@@ -30,21 +31,25 @@ cc.Class({
 
         maJiangList:[cc.Node],
         bgList:[cc.Node],
+
+        btnBeBanker : cc.Button,
+        btnUnBanker : cc.Button,
         // 游戏属性
-        _banker_id : cc.Integer,
-        _banker_name : String,
-        _game_state : cc.Integer,
-        _banker_times : cc.Integer,
-        _banker_gold : cc.Integer,
+        _banker_id : 0,
+        _banker_name : "暂无庄家",
+        _game_state : 0,
+        _banker_times : 0,
+        _banker_gold : 0,
 
         _south_pool : new Array(),
         _sky_pool : new Array(),
         _north_pool : new Array(),
 
-        _select_gold : cc.Integer,
-        _can_bet_gold : cc.Integer, 
+        _select_gold : 0,
+        _can_bet_gold : 0, 
+        _be_banker_list : [Object],
 
-        _MajiangSpriteList : [cc.SpriteFrame],
+        MajiangSpriteList : cc.SpriteAtlas,
     },
 
     // use this for initialization
@@ -88,18 +93,23 @@ cc.Class({
     initBanker: function () {
         this._banker_id = 0;
         this._banker_name = 0;
-        this.bankerNameLabel.string = "庄家";
+        this.bankerNameLabel.string = msgcode.TUIBING_STATE_STOP;
         this.bankerGoldLabel.string = 0;
         this.bankerTimesLabel.string = 0;
         this.betPoolLabel.string = 0;
+
+        this.btnBeBanker.active = true;
+        this.btnUnBanker.active = false;
     },
 
     onQueueChanged: function( banker, list ) {
-        this._banker_id = banker.bankerid;
-        this._banker_name = banker.bankername;
-        this.bankerNameLabel.string = this._banker_name;
+        if ( banker.bankerid != 0 ){
+            this._banker_id = banker.bankerid;
+            this._banker_name = banker.bankername;
+            this.bankerNameLabel.string = this._banker_name;
+        }
 
-        var node = cc.find("GameBgLayer/BankerList/view/content");
+        var node = cc.find("Canvas/GameBgLayer/BankerList/view/content");
         node.removeAllChildren()
 
         // console.log("id = " + id + ";name = "+ name);
@@ -114,6 +124,7 @@ cc.Class({
             node.addChild( item )
         }
         node.height = list.length * 40;
+        this._be_banker_list = list;
     },
 
     onGameStateChange: function(state) {
@@ -255,12 +266,14 @@ cc.Class({
     },
 
     OpenMajiang: function( node, obj ){
+        var self = this;
         var changesprite = function( sprite_node, sprite_name ){
+            console.log("aaaaaaaaaaaaaaaaaaa    " + sprite_name );
             var sprite = sprite_node.getComponent( cc.Sprite );
-            var frame = new cc.SpriteFrame;
-            var realUrl = cc.url.raw("resources/erguotou/"+sprite_name+".png");
-            var texture = cc.textureCache.addImage(realUrl);
-            frame.setTexture(texture);
+            var frame = self.MajiangSpriteList.getSpriteFrame( sprite_name );
+            // var realUrl = cc.url.raw("resources/erguotou/"+sprite_name+".png");
+            // var texture = cc.textureCache.addImage(realUrl);
+            // frame.setTexture(texture);
             sprite.spriteFrame = frame;
         }
         var majiang1 = node.getChildByName( "Majiang1" );
@@ -275,8 +288,13 @@ cc.Class({
             return
         }
         var numspr = pointbg.getChildByName( "NumSpr" );
-        var num = (obj.majiang1+obj.majiang2)%10;
-        namespr = "img_"+ num +"point_num";
+        
+        if ( obj.majiang1 == obj.majiang2 ){
+            namespr = "img_double_num";
+        }else{
+            var num = (obj.majiang1+obj.majiang2)%10;
+            namespr = "img_"+ num +"point_num";
+        }
         changesprite(numspr, namespr);
     },
 
@@ -287,11 +305,12 @@ cc.Class({
         var random_2 = Math.ceil(Math.random()*5 + 1);
 
         var majianglist = this.maJiangList
-        var openmajiang = this.OpenMajiang
+        // var openmajiang = this.OpenMajiang
+        var self = this;
         var open = function( id ) {
             var node = majianglist[ id ];
             var nums = majiangs[ id ];
-            openmajiang( node, nums );
+            self.OpenMajiang( node, nums );
         }
         var open1 = function(){open(0);}
         var open2 = function(){open(1);}
@@ -310,6 +329,10 @@ cc.Class({
     },
 
     onBankerInfo: function( obj ) {
+        if ( obj.id == 0 ){
+            this.initBanker();
+            return;
+        }
         this._banker_id = obj.id;
         this._banker_name = obj.name;
         this._banker_times = obj.times;
@@ -317,5 +340,25 @@ cc.Class({
         this.bankerNameLabel.string = obj.name;
         this.bankerGoldLabel.string = obj.gold;
         this.bankerTimesLabel.string = obj.times;
+        if ( pMgr.main_role.id == this._banker_id ){
+            this.btnBeBanker.active = false;
+            this.btnUnBanker.active = true;
+        }else{
+            this.btnBeBanker.active = true;
+            this.btnUnBanker.active = false;
+        }
     },
+
+    canBeBanker : function(){
+        if ( pMgr.main_role.id == this._banker_id ){
+            return ErrorCode.UR_BANKER;
+        }
+        for (var i = 0; i < this._be_banker_list.length; i++) {
+            var info = this._be_banker_list[i]
+            if( pMgr.main_role.id == info.playerid ){
+                return ErrorCode.HAS_IN_QUEUE
+            }
+        }
+        return 0;
+    }
 });

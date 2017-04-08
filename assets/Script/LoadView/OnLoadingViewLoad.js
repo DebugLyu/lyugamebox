@@ -36,18 +36,15 @@ cc.Class({
         // 初始化网络
         cc.ll.net = require("Lwebsocket");
         cc.ll.net.init();
-
-        // cc.ll.common = require("Common");
-
+        // 初始化协议
         cc.loader.loadRes("gamebox", function (err, arr){
             cc.ll.pb = ProtoBuf.protoFromString(arr); 
         });
-        // common.init();
-        //cc.ll.msgbox;//初始化弹窗
+        //初始化通用界面
         cc.ll.msgbox = require("Msgbox");
         cc.ll.notice = require("Notice");
         cc.ll.notice.init();
-
+        // 加载资源
         this._loadingList = ["loading","erguotou","login","main","profab","res_common"];
         this.onLoadNext();
     },

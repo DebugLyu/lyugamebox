@@ -1,19 +1,4 @@
-var ErrorCode = {}
-ErrorCode.ACCOUNT_REPEAT = 1
-ErrorCode.DBSERVICE_ERROR = 99
-
-ErrorCode.NO_ACCOUNT = 101
-ErrorCode.PASSWORD_ERROR = 102
-ErrorCode.HAS_ONLINE = 103
-
-ErrorCode.ROOM_NOT_FOUND = 201
-ErrorCode.ROOM_FULL = 202
-
-ErrorCode.GOLD_NOT_ENOUGH = 301
-ErrorCode.BANKER_NO_BET = 401
-ErrorCode.NOT_BANKER = 402
-ErrorCode.NOT_IN_QUEUE = 403
-
+var ErrorCode = require("errorcode")
 
 var msgcode = {}
 msgcode[ ErrorCode.ACCOUNT_REPEAT ] = "账号重复",
@@ -29,7 +14,8 @@ msgcode[ ErrorCode.ROOM_FULL ] = "",
 msgcode[ ErrorCode.GOLD_NOT_ENOUGH ] = "金币不足",
 msgcode[ ErrorCode.BANKER_NO_BET ] = "庄家不能下注",
 msgcode[ ErrorCode.NOT_BANKER ] = "你不是庄家",
-msgcode[ ErrorCode.NOT_IN_QUEUE ] = "你不在上庄队列",
+msgcode[ ErrorCode.UR_BANKER ] = "你已经是庄家",
+msgcode[ ErrorCode.HAS_IN_QUEUE ] = "你已经在队列",
 
 // 账号状态
 msgcode.ACCOUNT_TOO_LONG = "账号或密码长度错误，请输入6~12位字符",
@@ -54,5 +40,6 @@ msgcode.TUIBING_MORETHAN_BANKER = "已超过押注上限",
 
 msgcode.TUIBING_KEEP_BANKER = "是否继续坐庄？",
 msgcode.TUIBING_BANKER_BEGIN = "要开始游戏么？",
+msgcode.TUIBING_BANKER_TYPE = "<color=#FFFFFF>要快速上庄么？</c><br/><color=#FFAD00><size = 20>（快速上庄需要20万金币）</color></size>",
 
 module.exports = msgcode;

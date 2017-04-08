@@ -1,6 +1,7 @@
 var pMgr = require("PlayerManager").getInstance();
 var packet = require( 'Lpackage' )
 var sSceneMgr = require("SceneManager")
+var msgcode = require( 'Msgcode' )
 
 cc.Class({
     extends: cc.Component,
@@ -14,6 +15,8 @@ cc.Class({
             default: null,
             type: cc.Label,
         },
+
+        _logic : null,
     },
 
     // use this for initialization
@@ -29,6 +32,8 @@ cc.Class({
             var label = node.getComponent(cc.Label);
             label.string = gold;
         })
+
+        this._logic = this.node.getComponent( "GameLogic" )
     },
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
@@ -43,9 +48,22 @@ cc.Class({
     },
     
     onBeBankerClicked: function() {
-        var p = new packet( "ReqBeBanker" );
-        p.lpack.type = 1;
-        cc.ll.net.send( p.pack() );        
+        var res = this._logic.canBeBanker();
+        if( res != 0){
+            cc.ll.msgbox.addMsg(res);
+            return;
+        }
+        var okcallback = function(){
+            var p = new packet( "ReqBeBanker" );
+            p.lpack.type = 2;
+            cc.ll.net.send( p.pack() );   
+        }
+        var cancelcallback = function(){
+            var p = new packet( "ReqBeBanker" );
+            p.lpack.type = 1;
+            cc.ll.net.send( p.pack() ); 
+        }
+        cc.ll.notice.addMsg (1, msgcode.TUIBING_BANKER_TYPE, okcallback, cancelcallback)     
     },
 
     onFastBeBankerClicked: function() {

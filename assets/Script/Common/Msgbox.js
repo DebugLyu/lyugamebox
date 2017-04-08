@@ -9,7 +9,10 @@ var Msgbox = cc.Class({
         bg : cc.find("MsgBoxLayer"),
         addMsg : function( msg ) {
             if ( this.bg === null ){
-                return;
+                this.bg = cc.find("MsgBoxLayer");
+                if( this.bg === null ){
+                    return;
+                }
             }
             if( typeof( msg ) == "number" ){
                 msg = msgcode[ msg ];

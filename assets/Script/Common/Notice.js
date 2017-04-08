@@ -14,10 +14,10 @@ var NoticeBox = cc.Class({
             });
         },
         addMsg : function(type, msg, okfunc, cancelfunc, tag){
-            var node = cc.instantiate(pfab);
+            var node = cc.instantiate(this.pfab);
 
             var msgnode = node.getChildByName("NoticeBg").getChildByName("NoticeLabel");
-            var msglabel = msgnode.getComponent(cc.Label);
+            var msglabel = msgnode.getComponent(cc.RichText);
             msglabel.string = msg;
 
             var onDestroy = function(){

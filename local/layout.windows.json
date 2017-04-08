@@ -20,7 +20,7 @@
                 ],
                 "height": 300,
                 "type": "panel",
-                "width": 204
+                "width": 218
               },
               {
                 "active": 0,
@@ -29,12 +29,12 @@
                 ],
                 "height": 336,
                 "type": "panel",
-                "width": 204
+                "width": 218
               }
             ],
             "height": 639,
             "type": "dock-v",
-            "width": 204
+            "width": 218
           },
           {
             "children": [
@@ -47,7 +47,7 @@
                     ],
                     "height": 410,
                     "type": "panel",
-                    "width": 549
+                    "width": 506
                   },
                   {
                     "active": 0,
@@ -56,12 +56,12 @@
                     ],
                     "height": 410,
                     "type": "panel",
-                    "width": 204
+                    "width": 233
                   }
                 ],
                 "height": 410,
                 "type": "dock-h",
-                "width": 756
+                "width": 742
               },
               {
                 "active": 0,
@@ -71,12 +71,12 @@
                 ],
                 "height": 226,
                 "type": "panel",
-                "width": 756
+                "width": 742
               }
             ],
             "height": 639,
             "type": "dock-v",
-            "width": 756
+            "width": 742
           },
           {
             "active": 0,
@@ -99,7 +99,8 @@
         "node-library",
         "timeline"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "code-editor": {
