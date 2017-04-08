@@ -6356,8 +6356,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40,
-      "height": 36
+      "width": 102,
+      "height": 118
     },
     "_children": [],
     "_rotationX": 0,
@@ -6420,7 +6420,9 @@
       "__id__": 172
     },
     "_enabled": true,
-    "_defaultClip": null,
+    "_defaultClip": {
+      "__uuid__": "16d0c8b0-48ae-4398-8d2b-ec99045782d4"
+    },
     "_clips": [
       {
         "__uuid__": "16d0c8b0-48ae-4398-8d2b-ec99045782d4"
@@ -6546,6 +6548,9 @@
     },
     "btnUnBanker": {
       "__id__": 98
+    },
+    "dice": {
+      "__id__": 172
     },
     "_banker_id": 0,
     "_banker_name": "暂无庄家",

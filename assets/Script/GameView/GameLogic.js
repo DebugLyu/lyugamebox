@@ -34,6 +34,8 @@ cc.Class({
 
         btnBeBanker : cc.Button,
         btnUnBanker : cc.Button,
+
+        dice : cc.Node,
         // 游戏属性
         _banker_id : 0,
         _banker_name : "暂无庄家",
@@ -88,6 +90,7 @@ cc.Class({
             pointbg.active = false;
         }
         this.betPoolLabel.string = 0;
+        this.dice.active = false;
     },
 
     initBanker: function () {
@@ -270,9 +273,6 @@ cc.Class({
         var changesprite = function( sprite_node, sprite_name ){
             var sprite = sprite_node.getComponent( cc.Sprite );
             var frame = self.MajiangSpriteList.getSpriteFrame( sprite_name );
-            // var realUrl = cc.url.raw("resources/erguotou/"+sprite_name+".png");
-            // var texture = cc.textureCache.addImage(realUrl);
-            // frame.setTexture(texture);
             sprite.spriteFrame = frame;
         }
         var majiang1 = node.getChildByName( "Majiang1" );
@@ -303,27 +303,55 @@ cc.Class({
         var random_1 = Math.ceil(Math.random()*5 + 1);
         var random_2 = Math.ceil(Math.random()*5 + 1);
 
+        this.dice.active = true;
+        var action = this.dice.getComponent( cc.Animation )
+        action.play();
         var majianglist = this.maJiangList
-        // var openmajiang = this.OpenMajiang
+
         var self = this;
+        var dice1 = cc.find( "/Canvas/GameBgLayer/Dice1" )
+        var dice2 = cc.find( "/Canvas/GameBgLayer/Dice2" )
+        var key = (random_1+random_2)%4;
+        var list = [ key,(key+1)%4,(key+2)%4,(key+3)%4];
+        var stopact = function(){
+            action.stop();
+            self.dice.active = false;
+            var showdice = function(sprite_node, sprite_name){
+                var sprite = sprite_node.getComponent( cc.Sprite );
+                var frame = self.MajiangSpriteList.getSpriteFrame( sprite_name );
+                sprite.spriteFrame = frame;
+                sprite_node.active = true;
+            }
+            showdice( dice1, "img_dice_" + random_1 );
+            showdice( dice2, "img_dice_" + random_2 );
+        }
+        var hidedice = function(){
+            dice1.active = false;
+            dice2.active = false;
+        }
         var open = function( id ) {
             var node = majianglist[ id ];
             var nums = majiangs[ id ];
             self.OpenMajiang( node, nums );
         }
-        var open1 = function(){open(0);}
-        var open2 = function(){open(1);}
-        var open3 = function(){open(2);}
-        var open4 = function(){open(3);}
-    
-        var act1 = cc.callFunc( open1 )
-        var act2 = cc.delayTime(0.5);
-        var act3 = cc.callFunc( open2 )
-        var act4 = cc.delayTime(0.5);
-        var act5 = cc.callFunc( open3 )
-        var act6 = cc.delayTime(0.5);
-        var act7 = cc.callFunc( open4 )
-        var act = cc.sequence(act1, act2, act3, act4, act5, act6, act7);
+        var open1 = function(){open(list[0]);}
+        var open2 = function(){open(list[1]);}
+        var open3 = function(){open(list[2]);}
+        var open4 = function(){open(list[3]);}
+
+        var queue = [];
+        queue.push( cc.delayTime(1.5) );
+        queue.push( cc.callFunc( stopact ) );
+        queue.push( cc.delayTime(1) );
+        queue.push( cc.callFunc( hidedice ) );
+        queue.push( cc.callFunc( open1 ) );
+        queue.push( cc.delayTime( 0.5  ) );
+        queue.push( cc.callFunc( open2 ) );
+        queue.push( cc.delayTime( 0.5  ) );
+        queue.push( cc.callFunc( open3 ) );
+        queue.push( cc.delayTime( 0.5  ) );
+        queue.push( cc.callFunc( open4 ) );
+        var act = cc.sequence(queue);
         this.node.runAction(act);
     },
 

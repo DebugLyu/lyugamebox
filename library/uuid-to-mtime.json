@@ -545,8 +545,8 @@
     "relativePath": "Script"
   },
   "32035d0e-3078-4262-b3f4-7a3dc38845e3": {
-    "asset": 1491633901000,
-    "meta": 1491633901000,
+    "asset": 1491638990000,
+    "meta": 1491638990000,
     "relativePath": "Scene/tuibingview.fire"
   },
   "079443ad-d3f2-4d66-876a-cfb1e48407cc": {
@@ -765,8 +765,8 @@
     "relativePath": "Script/Common/Msgbox.js"
   },
   "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
-    "asset": 1491635906000,
-    "meta": 1491635912000,
+    "asset": 1491639235000,
+    "meta": 1491639237000,
     "relativePath": "Script/GameView/GameLogic.js"
   }
 }
