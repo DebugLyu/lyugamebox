@@ -70,6 +70,9 @@ cc.Class({
                 this._select_gold = select_gold;
             }
         }
+
+        var p = new packet( "ReqTuiBingInfo" );
+        cc.ll.net.send( p.pack() );        
     },
 
     // called every frame, uncomment this function to activate update callback

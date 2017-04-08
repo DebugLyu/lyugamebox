@@ -2,7 +2,8 @@
   "appKey": "",
   "appSecret": "",
   "excludeScenes": [
-    "c9ff02b6-cf4c-4f6b-9103-ab9a40b4c58e"
+    "235323d8-94d3-45b7-93de-e5e4089ffa7c",
+    "52a31714-ba15-47b4-9231-1b30a00a5368"
   ],
   "includeAnySDK": false,
   "includeSdk": [
@@ -20,7 +21,7 @@
   "packageName": "org.cocos2d.helloworld",
   "privateKey": "",
   "renderMode": "0",
-  "startScene": "bf47719f-0342-4856-9a9a-79b5823203c9",
+  "startScene": "b27f53ba-de03-4e7d-93b4-9c5a3b849c76",
   "title": "erguotou",
   "webOrientation": "landscape"
 }

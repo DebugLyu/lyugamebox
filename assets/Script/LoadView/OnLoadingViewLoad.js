@@ -33,6 +33,7 @@ cc.Class({
         this.loadingBar.totalLength = this.loadingBar.node.width;
 
         cc.ll = {};
+        this.tips.string = "正在初始化...";
         // 初始化网络
         cc.ll.net = require("Lwebsocket");
         cc.ll.net.init();
@@ -45,7 +46,7 @@ cc.Class({
         cc.ll.notice = require("Notice");
         cc.ll.notice.init();
         // 加载资源
-        this._loadingList = ["loading","erguotou","login","main","profab","res_common"];
+        this._loadingList = ["必要","重要","游戏","界面","UI","通用","其他"];
         this.onLoadNext();
     },
 
@@ -67,7 +68,7 @@ cc.Class({
     },
 
     startPreloading:function(name){
-        this._stateStr = "正在加载"+name+"，请稍候";
+        this._stateStr = "正在加载"+name+"资源，请稍候";
         this._isLoading = true;
         var self = this;
         

@@ -279,11 +279,6 @@
     "meta": 1491620916000,
     "relativePath": "resources/erguotou/erguotou.png"
   },
-  "d0a51a63-f822-4ec8-bcba-b7fd390dea6b": {
-    "asset": 1490774150000,
-    "meta": 1491620915000,
-    "relativePath": "resources/gamebox.proto"
-  },
   "b8cc26ca-7124-4194-8acf-69731973e57e": {
     "asset": 1491620915000,
     "meta": 1491620916000,
@@ -306,7 +301,7 @@
   },
   "cd9a53a0-1ed5-46ec-ba6d-ef9f11497c5a": {
     "asset": 1488944036000,
-    "meta": 1491621847000,
+    "meta": 1491640573000,
     "relativePath": "resources/loading/img_loading_bg.png"
   },
   "25ca40cc-5333-4968-9d92-2d03c2ba6fc9": {
@@ -520,8 +515,8 @@
     "relativePath": "Scene/helloworld.fire"
   },
   "b27f53ba-de03-4e7d-93b4-9c5a3b849c76": {
-    "asset": 1491621981000,
-    "meta": 1491621981000,
+    "asset": 1491640873000,
+    "meta": 1491640873000,
     "relativePath": "Scene/loadingview.fire"
   },
   "47aa4d80-b7dd-478e-9719-188af954544e": {
@@ -644,11 +639,6 @@
     "meta": 1491620926000,
     "relativePath": "Script/LoginView"
   },
-  "fdd1762c-145e-442f-862f-7c72cc149ae1": {
-    "asset": 1491547655000,
-    "meta": 1491620926000,
-    "relativePath": "Script/LoadView/OnLoadingViewLoad.js"
-  },
   "3e9e4f2f-c08f-48e4-b6f8-9ae6301e4a6b": {
     "asset": 1491559307000,
     "meta": 1491620927000,
@@ -683,11 +673,6 @@
     "asset": 1491499170000,
     "meta": 1491620927000,
     "relativePath": "Script/NetWork/Lpackage.js"
-  },
-  "cb6abf67-02b7-4251-a586-e4c63cc948de": {
-    "asset": 1491499179000,
-    "meta": 1491620927000,
-    "relativePath": "Script/NetWork/Lwebsocket.js"
   },
   "173afc8c-64c8-4e0e-bea9-8ea83c89c2f5": {
     "asset": 1491620915000,
@@ -764,9 +749,24 @@
     "meta": 1491635128000,
     "relativePath": "Script/Common/Msgbox.js"
   },
+  "fdd1762c-145e-442f-862f-7c72cc149ae1": {
+    "asset": 1491641802000,
+    "meta": 1491642598000,
+    "relativePath": "Script/LoadView/OnLoadingViewLoad.js"
+  },
   "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
-    "asset": 1491639235000,
-    "meta": 1491639237000,
+    "asset": 1491643529000,
+    "meta": 1491643533000,
     "relativePath": "Script/GameView/GameLogic.js"
+  },
+  "cb6abf67-02b7-4251-a586-e4c63cc948de": {
+    "asset": 1491642660000,
+    "meta": 1491643533000,
+    "relativePath": "Script/NetWork/Lwebsocket.js"
+  },
+  "d0a51a63-f822-4ec8-bcba-b7fd390dea6b": {
+    "asset": 1491643856000,
+    "meta": 1491620915000,
+    "relativePath": "resources/gamebox.proto"
   }
 }

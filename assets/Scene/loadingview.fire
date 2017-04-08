@@ -241,8 +241,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1080,
-      "height": 15
+      "width": 680,
+      "height": 30
     },
     "_children": [
       {
@@ -303,8 +303,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1080,
-      "height": 15
+      "width": 676,
+      "height": 26
     },
     "_children": [],
     "_rotationX": 0,
@@ -313,7 +313,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -540,
+      "x": -338,
       "y": 0
     },
     "_skewX": 0,
@@ -426,7 +426,7 @@
     },
     "_N$mode": 0,
     "_N$totalLength": 1080,
-    "_N$progress": 1,
+    "_N$progress": 0.5,
     "_N$reverse": false
   },
   {
@@ -436,14 +436,14 @@
     "node": {
       "__id__": 6
     },
-    "_enabled": true,
+    "_enabled": false,
     "isAlignOnce": false,
     "_target": null,
     "_alignFlags": 44,
-    "_left": 100,
-    "_right": 100,
+    "_left": 300,
+    "_right": 300,
     "_top": 0,
-    "_bottom": 100,
+    "_bottom": 92.5,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,

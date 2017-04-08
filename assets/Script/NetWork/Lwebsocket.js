@@ -33,7 +33,11 @@ var lwebsocket = cc.Class({
                 var head = buffer.readString( len );
                 console.log("response text msg: " + head);
                 self.msgdispatch.dispatch( head, buffer.toBuffer() )
-                self.working = false;
+                // self.working = false;
+                self.domessage();
+            });
+            this.reader.addEventListener( "onerror", function(){
+                // self.working = false;
                 self.domessage();
             });
 
@@ -41,10 +45,9 @@ var lwebsocket = cc.Class({
             this.msgdispatch = require("msgdispatch");
         },
         domessage : function () {
-            if(!this.working){
+            if( this.reader.readyState != 1 ){
                 var data = this.queue[0];
                 if (data != null){
-                    this.working = true;
                     this.queue.shift();
                     this.reader.readAsArrayBuffer(data);
                 }
