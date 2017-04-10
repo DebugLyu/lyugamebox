@@ -6,10 +6,11 @@ var Msgbox = cc.Class({
 
     },
     statics: {
-        bg : cc.find("MsgBoxLayer"),
+        bg : null,
         addMsg : function( msg ) {
             if ( this.bg === null ){
                 this.bg = cc.find("MsgBoxLayer");
+                cc.game.addPersistRootNode(this.bg);
                 if( this.bg === null ){
                     return;
                 }

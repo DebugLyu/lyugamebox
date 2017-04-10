@@ -142,11 +142,13 @@ var onTuiBingBetGold = function( pack ) {
 
 var onDealMajiang = function( pack ) {
     var majiangs = pack.majiangs
+    var dice1 = pack.dice1
+    var dice2 = pack.dice2
     var node = cc.find("Canvas/GameBgLayer");
     if( node ){
         var gamelogic = node.getComponent( "GameLogic" );
         // gamelogic.onGoldAction( gold )
-        gamelogic.onOpenMajiang( majiangs );
+        gamelogic.onOpenMajiang( majiangs, dice1, dice2 );
     }
 }
 

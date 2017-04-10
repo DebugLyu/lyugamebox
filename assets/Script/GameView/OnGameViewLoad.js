@@ -21,6 +21,12 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
+        if(!cc.sys.isNative && cc.sys.isMobile){
+            var cvs = cc.find("Canvas").getComponent(cc.Canvas);
+            cvs.fitHeight = true;
+            cvs.fitWidth = true;
+        }
+        
         if(pMgr.main_role !== null){
             this.NameLabel.string = pMgr.main_role.name;
             this.GoldLabel.string = pMgr.main_role.gold;

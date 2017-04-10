@@ -301,10 +301,10 @@ cc.Class({
     },
 
     // majiangs 0 庄 1 南 2 天 3 北 {majiang1 majiang2}
-    onOpenMajiang: function( majiangs ){
+    onOpenMajiang: function( majiangs, dicenum1, dicenum2 ){
         // 先撒骰子
-        var random_1 = Math.ceil(Math.random()*5 + 1);
-        var random_2 = Math.ceil(Math.random()*5 + 1);
+        var random_1 = dicenum1; //Math.ceil(Math.random()*5 + 1);
+        var random_2 = dicenum2; //Math.ceil(Math.random()*5 + 1);
 
         this.dice.active = true;
         var action = this.dice.getComponent( cc.Animation )

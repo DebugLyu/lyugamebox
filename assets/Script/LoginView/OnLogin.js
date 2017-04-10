@@ -13,6 +13,12 @@ cc.Class({
 
     onLoad: function () {
         // common.connect();
+        if(!cc.sys.isNative && cc.sys.isMobile){
+            var cvs = cc.find("Canvas").getComponent(cc.Canvas);
+            cvs.fitHeight = true;
+            cvs.fitWidth = true;
+        }
+
         var okfunc = function(){
 
         }
@@ -31,17 +37,8 @@ cc.Class({
     },
 
     onNormalLoginClick:function(){
-        // var scene = cc.director.getScene();
-        // if (common.getNetworkState() == 2){
-        //     var bg = cc.find("BgLayer");
-        //     let creatlayer = cc.instantiate(this.prefabNormalLogin);  
-        //     creatlayer.parent = bg;
-        //     creatlayer.setPosition(0,0);
-        // }else{
-        //     common.connectWithFunc( "onNormalLoginClick", this );
-        // }
         if ( cc.ll.net.state == 2 ) {
-            var bg = cc.find("BgLayer");
+            var bg = cc.find("Canvas/BgLayer");
             let creatlayer = cc.instantiate(this.prefabNormalLogin);  
             creatlayer.parent = bg;
             creatlayer.setPosition(0,0);

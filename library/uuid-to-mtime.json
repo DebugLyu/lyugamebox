@@ -520,8 +520,8 @@
     "relativePath": "Scene/loadingview.fire"
   },
   "47aa4d80-b7dd-478e-9719-188af954544e": {
-    "asset": 1491626252000,
-    "meta": 1491626253000,
+    "asset": 1491787852000,
+    "meta": 1491787852000,
     "relativePath": "Scene/loginview.fire"
   },
   "52a31714-ba15-47b4-9231-1b30a00a5368": {
@@ -530,8 +530,8 @@
     "relativePath": "Scene/mainview_bak.fire"
   },
   "09cdb00d-cab9-4083-bc4e-a84dce086fbe": {
-    "asset": 1491624155000,
-    "meta": 1491624155000,
+    "asset": 1491787880000,
+    "meta": 1491787880000,
     "relativePath": "Scene/mainview.fire"
   },
   "6b0f3ebe-5c5c-4c1b-839a-9b17aa39d2b1": {
@@ -604,11 +604,6 @@
     "meta": 1491621130000,
     "relativePath": "Script/Extend/protobuf.js"
   },
-  "251e330e-23b5-4b79-8170-83ebdf5b7273": {
-    "asset": 1491556412000,
-    "meta": 1491620926000,
-    "relativePath": "Script/GameView/OnGameViewLoad.js"
-  },
   "3bb1f7dd-fc79-4578-91af-77f660dde43e": {
     "asset": 1490269950000,
     "meta": 1491620926000,
@@ -638,16 +633,6 @@
     "asset": 1491620915000,
     "meta": 1491620926000,
     "relativePath": "Script/LoginView"
-  },
-  "3e9e4f2f-c08f-48e4-b6f8-9ae6301e4a6b": {
-    "asset": 1491559307000,
-    "meta": 1491620927000,
-    "relativePath": "Script/LoginView/OnLogin.js"
-  },
-  "20d40fe5-43cf-47ce-97d2-c3860fc1224e": {
-    "asset": 1491468342000,
-    "meta": 1491620927000,
-    "relativePath": "Script/LoginView/OnLoginViewLoad.js"
   },
   "fd58b7e5-c04b-4989-a9f2-e9e77d83f47b": {
     "asset": 1491620915000,
@@ -679,11 +664,6 @@
     "meta": 1491620927000,
     "relativePath": "Script/Role"
   },
-  "2c3095cc-6d1a-4399-87cf-54dbc2e45464": {
-    "asset": 1491559441000,
-    "meta": 1491620927000,
-    "relativePath": "Script/NetWork/msgdispatch.js"
-  },
   "ba6488e6-f842-4c15-a4a8-c6e0e39186e6": {
     "asset": 1491474388000,
     "meta": 1491620927000,
@@ -714,16 +694,6 @@
     "meta": 1491621289000,
     "relativePath": "Script/LoginView/OnRegisterLayerLoad.js"
   },
-  "7a6831ec-b91f-4432-b0b8-f8dcbfb5394f": {
-    "asset": 1491621331000,
-    "meta": 1491621332000,
-    "relativePath": "Script/MainView/OnMainViewLoad.js"
-  },
-  "80619fc9-5fe2-4000-a213-a93207fa9d6f": {
-    "asset": 1491621635000,
-    "meta": 1491621638000,
-    "relativePath": "Script/LoginView/OnLoginLayerLoad.js"
-  },
   "08b512f6-f5dc-4f7c-ad10-6b2383e4676c": {
     "asset": 1491622867000,
     "meta": 1491622932000,
@@ -744,20 +714,10 @@
     "meta": 1491624058000,
     "relativePath": "resources/res_common/res_common.png"
   },
-  "f668aa8d-d171-4d72-8455-d025d7b708eb": {
-    "asset": 1491635125000,
-    "meta": 1491635128000,
-    "relativePath": "Script/Common/Msgbox.js"
-  },
   "fdd1762c-145e-442f-862f-7c72cc149ae1": {
     "asset": 1491641802000,
     "meta": 1491642598000,
     "relativePath": "Script/LoadView/OnLoadingViewLoad.js"
-  },
-  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
-    "asset": 1491643529000,
-    "meta": 1491643533000,
-    "relativePath": "Script/GameView/GameLogic.js"
   },
   "cb6abf67-02b7-4251-a586-e4c63cc948de": {
     "asset": 1491642660000,
@@ -765,8 +725,48 @@
     "relativePath": "Script/NetWork/Lwebsocket.js"
   },
   "d0a51a63-f822-4ec8-bcba-b7fd390dea6b": {
-    "asset": 1491643856000,
+    "asset": 1491644832000,
     "meta": 1491620915000,
     "relativePath": "resources/gamebox.proto"
+  },
+  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
+    "asset": 1491644961000,
+    "meta": 1491644974000,
+    "relativePath": "Script/GameView/GameLogic.js"
+  },
+  "2c3095cc-6d1a-4399-87cf-54dbc2e45464": {
+    "asset": 1491644892000,
+    "meta": 1491644974000,
+    "relativePath": "Script/NetWork/msgdispatch.js"
+  },
+  "80619fc9-5fe2-4000-a213-a93207fa9d6f": {
+    "asset": 1491787982000,
+    "meta": 1491787997000,
+    "relativePath": "Script/LoginView/OnLoginLayerLoad.js"
+  },
+  "f668aa8d-d171-4d72-8455-d025d7b708eb": {
+    "asset": 1491789503000,
+    "meta": 1491789506000,
+    "relativePath": "Script/Common/Msgbox.js"
+  },
+  "251e330e-23b5-4b79-8170-83ebdf5b7273": {
+    "asset": 1491792273000,
+    "meta": 1491792295000,
+    "relativePath": "Script/GameView/OnGameViewLoad.js"
+  },
+  "3e9e4f2f-c08f-48e4-b6f8-9ae6301e4a6b": {
+    "asset": 1491792248000,
+    "meta": 1491792295000,
+    "relativePath": "Script/LoginView/OnLogin.js"
+  },
+  "20d40fe5-43cf-47ce-97d2-c3860fc1224e": {
+    "asset": 1491792262000,
+    "meta": 1491792295000,
+    "relativePath": "Script/LoginView/OnLoginViewLoad.js"
+  },
+  "7a6831ec-b91f-4432-b0b8-f8dcbfb5394f": {
+    "asset": 1491792291000,
+    "meta": 1491792295000,
+    "relativePath": "Script/MainView/OnMainViewLoad.js"
   }
 }

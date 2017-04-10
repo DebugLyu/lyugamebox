@@ -33,7 +33,7 @@ cc.Class({
     	}
     },
     onNormalRegisterClick:function(){
-        var bg = cc.find("BgLayer");
+        var bg = cc.find("Canvas/BgLayer");
         let registerlayer = cc.instantiate(this.prefabNormalRegister);  
         registerlayer.parent = bg;
         registerlayer.setPosition(0,0);
