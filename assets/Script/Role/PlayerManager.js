@@ -1,22 +1,18 @@
 // PlayerManager.js
-var pMgr = (function(){
-    
-    var instance = null;
-    function getInstance(){
-        if(instance === null){
-            instance = new PlayerManager()
-        }
-        return instance;
-    }
-    function PlayerManager(){
-    	this.role_list = {
 
-    	}; 
-    	this.main_role = null;
-    }
-    return {
-    	getInstance : getInstance
-    }
-})();
+var pMgr = cc.Class({
+    properties: {
+        _role_list : null,
+    },
+    statics : {
+        main_role : null,
+        init : function(){
+            this._role_list = new Array();
+        },
+        addPlayer: function( role ){
+            this._role_list[ role.id ] = role;
+        },
+    },
+});
 
 module.exports = pMgr;

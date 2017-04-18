@@ -1,7 +1,6 @@
-var pMgr = require("PlayerManager").getInstance();
 var packet = require( 'Lpackage' )
-var sSceneMgr = require("SceneManager")
 var msgcode = require( 'Msgcode' )
+var TuiBingConfig = require("TuiBingConfig")
 
 cc.Class({
     extends: cc.Component,
@@ -16,6 +15,13 @@ cc.Class({
             type: cc.Label,
         },
 
+        bgm: {
+            url: cc.AudioClip,
+            default: null
+        },
+        bankerDialog : cc.Prefab,
+
+        _Audio : null,
         _logic : null,
     },
 
@@ -26,20 +32,22 @@ cc.Class({
             cvs.fitHeight = true;
             cvs.fitWidth = true;
         }
-        
-        if(pMgr.main_role !== null){
-            this.NameLabel.string = pMgr.main_role.name;
-            this.GoldLabel.string = pMgr.main_role.gold;
+
+        if(cc.ll.pMgr.main_role !== null){
+            this.NameLabel.string = cc.ll.pMgr.main_role.name + " [" + cc.ll.pMgr.main_role.id + "]";
+            this.GoldLabel.string = cc.ll.pMgr.main_role.gold;
         }
 
         var node = this.GoldLabel.node;
-        pMgr.main_role.register("GoldChange",  node, function(event){
+        cc.ll.pMgr.main_role.register("GoldChange",  node, function(event){
             var gold = event.getUserData()     
             var label = node.getComponent(cc.Label);
             label.string = gold;
         })
 
         this._logic = this.node.getComponent( "GameLogic" )
+        cc.ll.sAudioMgr.playBGM("bgBet");
+        cc.ll.loading.removeLoading();
     },
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
@@ -50,7 +58,8 @@ cc.Class({
         var p = new packet( "ReqLeaveRoom" );
         cc.ll.net.send( p.pack() );
 
-        sSceneMgr.onChangeScene("mainview");
+        cc.ll.sSceneMgr.onChangeScene("mainview");
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
     
     onBeBankerClicked: function() {
@@ -59,38 +68,72 @@ cc.Class({
             cc.ll.msgbox.addMsg(res);
             return;
         }
-        var okcallback = function(){
-            var p = new packet( "ReqBeBanker" );
-            p.lpack.type = 2;
-            cc.ll.net.send( p.pack() );   
+        if(cc.ll.pMgr.main_role.gold < TuiBingConfig.BankerLessGold){
+            cc.ll.msgbox.addMsg( msgcode.GOLD_NOT_ENOUGH );
+            return;
         }
-        var cancelcallback = function(){
-            var p = new packet( "ReqBeBanker" );
-            p.lpack.type = 1;
-            cc.ll.net.send( p.pack() ); 
+        var dialog = cc.instantiate(this.bankerDialog);  
+        var bg = cc.find( "Canvas" );
+        dialog.parent = bg;
+
+        cc.ll.sAudioMgr.playNormalBtnClick();
+    },
+
+    onShowKeepBanker : function(){
+        if(cc.ll.pMgr.main_role.gold < TuiBingConfig.BankerLessGold){
+            var p = new packet( "ReqKeepBanker" );
+            p.lpack.iskeep = 1;
+            p.lpack.gold = 0;
+            cc.ll.net.send( p.pack() );
+            cc.ll.msgbox.addMsg( msgcode.GOLD_NOT_ENOUGH );
+            return;
         }
-        cc.ll.notice.addMsg (1, msgcode.TUIBING_BANKER_TYPE, okcallback, cancelcallback)     
+        var dialog = cc.instantiate(this.bankerDialog);
+        var logic = dialog.getComponent( "OnBankerLayerLoad" );
+        logic.initKeep();
+        var bg = cc.find( "Canvas" );
+        dialog.parent = bg;
     },
 
     onFastBeBankerClicked: function() {
         var p = new packet( "ReqBeBanker" );
         p.lpack.type = 2;
-        cc.ll.net.send( p.pack() );        
+        cc.ll.net.send( p.pack() );
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
 
     onAddGoldBtnClicked: function(){
-        var p = new packet( "ReqAddGold" );
-        p.lpack.gold = 100000;
-        cc.ll.net.send( p.pack() );  
+        // var p = new packet( "ReqAddGold" );
+        // p.lpack.id = cc.ll.pMgr.main_role.id;
+        // p.lpack.gold = 100000;
+        // p.lpack.logtype = 901;
+        // cc.ll.net.send( p.pack() ); 
+        cc.ll.msgbox.addMsg( msgcode.GM_CALL_GM );
+        cc.ll.sAudioMgr.playNormalBtnClick(); 
     },
 
     onUnBankerBtnClick : function (){
         var p = new packet( "ReqTuiBingUnbanker" );
         cc.ll.net.send( p.pack() );   
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
 
     onLeaveQueueBtnClick : function() {
         var p = new packet( "ReqTuibingLeaveQueue" );
         cc.ll.net.send( p.pack() );  
+        cc.ll.sAudioMgr.playNormalBtnClick();
+    },
+
+    onAllPlayerClick : function(){
+        var node = cc.find("Canvas/GameBgLayer/AllPlayerList");
+        node.active = !node.active;
+        if (node.active == true) {
+            var child = cc.find("pview/pcontent", node);
+            child.removeAllChildren();
+            var p = new packet( "ReqTuiBingAllPlayer" );
+            cc.ll.net.send( p.pack() );  
+        }
+
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
 });

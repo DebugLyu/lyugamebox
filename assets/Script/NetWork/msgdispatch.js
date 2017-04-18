@@ -1,18 +1,17 @@
 var packet = require( "Lpackage" )
 var msgcode = require( 'Msgcode' )
-var pMgr = require("PlayerManager").getInstance()
-var player = require('Player')
-var sSceneMgr = require("SceneManager")
 var TuiBingConfig = require("TuiBingConfig")
 
 var onLogin = function( pack ){
     var result = pack.result;
     if ( result == 0 ) {
-        var obj = {id:pack.id, name:pack.name, gold:pack.gold}
+        var obj = {id:pack.id, name:pack.name, gold:pack.gold, gm:pack.gmlevel}
+        var player = require('Player')
         var pPlayer = new player();
         pPlayer.login(obj)
     }else{
         cc.ll.msgbox.addMsg(result);
+        cc.ll.loading.removeLoading();
     }
 }
 
@@ -26,7 +25,7 @@ var onRegister = function( pack ){
 var onEnterRoom = function( pack ){
     var result = pack.result;
     if (result == 0) {
-        sSceneMgr.onChangeScene("tuibingview");
+        cc.ll.sSceneMgr.onChangeScene("tuibingview");
     }else{
         cc.ll.msgbox.addMsg(result);
     }
@@ -72,14 +71,14 @@ var onTuiBingGameState = function( pack ){
         var gamelogic = node.getComponent( "GameLogic" );
         gamelogic.onGameStateChange( state )
     }
-    if (state == TuiBingConfig.State.WaitOpen) {
+    if (state == TuiBingConfig.State.Ready) {
         cc.ll.notice.removeMsg(998);
     }
 }
 
 var onGoldChange = function( pack ){
     var gold = pack.gold;
-    pMgr.main_role.onGoldChanged( gold );
+    cc.ll.pMgr.main_role.onGoldChanged( gold );
 }
 
 var onTuiBingBet = function( pack ) {
@@ -91,7 +90,7 @@ var onTuiBingBet = function( pack ) {
         var node = cc.find("Canvas/GameBgLayer");
         if( node ){
             var gamelogic = node.getComponent( "GameLogic" );
-            gamelogic.onGoldAction( id, pos, gold )
+            gamelogic.onPlayerBet( id, pos, gold )
         }
     }else{
         cc.ll.msgbox.addMsg(result);
@@ -99,20 +98,25 @@ var onTuiBingBet = function( pack ) {
 }
 
 var onKeepBanker = function( pack ) {
-    let begincallback = function() {
-        var p = new packet( "ReqKeepBanker" );
-        p.lpack.iskeep = 0;
-        p.lpack.gold = 200000;
-        cc.ll.net.send( p.pack() );
+    // let begincallback = function() {
+    //     var p = new packet( "ReqKeepBanker" );
+    //     p.lpack.iskeep = 0;
+    //     p.lpack.gold = 200000;
+    //     cc.ll.net.send( p.pack() );
+    // }
+    // let endcallback = function() {
+    //     //下庄
+    //     var p = new packet( "ReqKeepBanker" );
+    //     p.lpack.iskeep = 1;
+    //     p.lpack.gold = 0;
+    //     cc.ll.net.send( p.pack() );
+    // }
+    // cc.ll.notice.addMsg(1,msgcode.TUIBING_KEEP_BANKER, begincallback, endcallback, 998);
+    var node = cc.find("Canvas/GameBgLayer");
+    if( node ){
+        var gameviewload = node.getComponent( "OnGameViewLoad" );
+        gameviewload.onShowKeepBanker()
     }
-    let endcallback = function() {
-        //下庄
-        var p = new packet( "ReqKeepBanker" );
-        p.lpack.iskeep = 1;
-        p.lpack.gold = 0;
-        cc.ll.net.send( p.pack() );
-    }
-    cc.ll.notice.addMsg(1,msgcode.TUIBING_KEEP_BANKER, begincallback, endcallback, 998);
 }
 
 var onBankerBegin = function( pack ) {
@@ -131,12 +135,12 @@ var onBankerBegin = function( pack ) {
 }
 
 var onTuiBingBetGold = function( pack ) {
-    var gold = pack.gold;
+    var goldlist = pack.gold;
     var node = cc.find("Canvas/GameBgLayer");
     if( node ){
         var gamelogic = node.getComponent( "GameLogic" );
         // gamelogic.onGoldAction( gold )
-        gamelogic.onBetGoldCount( gold );
+        gamelogic.onBetGoldCount( goldlist );
     }
 }
 
@@ -156,7 +160,7 @@ var onCloseClient = function( pack ) {
     var type = pack.type
     if(type == 1){
         let okcallback = function(argument) {
-            sSceneMgr.onChangeScene("loginview");
+            cc.ll.sSceneMgr.onChangeScene("loginview");
         }
         cc.ll.notice.addMsg ( 2, msgcode.NETWORK_OTHER_LOGIN, okcallback);
     }
@@ -183,6 +187,35 @@ var onResKeepBanker = function( pack ) {
     }
 }
 
+var onToTuiBingResult = function( pack ) {
+    var winlist = pack.iswiner;
+    var goldlist = pack.posgold;
+    var node = cc.find("Canvas/GameBgLayer");
+    if( node ){
+        var gamelogic = node.getComponent( "GameLogic" );
+        gamelogic.onSendReward( winlist, goldlist );
+    }
+}
+
+var onTuibingAllPlayer = function( pack ){
+    var list = pack.list;
+    var node = cc.find("Canvas/GameBgLayer");
+    if( node ){
+        var gamelogic = node.getComponent( "GameLogic" );
+        gamelogic.onShowAllPlayer( list );
+    }
+}
+
+var onAddGold = function( pack ){
+    var result = pack.result;
+    if (result == 0) {
+        cc.ll.msgbox.addMsg(msgcode.GM_PAYMENT_OK);
+    } else {
+        cc.ll.msgbox.addMsg(result);
+    }
+    // cc.ll.loading.removeLoading();
+}
+
 var FuncMap = {
     "Reslogin": onLogin,
     "ResRegister" : onRegister,
@@ -201,6 +234,9 @@ var FuncMap = {
     "ToTuibingBankerInfo" : onTuibingBankerInfo,
     "ResTuiBingUnbanker" : onTuibingUnbanker,
     "ResTuibingLeaveQueue" : onTuibingLeaveQueue,
+    "ToTuiBingResult" : onToTuiBingResult,
+    "ResTuiBingAllPlayer" : onTuibingAllPlayer,
+    "ResAddGold" : onAddGold,
 }
 
 var msgdispatch = cc.Class({

@@ -331,10 +331,10 @@
       "height": 32,
       "rawWidth": 32,
       "rawHeight": 32,
-      "borderTop": 0,
-      "borderBottom": 0,
-      "borderLeft": 0,
-      "borderRight": 0,
+      "borderTop": 2,
+      "borderBottom": 2,
+      "borderLeft": 2,
+      "borderRight": 2,
       "spriteType": "normal",
       "subMetas": {}
     }

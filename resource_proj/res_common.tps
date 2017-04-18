@@ -158,6 +158,17 @@
             <filename>res_common/img_head_icon.png</filename>
             <filename>res_common/logo.png</filename>
             <filename>res_common/img_num_frame.png</filename>
+            <filename>res_common/img_timer_bg.png</filename>
+            <filename>res_common/btn_setting_1.png</filename>
+            <filename>res_common/btn_setting_2.png</filename>
+            <filename>res_common/pgs_loading_bg.png</filename>
+            <filename>res_common/pgs_loading_show.png</filename>
+            <filename>res_common/btn_loading_hanld.png</filename>
+            <filename>res_common/img_close.png</filename>
+            <filename>res_common/btn_audio_1.png</filename>
+            <filename>res_common/btn_audio_2.png</filename>
+            <filename>res_common/bebanker.png</filename>
+            <filename>res_common/img_input_bg.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

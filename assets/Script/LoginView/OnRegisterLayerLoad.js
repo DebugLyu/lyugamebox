@@ -32,26 +32,29 @@ cc.Class({
     // },
     onRegisterClick: function () {
         var account = this.accountBox.string;
-        var passowrd = this.passwordBox.string;
-        var passowrd2 = this.passwordBox2.string;
+        var password = this.passwordBox.string;
+        var password2 = this.passwordBox2.string;
 
         if (account.length > 12 || account.length < 6 ||
-            passowrd.length > 12 || passowrd.length < 6 ) {
+            password.length > 12 || password.length < 6 ) {
             cc.ll.msgbox.addMsg(msgcode.ACCOUNT_TOO_LONG);
             return;
         }
-        if (passowrd != passowrd2) {
+        if (password != password2) {
             cc.ll.msgbox.addMsg(msgcode.PASSWORD_NOT_SAME);
             return;
         }
         var p = new packet( "ReqRegister" );
         p.lpack.account = account;
-        p.lpack.password = passowrd;
+        p.lpack.password = password;
         cc.ll.net.send( p.pack() );
         cc.sys.localStorage.setItem('account', account);
         cc.sys.localStorage.setItem('password', password);
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
+
     onDistroy:function(){
         this.node.destroy();
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
 });

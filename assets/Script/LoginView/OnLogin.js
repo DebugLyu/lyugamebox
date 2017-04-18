@@ -25,23 +25,53 @@ cc.Class({
         var errorfunc = function() {
             var callback = function(){
                 var scenename = cc.director.getScene().name;
-                if( scenename == "" || scenename == "loadingview" || scenename == "loginview"){
+                if( scenename == "loadingview" || scenename == "loginview"){
                     return;
                 }
-                var sSceneMgr = require("SceneManager");
-                sSceneMgr.onChangeScene("loginview");
+                cc.ll.sSceneMgr.onChangeScene("loginview");
             }
             cc.ll.notice.addMsg (2,msgcode.NETWORK_UNCONNECT,callback)
         }
         cc.ll.net.connect( etc.ip, etc.port, okfunc, errorfunc );
+
+
+        var size = cc.ll.sAudioMgr.getSize()
+        var node = cc.find( "Canvas/BgLayer/SettingBtn" )
+        var closeimg = node.getChildByName( "Close" );
+        closeimg.active = size == 0;
+        cc.ll.sAudioMgr.playBGM("bgm"); 
     },
 
     onNormalLoginClick:function(){
-        if ( cc.ll.net.state == 2 ) {
+        var self = this;
+        var showLogin = function(){
             var bg = cc.find("Canvas/BgLayer");
-            let creatlayer = cc.instantiate(this.prefabNormalLogin);  
+            let creatlayer = cc.instantiate(self.prefabNormalLogin);  
             creatlayer.parent = bg;
             creatlayer.setPosition(0,0);
         }
+        if ( cc.ll.net.state == 2 ) {
+            showLogin();
+        }else{
+            var callback = function(){
+                var okfunc = function(){
+                    showLogin();
+                }
+                var errorfunc = function(){
+                    cc.ll.notice.addMsg(2,msgcode.NETWORK_UNCONNECT,callback)        
+                }
+                cc.ll.net.connect( etc.ip, etc.port, okfunc, errorfunc );
+            }
+            cc.ll.notice.addMsg(2,msgcode.NETWORK_UNCONNECT,callback)
+        }
+        cc.ll.sAudioMgr.playNormalBtnClick();
+    },
+
+    onSettingClick : function(event) {
+        var node = event.target;
+        var closeimg = node.getChildByName( "Close" );
+        closeimg.active = !closeimg.active;
+        cc.ll.sAudioMgr.setSize( closeimg.active?0:1 );
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
 });

@@ -15,6 +15,7 @@ cc.Class({
         _PlayerName : null,
         _ID:0,
         _Type:0,
+        _From : 0,
     },
 
     // use this for initialization
@@ -27,10 +28,11 @@ cc.Class({
 
     // },
 
-    onChangeName: function( id, name, type ) {
+    onChangeName: function( from, id, name, type ) {
         this._ID = id;
         this._PlayerName = name;
         this._Type = type;
+        this._From = from;
         var label = this.getComponent(cc.Label);
         label.string = name
         if(type == 1){
@@ -38,5 +40,11 @@ cc.Class({
         }else if(type == 2){
             this.node.color = new cc.Color(255, 165, 0);
         }
+    },
+
+    onNameClicked : function () {
+        var bg = cc.find( "Canvas/GameBgLayer" );
+        var logic = bg.getComponent( "GameLogic" );
+        logic.onShowPlayerDetail( this._From, this._ID, this._PlayerName )
     },
 });

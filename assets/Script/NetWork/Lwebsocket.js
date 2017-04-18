@@ -1,5 +1,4 @@
 var ByteBuffer = require("bytebuffer");
-var ProtoBuf = require("protobuf");
 
 var SocketState = {
     UnInit : 0,

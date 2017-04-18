@@ -1,4 +1,3 @@
-var pMgr = require("PlayerManager").getInstance();
 var packet = require( 'Lpackage' )
 
 cc.Class({
@@ -33,19 +32,30 @@ cc.Class({
             cvs.fitHeight = true;
             cvs.fitWidth = true;
         }
-        if(pMgr.main_role !== null){
-            this.NameLabel.string = pMgr.main_role.name;
-            this.GoldLabel.string = pMgr.main_role.gold;
+        if(cc.ll.pMgr.main_role !== null){
+            this.NameLabel.string = cc.ll.pMgr.main_role.name + " [" + cc.ll.pMgr.main_role.id + "]";
+            this.GoldLabel.string = cc.ll.pMgr.main_role.gold;
         }
+
+        var size = cc.ll.sAudioMgr.getSize()
+        var node = cc.find( "Canvas/MainBgLayer/MainBg/SettingBtn" )
+        var closeimg = node.getChildByName( "Close" );
+        closeimg.active = size == 0;
+        cc.ll.sAudioMgr.playBGM("bgRace");
     },
 
     onGameBtnClick: function () {
         var p = new packet( "ReqEnterRoom" );
         p.lpack.roomid = 99;
         cc.ll.net.send( p.pack() );
+        cc.ll.loading.addLoading(20);
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
-    // called every frame, uncomment this function to activate update callback
-    // update: function (dt) {
-
-    // },
+    onSettingClick : function(event) {
+        var node = event.target;
+        var closeimg = node.getChildByName( "Close" );
+        closeimg.active = !closeimg.active;
+        cc.ll.sAudioMgr.setSize( closeimg.active?0:1 );
+        cc.ll.sAudioMgr.playNormalBtnClick();
+    },
 });

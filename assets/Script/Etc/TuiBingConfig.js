@@ -9,6 +9,23 @@ var TuiBingConfig = {
 		Openning : 6, // 开牌阶段
 		Reward : 7, // 发放奖励
 	},
+	Time : {
+		// WAIT_BEGIN = 5, -- 等待开始游戏时间
+		// WAIT_KEEP = 15, -- 等待续庄时间
+		// WAIT_BET = 10, -- 等待押注时间
+		// WAIT_OPEN = 10, -- 开牌展示时间
+		// WAIT_REWARD = 2, -- 奖励发送时间
+		Begin : 5,
+		Begin_keep : 30,
+		Bet : 15,
+		Wait : 3,
+		Open : 10,
+		Reward : 8,
+	},
+
+	LessGold : 10000, //最低金币
+	BankerLessGold : 200000, // 上庄最低金币
+	FastBankerGold : 200000, // 快速上庄缴纳金
 }
 
 module.exports = TuiBingConfig;

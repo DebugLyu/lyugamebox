@@ -21,6 +21,7 @@ cc.Class({
         _stateStr:"",
         _loadkey : 0,
         _loadingList:[cc.String],
+        _nameList : [""],
     },
 
     // use this for initialization
@@ -45,8 +46,21 @@ cc.Class({
         cc.ll.msgbox = require("Msgbox");
         cc.ll.notice = require("Notice");
         cc.ll.notice.init();
+        //初始化loading界面
+        cc.ll.loading = require("LoadingDialog");
+        cc.ll.loading.init();
+        //初始化 玩家管理器
+        cc.ll.pMgr = require("PlayerManager");
+        cc.ll.pMgr.init();
+        //初始化 场景管理器
+        cc.ll.sSceneMgr = require("SceneManager");
+        //初始化 音效管理器
+        cc.ll.sAudioMgr = require("AudioManager");
+        cc.ll.sAudioMgr.init();
+        
         // 加载资源
-        this._loadingList = ["必要","重要","游戏","界面","UI","通用","其他"];
+        this._loadingList = ["erguotou","login","main","profab","res_common","sound"];
+        this._nameList = ["必要","重要","游戏","界面","UI","通用","其他"];
         this.onLoadNext();
     },
 
@@ -61,13 +75,14 @@ cc.Class({
         if(this._loadkey >= this._loadingList.length){
             this.onLoadComplete();
         }else{
-            var name = this._loadingList[ this._loadkey ];
-            this.startPreloading( name );
+            var name = this._nameList[ this._loadkey ];
+            var dir = this._loadingList[ this._loadkey ];
+            this.startPreloading( name, dir );
         }
         this._loadkey = this._loadkey + 1;
     },
 
-    startPreloading:function(name){
+    startPreloading:function(name , dir){
         this._stateStr = "正在加载"+name+"资源，请稍候";
         this._isLoading = true;
         var self = this;
@@ -80,7 +95,7 @@ cc.Class({
             }
         };
         
-        cc.loader.loadResDir(name, function (err, assets) {
+        cc.loader.loadResDir(dir, function (err, assets) {
             self.onLoadNext();
         });      
     },

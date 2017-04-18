@@ -37,10 +37,12 @@ cc.Class({
         let registerlayer = cc.instantiate(this.prefabNormalRegister);  
         registerlayer.parent = bg;
         registerlayer.setPosition(0,0);
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
 
     onDistroy:function(){
     	this.node.destroy();
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
 
     onLoginClick: function() {
@@ -58,5 +60,8 @@ cc.Class({
         p.lpack.account = account;
         p.lpack.password = password;
         cc.ll.net.send( p.pack() );
+
+        cc.ll.loading.addLoading(5);
+        cc.ll.sAudioMgr.playNormalBtnClick();
     },
 });

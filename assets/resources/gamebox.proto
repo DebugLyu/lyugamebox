@@ -11,6 +11,7 @@ message Reslogin {
 	required int32 id = 2;		//玩家唯一id
 	required string name = 3;	//玩家名
 	required int32 gold = 4; //金币数
+	required int32 gmlevel = 5;//gm等级
 }
 
 // 注册请求
@@ -49,6 +50,7 @@ message ReqLeaveRoom {
 //上庄申请
 message ReqBeBanker {
 	required int32 type = 1; //申请上庄类型 1普通上庄 2快速上庄
+	required int32 gold = 2; //上庄金币
 }
 
 message ResBeBanker {
@@ -123,6 +125,11 @@ message ReqTuiBingBet {
 	required int32 gold = 2;
 }
 
+message ToTuiBingResult {
+	repeated int32 iswiner = 1; // 南 天 北 0输 1赢
+	repeated int32 posgold = 2; // 玩家 各个 位置赢多少
+}
+
 //广播下注通知
 message ResTuiBingBet {
 	required int32 result = 1;
@@ -144,7 +151,7 @@ message ToDealMajiang {
 
 //广播可压金币数
 message ToTuiBingBetGold {
-	required int32 gold = 1;
+	repeated int32 gold = 1;// 南  天  北 各压了多少
 }
 
 //广播房间信息 
@@ -162,7 +169,75 @@ message ReqTuiBingInfo {
 message ResTuibingInfo {
 }
 
+message ReqTuiBingAllPlayer {
+}
+
+message ResTuiBingAllPlayer {
+	message pInfo {
+		required int32 id = 1;
+		required string name = 2;
+	}
+	repeated pInfo list = 1;
+}
+
 //申请加金币
 message ReqAddGold {
-	required int32 gold = 1;
+	required int32 id = 1;
+	required int32 gold = 2;
+	required int32 logtype = 3;
+}
+
+message ResAddGold {
+	required int32 result = 1;
+}
+//////////////////////////////麻将相关///////////////////
+message ToMjRoomPlayerEnter {
+	required int32 id = 1;
+	required string name = 2;
+	required int32 gold = 3;
+	required int32 pos = 4;
+	required int32 headicon = 5;
+}
+
+message ToMjReady {
+}
+//申请准备游戏
+message ReqMJReady {
+}
+
+message ResMJReady {
+	repeated int32 pos = 1;//已经准备了的位置
+}
+// 提示客户端 有可选出牌类型 碰 杠 胡
+message ToMjSelected {
+	message SelectType {
+		required int32 state = 1; //2 碰 3 杠 4 暗杠  4 普通胡 5 对对胡
+		required int32 pai = 2;
+		required int32 pos = 3;
+	}
+	repeated SelectType states = 1;
+}
+// 起牌
+message ToMjGetMj {
+	required int32 pai = 1;
+}
+// 客户端申请出牌
+message ReqMjSendMj {
+	required int32 pai = 1;
+}
+// 出牌错误返回
+message ResMjSendMj {
+	required int32 result = 1;
+}
+// 通知客户端有人要牌
+message ToMjSmOneUse {
+}
+// 申请 特殊操作 碰 杠 胡
+message ReqMjOperate {
+	required int32 state = 1;
+	required int32 pai = 2;
+	required int32 pos = 3;
+}
+message ResMjOperate {
+	required int32 result = 1;
 }

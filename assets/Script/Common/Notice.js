@@ -29,6 +29,7 @@ var NoticeBox = cc.Class({
                 if (okfunc != null) {
                     okfunc();
                 }
+                cc.ll.sAudioMgr.playNormalBtnClick();
                 onDestroy();
             };
             okbtn.on('click', okcallback);
@@ -38,6 +39,7 @@ var NoticeBox = cc.Class({
                 if(cancelfunc != null){
                     cancelfunc();
                 }
+                cc.ll.sAudioMgr.playNormalBtnClick();
                 onDestroy();
             };
             cancelbtn.on('click', cancelcallback);
