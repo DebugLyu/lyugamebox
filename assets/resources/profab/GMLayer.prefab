@@ -1219,7 +1219,7 @@
     "editingDidEnded": [],
     "editingReturn": [],
     "_N$backgroundImage": {
-      "__uuid__": "95ca47a1-0500-4ddb-a99c-2a369e7cc737"
+      "__uuid__": "23bb2cf6-54c5-4c96-bd6d-5c17db6064c2"
     },
     "_N$returnType": 0,
     "_N$inputFlag": 5,
@@ -1437,7 +1437,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 320,
+      "x": 308,
       "y": 0
     },
     "_skewX": 0,
@@ -1665,7 +1665,7 @@
     "editingDidEnded": [],
     "editingReturn": [],
     "_N$backgroundImage": {
-      "__uuid__": "95ca47a1-0500-4ddb-a99c-2a369e7cc737"
+      "__uuid__": "23bb2cf6-54c5-4c96-bd6d-5c17db6064c2"
     },
     "_N$returnType": 0,
     "_N$inputFlag": 5,

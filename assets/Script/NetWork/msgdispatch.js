@@ -138,9 +138,10 @@ var onBankerBegin = function( pack ) {
     var msglabel = msgnode.getComponent(cc.RichText);
     
     var intervalID = setInterval(function(){
-        var str = msgcode.TUIBING_BANKER_BEGIN + "<br/><color=#FF0000><size = 25>00:0"+time+"</color></size>";
-        msglabel.string = msg;
         time--;
+        var str = msgcode.TUIBING_BANKER_BEGIN + "<br/><color=#FF0000><size = 25>00:0"+time+"</color></size>";
+        msglabel.string = str;
+        
         if (time < 0){
             clearInterval(intervalID)
         }

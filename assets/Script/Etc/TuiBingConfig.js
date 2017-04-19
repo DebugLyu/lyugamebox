@@ -23,6 +23,7 @@ var TuiBingConfig = {
 		Reward : 8,
 	},
 
+	BankerMaxTimes : 25 , // 最高上庄次数
 	LessGold : 10000, //最低金币
 	BankerLessGold : 200000, // 上庄最低金币
 	FastBankerGold : 200000, // 快速上庄缴纳金

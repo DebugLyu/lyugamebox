@@ -164,7 +164,7 @@ cc.Class({
         this._banker_name = 0;
         this.bankerNameLabel.string = msgcode.TUIBING_NO_BANKER;
         this.bankerGoldLabel.string = 0;
-        this.bankerTimesLabel.string = 0;
+        this.bankerTimesLabel.string = "0/" + TuiBingConfig.BankerMaxTimes;
 
         for (var i = this.betPoolLabel.length - 1; i >= 0; i--) {
             var label = this.betPoolLabel[i]
@@ -562,7 +562,7 @@ cc.Class({
         this._banker_gold = obj.gold;
         this.bankerNameLabel.string = obj.name;
         this.bankerGoldLabel.string = obj.gold;
-        this.bankerTimesLabel.string = obj.times;
+        this.bankerTimesLabel.string = obj.times + "/" + TuiBingConfig.BankerMaxTimes;
         if ( cc.ll.pMgr.main_role.id == this._banker_id ){
             this.btnBeBanker.node.active = false;
             this.btnUnBanker.node.active = true;

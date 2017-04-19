@@ -31,7 +31,7 @@ cc.Class({
             cvs.fitHeight = true;
             cvs.fitWidth = true;
         }
-        this.loadingBar.totalLength = this.loadingBar.node.width;
+        // this.loadingBar.totalLength = this.loadingBar.node.width;
 
         cc.ll = {};
         this.tips.string = "正在初始化...";
