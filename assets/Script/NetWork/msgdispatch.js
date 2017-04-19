@@ -131,7 +131,20 @@ var onBankerBegin = function( pack ) {
         p.lpack.gold = 0;
         cc.ll.net.send( p.pack() );
     }
-    cc.ll.notice.addMsg(1,msgcode.TUIBING_BANKER_BEGIN, begincallback, endcallback, 998)
+    var time = TuiBingConfig.Time.Begin;
+    var str = msgcode.TUIBING_BANKER_BEGIN + "<br/><color=#FF0000><size = 25>00:0"+time+"</color></size>";
+    var node = cc.ll.notice.addMsg(1,str, begincallback, endcallback, 998);
+    var msgnode = node.getChildByName("NoticeBg").getChildByName("NoticeLabel");
+    var msglabel = msgnode.getComponent(cc.RichText);
+    
+    var intervalID = setInterval(function(){
+        var str = msgcode.TUIBING_BANKER_BEGIN + "<br/><color=#FF0000><size = 25>00:0"+time+"</color></size>";
+        msglabel.string = msg;
+        time--;
+        if (time < 0){
+            clearInterval(intervalID)
+        }
+    }, 1000)
 }
 
 var onTuiBingBetGold = function( pack ) {

@@ -141,8 +141,8 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 20,
-      "g": 255,
+      "r": 255,
+      "g": 163,
       "b": 0,
       "a": 255
     },
@@ -199,7 +199,7 @@
       "__id__": 3
     },
     "_enabled": true,
-    "_N$string": "<color=#FFFFFF>要快速上庄么？</c><br/><color=#FFAD00><size = 20>（快速上庄需要20万金币）</color></size>",
+    "_N$string": "要快速上庄么？<br/><color=#FFFFFF><size = 25>（快速上庄需要20万金币）</color></size>",
     "_N$horizontalAlign": 1,
     "_N$fontSize": 40,
     "_N$font": null,

@@ -49,6 +49,7 @@ var NoticeBox = cc.Class({
                 okbtn.x = 0;
             }
             cc.director.getScene().addChild(node,99,tag);
+            return node;
         },
 
         removeMsg : function(tag){
