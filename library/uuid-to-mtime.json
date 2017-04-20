@@ -25,8 +25,8 @@
     "relativePath": "Profab/NormalRegisterLayer.prefab"
   },
   "e026a11f-69df-40e8-ae8b-e2bede96983e": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
+    "asset": 1492611019000,
+    "meta": 1492654663000,
     "relativePath": "resources"
   },
   "4567500c-6070-442d-8832-edb4a02fd7b3": {
@@ -35,8 +35,8 @@
     "relativePath": "Profab/PreBankerItem.prefab"
   },
   "bf778ba3-33eb-47f3-a281-18abb195afee": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
+    "asset": 1492613504000,
+    "meta": 1492654663000,
     "relativePath": "resources/erguotou"
   },
   "6bb8f669-9739-44ab-adac-f3a383815413": {
@@ -285,8 +285,8 @@
     "relativePath": "Scene/helloworld.fire"
   },
   "b27f53ba-de03-4e7d-93b4-9c5a3b849c76": {
-    "asset": 1492611950000,
-    "meta": 1492611950000,
+    "asset": 1492675450000,
+    "meta": 1492675450000,
     "relativePath": "Scene/loadingview.fire"
   },
   "47aa4d80-b7dd-478e-9719-188af954544e": {
@@ -310,8 +310,8 @@
     "relativePath": "Script"
   },
   "32035d0e-3078-4262-b3f4-7a3dc38845e3": {
-    "asset": 1492611291000,
-    "meta": 1492611291000,
+    "asset": 1492659824000,
+    "meta": 1492659824000,
     "relativePath": "Scene/tuibingview.fire"
   },
   "079443ad-d3f2-4d66-876a-cfb1e48407cc": {
@@ -749,16 +749,6 @@
     "meta": 1492606714000,
     "relativePath": "Script/Common/LoadingDialog.js"
   },
-  "b9a5ff16-aa5b-4851-94f9-6a709860a3e4": {
-    "asset": 1492478210000,
-    "meta": 1492606717000,
-    "relativePath": "resources/erguotou/erguotou.plist"
-  },
-  "f3d9adc3-d343-4c30-b4f7-2852d4a5cb7f": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
-    "relativePath": "resources/erguotou/erguotou.png"
-  },
   "4bcb0ee2-104d-4f21-8e25-ddfa9760345c": {
     "asset": 1492478210000,
     "meta": 1492478210000,
@@ -778,11 +768,6 @@
     "asset": 1492478210000,
     "meta": 1492606717000,
     "relativePath": "Script/Manager/AudioManager.js"
-  },
-  "3e9e4f2f-c08f-48e4-b6f8-9ae6301e4a6b": {
-    "asset": 1492478210000,
-    "meta": 1492606717000,
-    "relativePath": "Script/LoginView/OnLogin.js"
   },
   "2f839253-3fb3-4f09-9944-95a1b4fe46f4": {
     "asset": 1492478210000,
@@ -814,11 +799,6 @@
     "meta": 1492606717000,
     "relativePath": "Script/Role/Player.js"
   },
-  "251e330e-23b5-4b79-8170-83ebdf5b7273": {
-    "asset": 1492478210000,
-    "meta": 1492606717000,
-    "relativePath": "Script/GameView/OnGameViewLoad.js"
-  },
   "7a6831ec-b91f-4432-b0b8-f8dcbfb5394f": {
     "asset": 1492478210000,
     "meta": 1492606717000,
@@ -835,8 +815,8 @@
     "relativePath": "Script/Etc/etc.js"
   },
   "a3a40aaf-16ca-4773-b152-956dd212c60b": {
-    "asset": 1492612056000,
-    "meta": 1492612056000,
+    "asset": 1492667531000,
+    "meta": 1492667531000,
     "relativePath": "resources/profab/GMLayer.prefab"
   },
   "655a1793-4dbf-452d-9a6c-e2d8f572041a": {
@@ -849,16 +829,6 @@
     "meta": 1492478210000,
     "relativePath": "resources/gamebox.proto"
   },
-  "ff910c9b-759d-4457-8d97-f9df1f3ac454": {
-    "asset": 1492478210000,
-    "meta": 1492606714000,
-    "relativePath": "Script/Etc/Msgcode.js"
-  },
-  "a181527d-7789-4dff-8f65-22c9bf3c7069": {
-    "asset": 1492478210000,
-    "meta": 1492606717000,
-    "relativePath": "Script/GameView/OnBankerLayerLoad.js"
-  },
   "331a2da0-5404-4a59-81ac-70bbc7c2f139": {
     "asset": 1492608187000,
     "meta": 1492608312000,
@@ -869,24 +839,54 @@
     "meta": 1492610700000,
     "relativePath": "Script/Etc/TuiBingConfig.js"
   },
-  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
-    "asset": 1492610697000,
-    "meta": 1492610700000,
-    "relativePath": "Script/GameView/GameLogic.js"
-  },
   "cf8022f6-bd66-4ee8-a291-3b00ae127624": {
     "asset": 1492605340000,
     "meta": 1492611040000,
     "relativePath": "resources/erguotou/img_topview_bg.png"
   },
-  "2c3095cc-6d1a-4399-87cf-54dbc2e45464": {
-    "asset": 1492611588000,
-    "meta": 1492611595000,
-    "relativePath": "Script/NetWork/msgdispatch.js"
-  },
   "fdd1762c-145e-442f-862f-7c72cc149ae1": {
     "asset": 1492611826000,
     "meta": 1492611831000,
     "relativePath": "Script/LoadView/OnLoadingViewLoad.js"
+  },
+  "b9a5ff16-aa5b-4851-94f9-6a709860a3e4": {
+    "asset": 1492613478000,
+    "meta": 1492613508000,
+    "relativePath": "resources/erguotou/erguotou.plist"
+  },
+  "f3d9adc3-d343-4c30-b4f7-2852d4a5cb7f": {
+    "asset": 1492613478000,
+    "meta": 1492613508000,
+    "relativePath": "resources/erguotou/erguotou.png"
+  },
+  "ff910c9b-759d-4457-8d97-f9df1f3ac454": {
+    "asset": 1492656479000,
+    "meta": 1492657378000,
+    "relativePath": "Script/Etc/Msgcode.js"
+  },
+  "3e9e4f2f-c08f-48e4-b6f8-9ae6301e4a6b": {
+    "asset": 1492658292000,
+    "meta": 1492658371000,
+    "relativePath": "Script/LoginView/OnLogin.js"
+  },
+  "251e330e-23b5-4b79-8170-83ebdf5b7273": {
+    "asset": 1492674196000,
+    "meta": 1492674789000,
+    "relativePath": "Script/GameView/OnGameViewLoad.js"
+  },
+  "a181527d-7789-4dff-8f65-22c9bf3c7069": {
+    "asset": 1492675856000,
+    "meta": 1492675859000,
+    "relativePath": "Script/GameView/OnBankerLayerLoad.js"
+  },
+  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
+    "asset": 1492676135000,
+    "meta": 1492676137000,
+    "relativePath": "Script/GameView/GameLogic.js"
+  },
+  "2c3095cc-6d1a-4399-87cf-54dbc2e45464": {
+    "asset": 1492677639000,
+    "meta": 1492678602000,
+    "relativePath": "Script/NetWork/msgdispatch.js"
   }
 }

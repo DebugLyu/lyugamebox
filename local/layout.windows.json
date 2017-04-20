@@ -100,12 +100,12 @@
         "timeline"
       ]
     },
-    "window-1492612144838": {
+    "window-1492683888542": {
       "main": false,
       "url": "unpack://static/window.html",
       "windowType": "dockable",
-      "x": 367,
-      "y": 124,
+      "x": 479,
+      "y": 98,
       "width": 500,
       "height": 722,
       "layout": {
@@ -153,8 +153,8 @@
       "height": 548
     },
     "builder": {
-      "x": 367,
-      "y": 124,
+      "x": 479,
+      "y": 98,
       "width": 500,
       "height": 722
     },
@@ -169,6 +169,12 @@
       "y": 317,
       "width": 400,
       "height": 422
+    },
+    "store": {
+      "x": 558,
+      "y": 217,
+      "width": 800,
+      "height": 622
     }
   }
 }

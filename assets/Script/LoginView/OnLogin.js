@@ -58,7 +58,7 @@ cc.Class({
                     showLogin();
                 }
                 var errorfunc = function(){
-                    cc.ll.notice.addMsg(2,msgcode.NETWORK_UNCONNECT,callback)        
+                    cc.ll.notice.addMsg(2,msgcode.NETWORK_UNCONNECT,null)        
                 }
                 cc.ll.net.connect( etc.ip, etc.port, okfunc, errorfunc );
             }

@@ -22,6 +22,11 @@ cc.Class({
         this.checkbox.interactable = false;
         this.fasttips.node.color = new cc.Color(140, 140, 140);
         this._is_keep = true;
+        var self = this;
+        var closefunc = function(){
+            self.onDistroy();
+        }
+        this.node.runAction( cc.sequence(cc.delayTime( TuiBingConfig.Time.Begin_keep ), cc.callFunc( closefunc ) )  )
     },
 
     onSlideChanged : function (slider, customEventData ){

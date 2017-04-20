@@ -28,6 +28,7 @@ cc.Class({
         bankerTimesLabel : cc.Label,
 
         noticeLabel : cc.Label, 
+
         betPoolLabel : [cc.Label],
 
         maJiangList:[cc.Node],
@@ -35,6 +36,8 @@ cc.Class({
 
         btnBeBanker : cc.Button,
         btnUnBanker : cc.Button,
+        btnKeepBanker : cc.Button,
+        bankerLabel : cc.Label, 
 
         dice : cc.Node,
         // game params
@@ -59,6 +62,8 @@ cc.Class({
         MajiangSpriteList : cc.SpriteAtlas,
 
         _gmPrefab : cc.Prefab,
+
+        _unBankerFlag : false,
     },
 
     // use this for initialization
@@ -155,6 +160,7 @@ cc.Class({
             node.active = true;
             node.stopAllActions();
         }
+
         this.node.stopAllActions();
         this._mj_move_key = 1;
     },
@@ -166,13 +172,16 @@ cc.Class({
         this.bankerGoldLabel.string = 0;
         this.bankerTimesLabel.string = "0/" + TuiBingConfig.BankerMaxTimes;
 
+        this.btnBeBanker.node.active = true;
+        this.btnUnBanker.node.active = false;
+        this._unBankerFlag = false;
+        this.bankerLabel.node.active = false;
+        this.btnKeepBanker.node.active = false;
+
         for (var i = this.betPoolLabel.length - 1; i >= 0; i--) {
             var label = this.betPoolLabel[i]
             label.string = 0;
         }
-
-        this.btnBeBanker.node.active = true;
-        this.btnUnBanker.node.active = false;
     },
 
     onQueueChanged: function( banker, list ) {
@@ -563,12 +572,25 @@ cc.Class({
         this.bankerNameLabel.string = obj.name;
         this.bankerGoldLabel.string = obj.gold;
         this.bankerTimesLabel.string = obj.times + "/" + TuiBingConfig.BankerMaxTimes;
+
         if ( cc.ll.pMgr.main_role.id == this._banker_id ){
-            this.btnBeBanker.node.active = false;
-            this.btnUnBanker.node.active = true;
+            if(this._unBankerFlag){
+                this.bankerLabel.node.active = true;
+                this.btnBeBanker.node.active = false;
+                this.btnUnBanker.node.active = false;
+                this.btnKeepBanker.node.active = false;
+            }else{
+                this.bankerLabel.node.active = false;
+                this.btnBeBanker.node.active = false;
+                this.btnUnBanker.node.active = true;
+                this.btnKeepBanker.node.active = true;
+            }
         }else{
             this.btnBeBanker.node.active = true;
             this.btnUnBanker.node.active = false;
+            this.btnKeepBanker.node.active = false;
+            this._unBankerFlag = false;
+            this.bankerLabel.node.active = false;
         }
         this._can_bet_gold = this._banker_gold
     },

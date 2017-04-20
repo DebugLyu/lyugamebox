@@ -210,6 +210,8 @@
             <filename>erguotou/btn_allplayer_2.png</filename>
             <filename>erguotou/btn_allplayer_1.png</filename>
             <filename>erguotou/img_notice_bg.png</filename>
+            <filename>erguotou/btn_keep_1.png</filename>
+            <filename>erguotou/btn_keep_2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -15,13 +15,10 @@ cc.Class({
             type: cc.Label,
         },
 
-        bgm: {
-            url: cc.AudioClip,
-            default: null
-        },
+        BankerBtns : [cc.Button],
+        bankerLabel : cc.Label, 
         bankerDialog : cc.Prefab,
 
-        _Audio : null,
         _logic : null,
     },
 
@@ -88,11 +85,23 @@ cc.Class({
             cc.ll.msgbox.addMsg( msgcode.GOLD_NOT_ENOUGH );
             return;
         }
-        var dialog = cc.instantiate(this.bankerDialog);
-        var logic = dialog.getComponent( "OnBankerLayerLoad" );
-        logic.initKeep();
+        
         var bg = cc.find( "Canvas" );
-        dialog.parent = bg;
+        var tmp = bg.getChildByName( "BeBankerDialog" );
+        if( tmp == null ){
+            var dialog = cc.instantiate(this.bankerDialog);
+            var logic = dialog.getComponent( "OnBankerLayerLoad" );
+            logic.initKeep();
+            dialog.parent = bg;
+        }
+    },
+
+    unShowKeepBanker : function() {
+        var bg = cc.find( "Canvas" );
+        var tmp = bg.getChildByName( "BeBankerDialog" );
+        if( tmp != null ){
+            tmp.destroy();
+        }
     },
 
     onFastBeBankerClicked: function() {
@@ -113,9 +122,15 @@ cc.Class({
     },
 
     onUnBankerBtnClick : function (){
-        var p = new packet( "ReqTuiBingUnbanker" );
-        cc.ll.net.send( p.pack() );   
+        var okcallback = function(){
+            var p = new packet( "ReqTuiBingUnbanker" );
+            cc.ll.net.send( p.pack() );  
+        }
+        var cancelcallback = function(){
+            //do nothing
+        }
         cc.ll.sAudioMgr.playNormalBtnClick();
+        cc.ll.notice.addMsg(1,msgcode.TUIBING_ASK_UNBANKER, okcallback, cancelcallback, 998);
     },
 
     onLeaveQueueBtnClick : function() {
@@ -135,5 +150,30 @@ cc.Class({
         }
 
         cc.ll.sAudioMgr.playNormalBtnClick();
+    },
+
+    onKeepBankerBtnClick : function(){
+        if(cc.ll.pMgr.main_role.gold < TuiBingConfig.BankerLessGold){
+            cc.ll.msgbox.addMsg( msgcode.GOLD_NOT_ENOUGH );
+            return;
+        }
+        
+        var bg = cc.find( "Canvas" );
+        var tmp = bg.getChildByName( "BeBankerDialog" );
+        if( tmp == null ){
+            var dialog = cc.instantiate(this.bankerDialog);
+            var logic = dialog.getComponent( "OnBankerLayerLoad" );
+            logic.initKeep();
+            dialog.parent = bg;
+        }
+    },
+
+    showUnBankerTips : function(){
+        this.bankerLabel.node.active = true;
+        for (var i = this.BankerBtns.length - 1; i >= 0; i--) {
+            var btn = this.BankerBtns[i];
+            btn.node.active = false;
+        }
+        this._logic._unBankerFlag = true;
     },
 });

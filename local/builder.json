@@ -1,6 +1,7 @@
 {
   "androidStudio": false,
   "apiLevel": "",
+  "appABIs": [],
   "buildPath": "./build",
   "debug": false,
   "keystoreAlias": "",
@@ -13,6 +14,5 @@
   "sourceMaps": false,
   "template": "default",
   "useDebugKeystore": true,
-  "appABIs": [],
   "vsVersion": "auto"
 }

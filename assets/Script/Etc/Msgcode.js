@@ -50,6 +50,7 @@ msgcode.TUIBING_GOLD_BANKER_NOT_ENOUGH = "金币不足",
 msgcode.TUIBING_KEEP_BANKER = "是否继续坐庄？",
 msgcode.TUIBING_BANKER_BEGIN = "要开始游戏么？",
 msgcode.TUIBING_BANKER_TYPE = "<color=#FFFFFF>要快速上庄么？</c><br/><color=#FFAD00><size = 20>（快速上庄需要20万金币）</color></size>",
+msgcode.TUIBING_ASK_UNBANKER = "确认下庄么？<br/><color=#FF0000><size = 25>下庄后需要重新排队上庄</color></size>",
 
 msgcode.GM_ERROR_ID = "请输入正确的玩家id",
 msgcode.GM_CALL_GM = "请联系GM",

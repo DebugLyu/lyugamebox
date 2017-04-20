@@ -42,6 +42,12 @@ var onTuibingUnbanker = function( pack ){
     var result = pack.result;
     if (result != 0 ){
         cc.ll.msgbox.addMsg(result);
+    }else{
+        var node = cc.find("Canvas/GameBgLayer");
+        if( node ){
+            var viewlogic = node.getComponent("OnGameViewLoad");
+            viewlogic.showUnBankerTips(); 
+        }
     }
 }
 
@@ -69,7 +75,7 @@ var onTuiBingGameState = function( pack ){
     var node = cc.find("Canvas/GameBgLayer");
     if( node ){
         var gamelogic = node.getComponent( "GameLogic" );
-        gamelogic.onGameStateChange( state )
+        gamelogic.onGameStateChange( state );
     }
     if (state == TuiBingConfig.State.Ready) {
         cc.ll.notice.removeMsg(998);
@@ -141,11 +147,8 @@ var onBankerBegin = function( pack ) {
         time--;
         var str = msgcode.TUIBING_BANKER_BEGIN + "<br/><color=#FF0000><size = 25>00:0"+time+"</color></size>";
         msglabel.string = str;
-        
-        if (time < 0){
-            clearInterval(intervalID)
-        }
-    }, 1000)
+    }, 1000);
+    setTimeout(function(){ clearInterval(intervalID); }, time * 1000);
 }
 
 var onTuiBingBetGold = function( pack ) {
@@ -171,18 +174,22 @@ var onDealMajiang = function( pack ) {
 }
 
 var onCloseClient = function( pack ) {
-    var type = pack.type
+    var type = pack.type;
+    var msg = "unknow error";
     if(type == 1){
-        let okcallback = function(argument) {
-            cc.ll.sSceneMgr.onChangeScene("loginview");
-        }
-        cc.ll.notice.addMsg ( 2, msgcode.NETWORK_OTHER_LOGIN, okcallback);
+        msg = msgcode.NETWORK_OTHER_LOGIN;
+    }else if( type == 2 ){
+        msg = msgcode.NETWORK_RELOGIN;
     }
+    var okcallback = function(argument) {
+        cc.ll.sSceneMgr.onChangeScene("loginview");
+    }
+    cc.ll.notice.addMsg ( 2, msg, okcallback);
 }
 
 var onTuibingBankerInfo = function( pack ) {
     var obj = {
-        name:pack.name,
+        name : pack.name,
         id : pack.id,
         gold : pack.gold,
         times : pack.times,
