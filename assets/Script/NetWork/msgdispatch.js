@@ -1,5 +1,6 @@
 var packet = require( "Lpackage" )
 var msgcode = require( 'Msgcode' )
+var ErrorCode = require( "errorcode" )
 var TuiBingConfig = require("TuiBingConfig")
 
 var onLogin = function( pack ){
@@ -9,10 +10,16 @@ var onLogin = function( pack ){
         var player = require('Player')
         var pPlayer = new player();
         pPlayer.login(obj)
+    }else if( result == ErrorCode.ACCOUNT_SEAL ){
+        var timestamp3 = pack.id;
+        var newDate = new Date();
+        newDate.setTime(timestamp3 * 1000);
+        var msg = msgcode[ result ] + " " + newDate.toLocaleString() + msgcode.END_COLOR +msgcode.END_SIZE;
+        cc.ll.notice.addMsg ( 2, msg, null);
     }else{
         cc.ll.msgbox.addMsg(result);
-        cc.ll.loading.removeLoading();
     }
+    cc.ll.loading.removeLoading();
 }
 
 var onRegister = function( pack ){
@@ -237,6 +244,40 @@ var onAddGold = function( pack ){
     // cc.ll.loading.removeLoading();
 }
 
+var onCheckName = function( pack ){
+    var result = pack.result;
+    if (result == 0){
+        var index = pack.index;
+        var id = pack.id;
+        var name = pack.name;
+        var event = require("LLEvent");
+        var obj = {id : id, name : name};
+        event.dispatchEvent( index, obj )
+    }else{
+        // cc.ll.msgbox.addMsg(result);
+        var node = cc.ll.notice.addMsg( 2, result, null);
+        node.setTimeOut( 3 );
+    }
+}
+
+var onToTradeGold = function(pack){
+    var id = pack.fromid;
+    var name = pack.fromname;
+    var gold = pack.gold;
+
+    var str = msgcode.TRANSTFER_NOTICE_1 + name + msgcode.TRANSTFER_NOTICE_2 + gold + msgcode.TRANSTFER_NOTICE_3
+    cc.ll.notice.addMsg( 2, str, null);
+}
+
+var onTradeGold = function(pack){
+    var result = pack.result;
+    if (result == 0) {
+        var node = cc.ll.notice.addMsg( 2, msgcode.TRANSTFER_COMPLETE, null);
+    }else{
+        var node = cc.ll.notice.addMsg( 2, result, null);
+    }
+}
+
 var FuncMap = {
     "Reslogin": onLogin,
     "ResRegister" : onRegister,
@@ -258,6 +299,9 @@ var FuncMap = {
     "ToTuiBingResult" : onToTuiBingResult,
     "ResTuiBingAllPlayer" : onTuibingAllPlayer,
     "ResAddGold" : onAddGold,
+    "ResCheckName" : onCheckName,
+    "ToTreadeGold" : onToTradeGold,
+    "ResTradeGold" : onTradeGold,
 }
 
 var msgdispatch = cc.Class({

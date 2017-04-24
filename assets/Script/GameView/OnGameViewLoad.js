@@ -36,11 +36,14 @@ cc.Class({
         }
 
         var node = this.GoldLabel.node;
+
         cc.ll.pMgr.main_role.register("GoldChange",  node, function(event){
             var gold = event.getUserData()     
             var label = node.getComponent(cc.Label);
             label.string = gold;
         })
+        var event = require("LLEvent");
+        event
 
         this._logic = this.node.getComponent( "GameLogic" )
         cc.ll.sAudioMgr.playBGM("bgBet");

@@ -27,6 +27,7 @@ cc.Class({
         var cur = Number(this.GoldLabel.string) || 0;
         var add = Number( data ) || 0;
         this.GoldLabel.string = cur + add;
+        cc.ll.sAudioMgr.playNormalBtnClick(); 
     },
 
     onLogBtnClicked : function( event, data ){
@@ -39,20 +40,23 @@ cc.Class({
                 btn.interactable = true;
             }
         }
+        cc.ll.sAudioMgr.playNormalBtnClick(); 
     },
 
     onCleanBtnClicked: function(){
         this.GoldLabel.string = 0;
+        cc.ll.sAudioMgr.playNormalBtnClick(); 
     },
 
     onOkBtnClicked : function( event ){
         var name = Number(this.NameLabel.string);
         if (name<=0) {
-            cc.ll.msgbox.addMsg(msgcode.GM_ERROR_ID);
+            cc.ll.msgbox.addMsg(msgcode.COMMON_ERROR_ID);
             return;
         }
         var gold = Number( this.GoldLabel.string );
         if( gold <= 0 ){
+            cc.ll.msgbox.addMsg(msgcode.COMMON_ERROR_GOLD);
             return;
         }
 

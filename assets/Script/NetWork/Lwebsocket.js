@@ -45,9 +45,8 @@ var lwebsocket = cc.Class({
         },
         domessage : function () {
             if( this.reader.readyState != 1 ){
-                var data = this.queue[0];
-                if (data != null){
-                    this.queue.shift();
+                if ( this.queue.length > 0 ){
+                    var data = this.queue.shift();
                     this.reader.readAsArrayBuffer(data);
                 }
             }

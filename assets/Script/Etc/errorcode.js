@@ -1,13 +1,14 @@
+// ErrorCode.js
 var ErrorCode = {}
-
-ErrorCode = {}
 
 ErrorCode.ACCOUNT_REPEAT = 1
 ErrorCode.DBSERVICE_ERROR = 99
 ErrorCode.NO_ACCOUNT = 101
 ErrorCode.PASSWORD_ERROR = 102
 ErrorCode.HAS_ONLINE = 103
-
+ErrorCode.NO_USER_ID = 105
+ErrorCode.NOT_ONLINE = 106
+ErrorCode.ACCOUNT_SEAL = 107
 
 ErrorCode.ROOM_NOT_FOUND = 201
 ErrorCode.ROOM_FULL = 202
@@ -26,6 +27,8 @@ ErrorCode.MAHJONG_PLAYER_NOT_FOUND = 502
 ErrorCode.MAHJONG_MJ_NOT_FOUND = 503
 ErrorCode.MAHJONG_ERROR_COMMAND = 504
 
+// DB
+ErrorCode.DB_PLAYER_NOT_FOUND = 701
 // GM
 ErrorCode.PERMISSION_DENIED = 901
 ErrorCode.LOGTYPE_ERROR = 902

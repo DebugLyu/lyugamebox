@@ -23,6 +23,8 @@ cc.Class({
             default: null,
             type: cc.Label,
         },
+
+        TradePrefab : cc.Prefab,
     },
 
     // use this for initialization
@@ -35,6 +37,12 @@ cc.Class({
         if(cc.ll.pMgr.main_role !== null){
             this.NameLabel.string = cc.ll.pMgr.main_role.name + " [" + cc.ll.pMgr.main_role.id + "]";
             this.GoldLabel.string = cc.ll.pMgr.main_role.gold;
+            var self = this;
+            cc.ll.pMgr.main_role.register("GoldChange",  this.GoldLabel.node, function(event){
+                var gold = event.getUserData()     
+                var label = node.getComponent(cc.Label);
+                self.GoldLabel.string = gold;
+            })
         }
 
         var size = cc.ll.sAudioMgr.getSize()
@@ -57,5 +65,11 @@ cc.Class({
         closeimg.active = !closeimg.active;
         cc.ll.sAudioMgr.setSize( closeimg.active?0:1 );
         cc.ll.sAudioMgr.playNormalBtnClick();
+    },
+
+    onTradeBtnClick : function(event){
+        var tradelayer = cc.instantiate(this.TradePrefab);
+        var bg = cc.find( "/Canvas/MainBgLayer" );
+        tradelayer.parent = bg;
     },
 });

@@ -190,6 +190,35 @@ message ReqAddGold {
 message ResAddGold {
 	required int32 result = 1;
 }
+
+//通过id 检测名字
+message ReqCheckName {
+	required int32 index = 1; 	//申请检测的 功能id 客户端发送
+	required int32 id = 2;		//查询id
+}
+message ResCheckName {
+	required int32 result = 1; 	// 结果
+	required int32 index = 2; 	// 功能id 照样返回客户端
+	required int32 id = 3;		// id对比
+	required string name = 4;	// 名字
+}
+
+//交易金币
+message ReqTradeGold {
+	required int32 toid = 1;	// 交易接收方
+	required int32 gold = 2; 	// 交易金额
+}
+
+message ResTradeGold {
+	required int32 result = 1;
+}
+
+message ToTreadeGold {
+	required int32 fromid = 1;  // 交易来源方id
+	required string fromname = 2;  // 交易来源名字
+	required int32 gold = 3; 	// 交易金额
+}
+
 //////////////////////////////麻将相关///////////////////
 message ToMjRoomPlayerEnter {
 	required int32 id = 1;

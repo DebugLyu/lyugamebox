@@ -47,7 +47,7 @@
                     ],
                     "height": 622,
                     "type": "panel",
-                    "width": 745
+                    "width": 800
                   },
                   {
                     "active": 0,
@@ -56,12 +56,12 @@
                     ],
                     "height": 622,
                     "type": "panel",
-                    "width": 344
+                    "width": 369
                   }
                 ],
                 "height": 622,
                 "type": "dock-h",
-                "width": 1092
+                "width": 1172
               },
               {
                 "active": 0,
@@ -71,12 +71,12 @@
                 ],
                 "height": 341,
                 "type": "panel",
-                "width": 1092
+                "width": 1172
               }
             ],
             "height": 966,
             "type": "dock-v",
-            "width": 1092
+            "width": 1172
           },
           {
             "active": 0,
@@ -85,7 +85,7 @@
             ],
             "height": 966,
             "type": "panel",
-            "width": 458
+            "width": 378
           }
         ],
         "type": "dock-h"
@@ -100,32 +100,7 @@
         "timeline"
       ]
     },
-    "window-1492683888542": {
-      "main": false,
-      "url": "unpack://static/window.html",
-      "windowType": "dockable",
-      "x": 479,
-      "y": 98,
-      "width": 500,
-      "height": 722,
-      "layout": {
-        "children": [
-          {
-            "active": 0,
-            "children": [
-              "builder"
-            ],
-            "height": 700,
-            "type": "panel",
-            "width": 500
-          }
-        ],
-        "type": "dock-v"
-      },
-      "panels": [
-        "builder"
-      ]
-    }
+    "worker": {}
   },
   "panels": {
     "code-editor": {
@@ -147,8 +122,8 @@
       "height": 777
     },
     "project-settings": {
-      "x": 358,
-      "y": 127,
+      "x": 474,
+      "y": 58,
       "width": 584,
       "height": 548
     },
