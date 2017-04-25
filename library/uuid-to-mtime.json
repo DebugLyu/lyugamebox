@@ -310,8 +310,8 @@
     "relativePath": "Script"
   },
   "32035d0e-3078-4262-b3f4-7a3dc38845e3": {
-    "asset": 1492659824000,
-    "meta": 1492659824000,
+    "asset": 1493111914000,
+    "meta": 1493111914000,
     "relativePath": "Scene/tuibingview.fire"
   },
   "079443ad-d3f2-4d66-876a-cfb1e48407cc": {
@@ -795,9 +795,9 @@
     "relativePath": "Script/Role/Player.js"
   },
   "a3a40aaf-16ca-4773-b152-956dd212c60b": {
-    "asset": 1492755658000,
-    "meta": 1492755658000,
-    "relativePath": "resources/profab/GMLayer.prefab"
+    "asset": 1493107608000,
+    "meta": 1493107608000,
+    "relativePath": "resources/profab/GMAddGoldLayer.prefab"
   },
   "dcf35410-8625-47b7-917f-6bef93c0d430": {
     "asset": 1492610625000,
@@ -834,11 +834,6 @@
     "meta": 1492675859000,
     "relativePath": "Script/GameView/OnBankerLayerLoad.js"
   },
-  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
-    "asset": 1492676135000,
-    "meta": 1492676137000,
-    "relativePath": "Script/GameView/GameLogic.js"
-  },
   "331a2da0-5404-4a59-81ac-70bbc7c2f139": {
     "asset": 1492754391000,
     "meta": 1492754611000,
@@ -856,18 +851,13 @@
   },
   "655a1793-4dbf-452d-9a6c-e2d8f572041a": {
     "asset": 1492757708000,
-    "meta": 1492757964000,
-    "relativePath": "Script/GMLayer/OnGmLayerLoad.js"
+    "meta": 1493091906000,
+    "relativePath": "Script/GMLayer/OnGmAddGoldLayerLoad.js"
   },
   "cb6abf67-02b7-4251-a586-e4c63cc948de": {
     "asset": 1492759885000,
     "meta": 1492760725000,
     "relativePath": "Script/NetWork/Lwebsocket.js"
-  },
-  "d0a51a63-f822-4ec8-bcba-b7fd390dea6b": {
-    "asset": 1492765088000,
-    "meta": 1492478210000,
-    "relativePath": "resources/gamebox.proto"
   },
   "d170b51f-a8a6-4789-b3c2-3ec27333d711": {
     "asset": 1492765811000,
@@ -918,5 +908,20 @@
     "asset": 1493005823000,
     "meta": 1493005824000,
     "relativePath": "Script/NetWork/msgdispatch.js"
+  },
+  "d0a51a63-f822-4ec8-bcba-b7fd390dea6b": {
+    "asset": 1493107181000,
+    "meta": 1492478210000,
+    "relativePath": "resources/gamebox.proto"
+  },
+  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
+    "asset": 1493109038000,
+    "meta": 1493109145000,
+    "relativePath": "Script/GameView/GameLogic.js"
+  },
+  "baacd837-0428-4bf4-b2b0-da33b5f67d52": {
+    "asset": 1493109431000,
+    "meta": 1493109433000,
+    "relativePath": "Script/GMLayer/OnGmLayerLoad.js"
   }
 }

@@ -219,6 +219,11 @@ message ToTreadeGold {
 	required int32 gold = 3; 	// 交易金额
 }
 
+message ReqSendWin {
+	required int32 pos = 1; 
+	required int32 win = 2;
+}
+
 //////////////////////////////麻将相关///////////////////
 message ToMjRoomPlayerEnter {
 	required int32 id = 1;

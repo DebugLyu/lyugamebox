@@ -64,6 +64,8 @@ cc.Class({
         _gmPrefab : cc.Prefab,
 
         _unBankerFlag : false,
+
+        _gmLogic : null,
     },
 
     // use this for initialization
@@ -124,10 +126,11 @@ cc.Class({
 
         var node = cc.find("Canvas/GameBgLayer/GMLayer");
         if(cc.ll.pMgr.main_role.gmlevel > 0){
-            cc.loader.loadRes("profab/GMLayer", function (err, prefab) {
+            cc.loader.loadRes("profab/GMAddGoldLayer", function (err, prefab) {
                 self._gmPrefab = prefab;
             });
             node.active = true;
+            this._gmLogic = node.getComponent( "OnGmLayerLoad" );
         }else{
             node.active = false;
         }
@@ -163,6 +166,9 @@ cc.Class({
 
         this.node.stopAllActions();
         this._mj_move_key = 1;
+        if (this._gmLogic != null) {
+            this._gmLogic.onResetAll()
+        }
     },
 
     initBanker: function () {
@@ -242,6 +248,9 @@ cc.Class({
             case TuiBingConfig.State.Ready:{
                 this.noticeLabel.string = msgcode.TUIBING_STATE_READY;
                 this._timer = TuiBingConfig.Time.Bet;
+                if (this._gmLogic != null) {
+                    this._gmLogic.onEnableAll()
+                }
             }break;
             case TuiBingConfig.State.WaitOpen:{
                 // cc.ll.msgbox.addMsg(msgcode.TUIBING_STATE_WAITOPEN);
@@ -252,6 +261,9 @@ cc.Class({
                 // cc.ll.msgbox.addMsg(msgcode.TUIBING_STATE_OPENNING);
                 this.noticeLabel.string = msgcode.TUIBING_STATE_OPENNING;
                 this._timer = TuiBingConfig.Time.Open;
+                if (this._gmLogic != null) {
+                    this._gmLogic.onUnableAll()
+                }
             }break;
             case TuiBingConfig.State.Reward:{
                 // cc.ll.msgbox.addMsg(msgcode.TUIBING_STATE_REWARD);

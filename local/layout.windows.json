@@ -99,6 +99,32 @@
         "node-library",
         "timeline"
       ]
+    },
+    "window-1493111917619": {
+      "main": false,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": 595,
+      "y": 123,
+      "width": 500,
+      "height": 722,
+      "layout": {
+        "children": [
+          {
+            "active": 0,
+            "children": [
+              "builder"
+            ],
+            "height": 700,
+            "type": "panel",
+            "width": 500
+          }
+        ],
+        "type": "dock-v"
+      },
+      "panels": [
+        "builder"
+      ]
     }
   },
   "panels": {
@@ -109,14 +135,14 @@
       "height": 622
     },
     "ui-kit": {
-      "x": 238,
-      "y": 77,
+      "x": 675,
+      "y": 197,
       "width": 800,
       "height": 622
     },
     "package-manager": {
-      "x": 388,
-      "y": 23,
+      "x": 485,
+      "y": 108,
       "width": 504,
       "height": 777
     },
@@ -149,6 +175,18 @@
       "y": 217,
       "width": 800,
       "height": 622
+    },
+    "ui-kit-preview": {
+      "x": 558,
+      "y": 217,
+      "width": 800,
+      "height": 622
+    },
+    "tester": {
+      "x": 708,
+      "y": 117,
+      "width": 500,
+      "height": 822
     }
   }
 }
