@@ -9190,7 +9190,7 @@
     "_tag": -1,
     "_opacityModifyRGB": false,
     "_id": "4bdc2wS3cdD3q7qWLXvoj7B",
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 310
@@ -9707,7 +9707,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30,
+      "width": 17.52,
       "height": 30
     },
     "_children": [],
@@ -9752,7 +9752,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "输",
+    "_N$string": "×",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
@@ -10084,7 +10084,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30,
+      "width": 16.46,
       "height": 30
     },
     "_children": [],
@@ -10129,7 +10129,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "赢",
+    "_N$string": "√",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
@@ -10510,7 +10510,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30,
+      "width": 17.52,
       "height": 30
     },
     "_children": [],
@@ -10555,7 +10555,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "输",
+    "_N$string": "×",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
@@ -10887,7 +10887,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30,
+      "width": 16.46,
       "height": 30
     },
     "_children": [],
@@ -10932,7 +10932,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "赢",
+    "_N$string": "√",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
@@ -11313,7 +11313,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30,
+      "width": 17.52,
       "height": 30
     },
     "_children": [],
@@ -11358,7 +11358,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "输",
+    "_N$string": "×",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
@@ -11690,7 +11690,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30,
+      "width": 16.46,
       "height": 30
     },
     "_children": [],
@@ -11735,7 +11735,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "赢",
+    "_N$string": "√",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
