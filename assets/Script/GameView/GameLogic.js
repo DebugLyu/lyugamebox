@@ -7,16 +7,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //    default: null,      // The default value will be used only when the component attaching
-        //                           to a node for the first time
-        //    url: cc.Texture2D,  // optional, default is typeof default
-        //    serializable: true, // optional, default is true
-        //    visible: true,      // optional, default is true
-        //    displayName: 'Foo', // optional
-        //    readonly: false,    // optional, default is false
-        // },
-        // ...
         perBankerList : cc.ScrollView,
         itemPreforb : cc.Prefab,
         goldPrefab : cc.Prefab,
@@ -89,29 +79,31 @@ cc.Class({
             this._mj_old_pos[i-1] = node.getPosition();
         }
         this.reSetGame();
-        setTimeout( function(){
-            var p = new packet( "ReqTuiBingInfo" );
-            cc.ll.net.send( p.pack() ); 
-        }, 500 );
+
+        this.scheduleOnce(function() {
+             var p = new packet( "ReqTuiBingInfo" );
+             cc.ll.net.send( p.pack() ); 
+         }, 0.5);
 
         var node = cc.find( "Canvas/GameBgLayer/TopBg/TimerBg/Timer" )
         var timer_label = node.getComponent( cc.Label );
-        var self = this;
-        setInterval(function(){
-            if(self._timer > 0){
+        
+        this.schedule(function() {
+            if(this._timer > 0){
                 var str = ""
-                if(self._timer >= 10){
-                    str = self._timer.toString();
+                if(this._timer >= 10){
+                    str = this._timer.toString();
                 }else{
-                    str = "0" + self._timer.toString();
+                    str = "0" + this._timer.toString();
                 }
                 timer_label.string = "00:"+str;
-                self._timer --;
+                this._timer --;
             }else{
                 timer_label.string = "00:00";
             }
-        },1000);
+         }, 1);
 
+        var self = this;
         cc.game.on(cc.game.EVENT_HIDE, function () {
             
         });

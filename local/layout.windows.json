@@ -125,7 +125,8 @@
       "panels": [
         "builder"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "code-editor": {

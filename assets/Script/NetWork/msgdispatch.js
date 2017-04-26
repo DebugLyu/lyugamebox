@@ -152,8 +152,10 @@ var onBankerBegin = function( pack ) {
     
     var intervalID = setInterval(function(){
         time--;
-        var str = msgcode.TUIBING_BANKER_BEGIN + "<br/><color=#FF0000><size = 25>00:0"+time+"</color></size>";
-        msglabel.string = str;
+        if (cc.isValid(node)) {
+            var str = msgcode.TUIBING_BANKER_BEGIN + "<br/><color=#FF0000><size = 25>00:0"+time+"</color></size>";
+            msglabel.string = str;
+        }
     }, 1000);
     setTimeout(function(){ clearInterval(intervalID); }, time * 1000);
 }
