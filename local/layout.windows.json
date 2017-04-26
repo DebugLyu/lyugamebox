@@ -125,8 +125,7 @@
       "panels": [
         "builder"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "code-editor": {
@@ -142,8 +141,8 @@
       "height": 622
     },
     "package-manager": {
-      "x": 485,
-      "y": 108,
+      "x": 858,
+      "y": 232,
       "width": 504,
       "height": 777
     },

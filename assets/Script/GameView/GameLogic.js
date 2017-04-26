@@ -32,7 +32,7 @@ cc.Class({
         dice : cc.Node,
         // game params
         _banker_id : 0,
-        _banker_name : "暂无庄家",
+        _banker_name : msgcode.TUIBING_NO_BANKER,
         _game_state : 0,
         _banker_times : 0,
         _banker_gold : 0,
@@ -129,6 +129,9 @@ cc.Class({
     },
 
     reSetGame: function() {
+        if(this.bgList == null){
+            return;
+        }
         for (var i = 0; i < this.bgList.length; i++) {
             var bg = this.bgList[i];
             bg.removeAllChildren();

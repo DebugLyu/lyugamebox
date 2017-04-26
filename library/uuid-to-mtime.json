@@ -845,8 +845,8 @@
     "relativePath": "resources/res_common/img_common_bg.png"
   },
   "008fbf3b-24e3-4f7a-87af-611d1b675baf": {
-    "asset": 1492767665000,
-    "meta": 1492767665000,
+    "asset": 1493210303000,
+    "meta": 1493210303000,
     "relativePath": "resources/profab/TradeLayer.prefab"
   },
   "655a1793-4dbf-452d-9a6c-e2d8f572041a": {
@@ -914,14 +914,14 @@
     "meta": 1493109433000,
     "relativePath": "Script/GMLayer/OnGmLayerLoad.js"
   },
-  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
-    "asset": 1493190638000,
-    "meta": 1493190640000,
-    "relativePath": "Script/GameView/GameLogic.js"
-  },
   "2c3095cc-6d1a-4399-87cf-54dbc2e45464": {
     "asset": 1493190980000,
     "meta": 1493190985000,
     "relativePath": "Script/NetWork/msgdispatch.js"
+  },
+  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
+    "asset": 1493197050000,
+    "meta": 1493197055000,
+    "relativePath": "Script/GameView/GameLogic.js"
   }
 }
