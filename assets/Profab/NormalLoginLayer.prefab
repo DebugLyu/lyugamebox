@@ -1834,6 +1834,9 @@
     "prefabNormalRegister": {
       "__uuid__": "a08181e5-809e-4a4b-b44a-b872ce8cf0d0"
     },
+    "prefabPhoneRegister": {
+      "__uuid__": "394a4aa2-6487-4d67-99e7-8d046542d6e1"
+    },
     "accountBox": {
       "__id__": 4
     },
@@ -1842,7 +1845,8 @@
     },
     "rememberCheckBox": {
       "__id__": 38
-    }
+    },
+    "_login_type": 0
   },
   {
     "__type__": "cc.PrefabInfo",

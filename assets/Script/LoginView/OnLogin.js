@@ -42,11 +42,13 @@ cc.Class({
         cc.ll.sAudioMgr.playBGM("bgm"); 
     },
 
-    onNormalLoginClick:function(){
+    onNormalLoginClick:function(event, data){
         var self = this;
         var showLogin = function(){
             var bg = cc.find("Canvas/BgLayer");
-            let creatlayer = cc.instantiate(self.prefabNormalLogin);  
+            var creatlayer = cc.instantiate(self.prefabNormalLogin);  
+            var logic = creatlayer.getComponent( "OnLoginLayerLoad" );
+            logic._login_type = Number(data) || 0;
             creatlayer.parent = bg;
             creatlayer.setPosition(0,0);
         }

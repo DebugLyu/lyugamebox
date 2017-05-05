@@ -1,7 +1,7 @@
 {
   "13f101af-e64a-4fe1-9505-48bcf03d6ca5": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
+    "asset": 1493815174000,
+    "meta": 1493887891000,
     "relativePath": "Profab"
   },
   "8f56c622-34c7-416d-9030-804d75a11cc7": {
@@ -15,13 +15,13 @@
     "relativePath": "Profab/MajiangBg.prefab"
   },
   "d3bf76b8-be97-409c-bf8a-b55037dd7b9c": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
+    "asset": 1493892401000,
+    "meta": 1493892401000,
     "relativePath": "Profab/NormalLoginLayer.prefab"
   },
   "a08181e5-809e-4a4b-b44a-b872ce8cf0d0": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
+    "asset": 1493887881000,
+    "meta": 1493887881000,
     "relativePath": "Profab/NormalRegisterLayer.prefab"
   },
   "e026a11f-69df-40e8-ae8b-e2bede96983e": {
@@ -65,8 +65,8 @@
     "relativePath": "resources/loading/img_loading_bar.png"
   },
   "2366ff7f-de0a-4bf3-b927-e2b093e9c17e": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
+    "asset": 1493887513000,
+    "meta": 1493887891000,
     "relativePath": "resources/login"
   },
   "cd9a53a0-1ed5-46ec-ba6d-ef9f11497c5a": {
@@ -105,8 +105,8 @@
     "relativePath": "resources/profab/Notice.prefab"
   },
   "932334e8-11f4-4ad2-830f-a44c95a7d58e": {
-    "asset": 1492755519000,
-    "meta": 1492768661000,
+    "asset": 1493300764000,
+    "meta": 1493887891000,
     "relativePath": "resources/res_common"
   },
   "a0cfc1c8-6fdc-48cd-b527-afb0da923b19": {
@@ -290,8 +290,8 @@
     "relativePath": "Scene/loadingview.fire"
   },
   "47aa4d80-b7dd-478e-9719-188af954544e": {
-    "asset": 1493300768000,
-    "meta": 1493300768000,
+    "asset": 1493887885000,
+    "meta": 1493887885000,
     "relativePath": "Scene/loginview.fire"
   },
   "52a31714-ba15-47b4-9231-1b30a00a5368": {
@@ -300,8 +300,8 @@
     "relativePath": "Scene/mainview_bak.fire"
   },
   "09cdb00d-cab9-4083-bc4e-a84dce086fbe": {
-    "asset": 1493005331000,
-    "meta": 1493005331000,
+    "asset": 1493897000000,
+    "meta": 1493897000000,
     "relativePath": "Scene/mainview.fire"
   },
   "6b0f3ebe-5c5c-4c1b-839a-9b17aa39d2b1": {
@@ -310,8 +310,8 @@
     "relativePath": "Script"
   },
   "32035d0e-3078-4262-b3f4-7a3dc38845e3": {
-    "asset": 1493122744000,
-    "meta": 1493122744000,
+    "asset": 1493897566000,
+    "meta": 1493897566000,
     "relativePath": "Scene/tuibingview.fire"
   },
   "079443ad-d3f2-4d66-876a-cfb1e48407cc": {
@@ -414,16 +414,6 @@
     "meta": 1492606717000,
     "relativePath": "Texture/HelloWorld.png"
   },
-  "08b512f6-f5dc-4f7c-ad10-6b2383e4676c": {
-    "asset": 1492478210000,
-    "meta": 1492606717000,
-    "relativePath": "resources/login/login.plist"
-  },
-  "72e763e8-3823-41bd-a59c-2f99686c4d4c": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
-    "relativePath": "resources/login/login.png"
-  },
   "f668aa8d-d171-4d72-8455-d025d7b708eb": {
     "asset": 1492478210000,
     "meta": 1492606714000,
@@ -498,11 +488,6 @@
     "asset": 1492478210000,
     "meta": 1492606714000,
     "relativePath": "Script/Common/SettingViewLoad.js"
-  },
-  "80619fc9-5fe2-4000-a213-a93207fa9d6f": {
-    "asset": 1492478210000,
-    "meta": 1492606717000,
-    "relativePath": "Script/LoginView/OnLoginLayerLoad.js"
   },
   "acf66e77-b1c1-48a2-a7cc-071cc772e983": {
     "asset": 1492478210000,
@@ -604,11 +589,6 @@
     "meta": 1492613508000,
     "relativePath": "resources/erguotou/erguotou.png"
   },
-  "3e9e4f2f-c08f-48e4-b6f8-9ae6301e4a6b": {
-    "asset": 1492658292000,
-    "meta": 1492658371000,
-    "relativePath": "Script/LoginView/OnLogin.js"
-  },
   "a181527d-7789-4dff-8f65-22c9bf3c7069": {
     "asset": 1492675856000,
     "meta": 1492675859000,
@@ -678,16 +658,6 @@
     "asset": 1493004606000,
     "meta": 1493004973000,
     "relativePath": "Script/Etc/etc.js"
-  },
-  "ff910c9b-759d-4457-8d97-f9df1f3ac454": {
-    "asset": 1493005806000,
-    "meta": 1493005824000,
-    "relativePath": "Script/Etc/Msgcode.js"
-  },
-  "d0a51a63-f822-4ec8-bcba-b7fd390dea6b": {
-    "asset": 1493107181000,
-    "meta": 1492478210000,
-    "relativePath": "resources/gamebox.proto"
   },
   "baacd837-0428-4bf4-b2b0-da33b5f67d52": {
     "asset": 1493109431000,
@@ -923,5 +893,45 @@
     "asset": 1490776610000,
     "meta": 1493277287000,
     "relativePath": "prefab/webview.prefab"
+  },
+  "3e9e4f2f-c08f-48e4-b6f8-9ae6301e4a6b": {
+    "asset": 1493814786000,
+    "meta": 1493814792000,
+    "relativePath": "Script/LoginView/OnLogin.js"
+  },
+  "80619fc9-5fe2-4000-a213-a93207fa9d6f": {
+    "asset": 1493814722000,
+    "meta": 1493814792000,
+    "relativePath": "Script/LoginView/OnLoginLayerLoad.js"
+  },
+  "394a4aa2-6487-4d67-99e7-8d046542d6e1": {
+    "asset": 1493896898000,
+    "meta": 1493896898000,
+    "relativePath": "Profab/PhoneRegisterLayer.prefab"
+  },
+  "08b512f6-f5dc-4f7c-ad10-6b2383e4676c": {
+    "asset": 1493887493000,
+    "meta": 1493887517000,
+    "relativePath": "resources/login/login.plist"
+  },
+  "72e763e8-3823-41bd-a59c-2f99686c4d4c": {
+    "asset": 1493887493000,
+    "meta": 1493887517000,
+    "relativePath": "resources/login/login.png"
+  },
+  "ff910c9b-759d-4457-8d97-f9df1f3ac454": {
+    "asset": 1493888295000,
+    "meta": 1493891240000,
+    "relativePath": "Script/Etc/Msgcode.js"
+  },
+  "d0a51a63-f822-4ec8-bcba-b7fd390dea6b": {
+    "asset": 1493892302000,
+    "meta": 1492478210000,
+    "relativePath": "resources/gamebox.proto"
+  },
+  "ae57aba8-c072-49fa-abbb-42bfe0117f85": {
+    "asset": 1493893394000,
+    "meta": 1493893396000,
+    "relativePath": "Script/LoginView/OnPhoneRegisterLoad.js"
   }
 }

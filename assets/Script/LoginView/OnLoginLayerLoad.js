@@ -11,6 +11,8 @@ cc.Class({
             type: cc.Prefab,
         },
 
+        prefabPhoneRegister : cc.Prefab,
+
         accountBox : {
         	default : null,
         	type: cc.EditBox,
@@ -23,6 +25,7 @@ cc.Class({
 
         rememberCheckBox : cc.Toggle,
         
+        _login_type : 0,
     },
     onLoad:function() {
     	var account = cc.sys.localStorage.getItem('account');
@@ -33,8 +36,13 @@ cc.Class({
     	}
     },
     onNormalRegisterClick:function(){
+        var instance = this.prefabNormalRegister;
+        if( this._login_type == 2 ){
+            // 手机登陆注册
+            instance = this.prefabPhoneRegister;
+        }
         var bg = cc.find("Canvas/BgLayer");
-        let registerlayer = cc.instantiate(this.prefabNormalRegister);  
+        let registerlayer = cc.instantiate(instance);  
         registerlayer.parent = bg;
         registerlayer.setPosition(0,0);
         cc.ll.sAudioMgr.playNormalBtnClick();

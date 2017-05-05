@@ -28,6 +28,7 @@ msgcode[ ErrorCode.NOT_ONLINE ] = "用户不在线，无法操作",
 // 账号状态
 msgcode.ACCOUNT_TOO_LONG = "账号或密码长度错误，请输入6~12位字符",
 msgcode.PASSWORD_NOT_SAME = "两次输入的密码不相同",
+msgcode.ACCOUNT_PHONE_ERROR = "请输入正确的手机号",
 
 msgcode.NETWORK_RELINK = "网络已断开，点击重连",
 msgcode.NETWORK_RELOGIN ="网络已断开，请重新登录",

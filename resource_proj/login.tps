@@ -163,6 +163,15 @@
             <filename>login/img_register_bg.png</filename>
             <filename>login/img_selected_bg.png</filename>
             <filename>login/img_selected.png</filename>
+            <filename>login/btn_check_1.png</filename>
+            <filename>login/btn_check_2.png</filename>
+            <filename>login/img_check_bg.png</filename>
+            <filename>login/img_label_1.png</filename>
+            <filename>login/img_input_bg.png</filename>
+            <filename>login/img_label_2.png</filename>
+            <filename>login/img_label_3.png</filename>
+            <filename>login/img_label_4.png</filename>
+            <filename>login/img_label_5.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

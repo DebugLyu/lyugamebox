@@ -1134,7 +1134,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
+      "width": 280,
       "height": 40
     },
     "_children": [],
@@ -1185,7 +1185,7 @@
     "_N$string": "名字",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
-    "_N$overflow": 0
+    "_N$overflow": 2
   },
   {
     "__type__": "cc.Widget",
