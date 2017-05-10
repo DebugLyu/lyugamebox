@@ -370,8 +370,8 @@
     "relativePath": "Script/Lcomponent/Lscrollview.js"
   },
   "bdc01f86-3f06-4a4a-81d9-2f1da354e60d": {
-    "asset": 1492478210000,
-    "meta": 1492606717000,
+    "asset": 1493888013000,
+    "meta": 1494297855000,
     "relativePath": "Script/LoginView"
   },
   "fd58b7e5-c04b-4989-a9f2-e9e77d83f47b": {
@@ -619,11 +619,6 @@
     "meta": 1492760725000,
     "relativePath": "Script/NetWork/Lwebsocket.js"
   },
-  "d170b51f-a8a6-4789-b3c2-3ec27333d711": {
-    "asset": 1492765811000,
-    "meta": 1492765812000,
-    "relativePath": "Script/MainView/OnTransferViewLoad.js"
-  },
   "56f0944e-ca0c-49a8-bc60-cfe484dd90bc": {
     "asset": 1492766883000,
     "meta": 1492767083000,
@@ -653,11 +648,6 @@
     "asset": 1493002594000,
     "meta": 1493004300000,
     "relativePath": "Script/Etc/errorcode.js"
-  },
-  "d4b55c2f-5e71-49b9-b423-e7a4504c01ec": {
-    "asset": 1493004606000,
-    "meta": 1493004973000,
-    "relativePath": "Script/Etc/etc.js"
   },
   "baacd837-0428-4bf4-b2b0-da33b5f67d52": {
     "asset": 1493109431000,
@@ -919,11 +909,6 @@
     "meta": 1493887517000,
     "relativePath": "resources/login/login.png"
   },
-  "ff910c9b-759d-4457-8d97-f9df1f3ac454": {
-    "asset": 1493888295000,
-    "meta": 1493891240000,
-    "relativePath": "Script/Etc/Msgcode.js"
-  },
   "d0a51a63-f822-4ec8-bcba-b7fd390dea6b": {
     "asset": 1493892302000,
     "meta": 1492478210000,
@@ -933,5 +918,20 @@
     "asset": 1493893394000,
     "meta": 1493893396000,
     "relativePath": "Script/LoginView/OnPhoneRegisterLoad.js"
+  },
+  "d4b55c2f-5e71-49b9-b423-e7a4504c01ec": {
+    "asset": 1494300890000,
+    "meta": 1494300958000,
+    "relativePath": "Script/Etc/etc.js"
+  },
+  "ff910c9b-759d-4457-8d97-f9df1f3ac454": {
+    "asset": 1494395811000,
+    "meta": 1494395856000,
+    "relativePath": "Script/Etc/Msgcode.js"
+  },
+  "d170b51f-a8a6-4789-b3c2-3ec27333d711": {
+    "asset": 1494395850000,
+    "meta": 1494395856000,
+    "relativePath": "Script/MainView/OnTransferViewLoad.js"
   }
 }

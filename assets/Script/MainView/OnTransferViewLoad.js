@@ -53,10 +53,11 @@ cc.Class({
             return;
         }
         var gold = Number( this.GoldLabel.string );
-        if( gold <= 0 ){
-            cc.ll.msgbox.addMsg(msgcode.COMMON_ERROR_GOLD);
+        if( gold < 500000 ){
+            cc.ll.msgbox.addMsg(msgcode.TRANSTFER_ERROR_GOLD);
             return;
         }
+        
         var name = this.NameLabel.string;
         if( name.length <= 0 ){
             cc.ll.msgbox.addMsg(msgcode.msgcode.COMMON_ERROR_USER);
@@ -70,9 +71,11 @@ cc.Class({
         }
         var str = msgcode.TRANSTFER_SUBMIT_1 + name + msgcode.TRANSTFER_SUBMIT_2 + gold + msgcode.TRANSTFER_SUBMIT_3;
         var node = cc.ll.notice.addMsg(1, str, okcallback, null);
+        cc.ll.sAudioMgr.playNormalBtnClick(); 
     },
 
     onLayerDestroy: function(){
         this.node.destroy();
+        cc.ll.sAudioMgr.playNormalBtnClick(); 
     },
 });

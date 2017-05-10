@@ -71,7 +71,7 @@ msgcode.TRANSTFER_NOTICE_1 = "收到来自<color=#00FF00>",
 msgcode.TRANSTFER_NOTICE_2 = "</color>的<color=#FF0000>",
 msgcode.TRANSTFER_NOTICE_3 = "金币</color>",
 msgcode.TRANSTFER_COMPLETE = "交易完成",
-
+msgcode.TRANSTFER_ERROR_GOLD = "转账至少要500000金币",
 
 msgcode.END_COLOR = "</color>",
 msgcode.END_SIZE = "</size>",
