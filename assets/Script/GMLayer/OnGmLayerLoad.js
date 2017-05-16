@@ -6,12 +6,30 @@ cc.Class({
     properties: {
         ToggleList : [ cc.Toggle ],
         _logic : null,
+        _gmPrefab : cc.Prefab,
     },
 
     // use this for initialization
     onLoad: function () {
         var bglayer = cc.find("Canvas/GameBgLayer")
         this._logic = bglayer.getComponent("GameLogic");
+        var self = this;
+        cc.loader.loadRes("profab/GMAddGoldLayer", function (err, prefab) {
+            self._gmPrefab = prefab;
+        });
+
+        var node = cc.find( "AddGold", this.node );
+        if(cc.ll.pMgr.main_role.gmlevel >= 1){
+            node.active = true;
+        }else{
+            node.active = false;
+        }
+        node = cc.find( "ControlLayer", this.node );
+        if(cc.ll.pMgr.main_role.gmlevel >= 2){
+            node.active = true;
+        }else{
+            node.active = false;
+        }
     },
 
     onUnableAll : function(){
@@ -53,5 +71,13 @@ cc.Class({
             p.lpack.win = win;
             cc.ll.net.send( p.pack() );
         }
+    },
+    onGmAddGoldClicked: function(event, data){
+        if( this._gmPrefab == null ){
+            return;
+        }
+        var node = cc.instantiate(this._gmPrefab);
+        var bg = cc.find( "Canvas" )
+        node.parent = bg;
     },
 });

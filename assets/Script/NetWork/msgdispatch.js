@@ -239,9 +239,9 @@ var onTuibingAllPlayer = function( pack ){
 var onAddGold = function( pack ){
     var result = pack.result;
     if (result == 0) {
-        cc.ll.msgbox.addMsg(msgcode.GM_PAYMENT_OK);
+        cc.ll.notice.addMsg(2, msgcode.GM_PAYMENT_OK, function(){});
     } else {
-        cc.ll.msgbox.addMsg(result);
+        cc.ll.notice.addMsg(2, result);
     }
     // cc.ll.loading.removeLoading();
 }

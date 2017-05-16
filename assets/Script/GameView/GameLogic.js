@@ -51,8 +51,6 @@ cc.Class({
         _timer : 0,
         MajiangSpriteList : cc.SpriteAtlas,
 
-        _gmPrefab : cc.Prefab,
-
         _unBankerFlag : false,
 
         _gmLogic : null,
@@ -118,9 +116,6 @@ cc.Class({
 
         var node = cc.find("Canvas/GameBgLayer/GMLayer");
         if(cc.ll.pMgr.main_role.gmlevel > 0){
-            cc.loader.loadRes("profab/GMAddGoldLayer", function (err, prefab) {
-                self._gmPrefab = prefab;
-            });
             node.active = true;
             this._gmLogic = node.getComponent( "OnGmLayerLoad" );
         }else{
@@ -770,14 +765,5 @@ cc.Class({
             var namelabel = namenode.getComponent( cc.Label );
             namelabel.string = name;
         }
-    },
-
-    onGmAddGoldClicked: function(event, data){
-        if( this._gmPrefab == null ){
-            return;
-        }
-        var node = cc.instantiate(this._gmPrefab);
-        var bg = cc.find( "Canvas" )
-        node.parent = bg;
     },
 });

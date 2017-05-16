@@ -67,6 +67,7 @@ cc.Class({
         cc.ll.net.send( p.pack() ); 
         cc.ll.sAudioMgr.playNormalBtnClick(); 
         cc.ll.loading.addLoading(3);
+        this.onLayerDestroy();
     },
 
     onLayerDestroy: function(){

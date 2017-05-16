@@ -99,8 +99,7 @@
         "node-library",
         "timeline"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "code-editor": {
@@ -128,7 +127,7 @@
       "height": 548
     },
     "builder": {
-      "x": 701,
+      "x": 700,
       "y": 110,
       "width": 500,
       "height": 722

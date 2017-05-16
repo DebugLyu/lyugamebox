@@ -305,13 +305,13 @@
     "relativePath": "Scene/mainview.fire"
   },
   "6b0f3ebe-5c5c-4c1b-839a-9b17aa39d2b1": {
-    "asset": 1492478210000,
-    "meta": 1492606713000,
+    "asset": 1494395628000,
+    "meta": 1494817746000,
     "relativePath": "Script"
   },
   "32035d0e-3078-4262-b3f4-7a3dc38845e3": {
-    "asset": 1493897566000,
-    "meta": 1493897566000,
+    "asset": 1494936357000,
+    "meta": 1494936357000,
     "relativePath": "Scene/tuibingview.fire"
   },
   "079443ad-d3f2-4d66-876a-cfb1e48407cc": {
@@ -320,8 +320,8 @@
     "relativePath": "Script/Common"
   },
   "50fa13b7-1dc2-4498-8487-40d9db415c47": {
-    "asset": 1492478210000,
-    "meta": 1492606714000,
+    "asset": 1494397185000,
+    "meta": 1494817746000,
     "relativePath": "Script/Etc"
   },
   "77f29453-49c9-46fe-acbb-54b0d8165086": {
@@ -609,11 +609,6 @@
     "meta": 1493210303000,
     "relativePath": "resources/profab/TradeLayer.prefab"
   },
-  "655a1793-4dbf-452d-9a6c-e2d8f572041a": {
-    "asset": 1492757708000,
-    "meta": 1493091906000,
-    "relativePath": "Script/GMLayer/OnGmAddGoldLayerLoad.js"
-  },
   "cb6abf67-02b7-4251-a586-e4c63cc948de": {
     "asset": 1492759885000,
     "meta": 1492760725000,
@@ -648,21 +643,6 @@
     "asset": 1493002594000,
     "meta": 1493004300000,
     "relativePath": "Script/Etc/errorcode.js"
-  },
-  "baacd837-0428-4bf4-b2b0-da33b5f67d52": {
-    "asset": 1493109431000,
-    "meta": 1493109433000,
-    "relativePath": "Script/GMLayer/OnGmLayerLoad.js"
-  },
-  "2c3095cc-6d1a-4399-87cf-54dbc2e45464": {
-    "asset": 1493190980000,
-    "meta": 1493190985000,
-    "relativePath": "Script/NetWork/msgdispatch.js"
-  },
-  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
-    "asset": 1493197050000,
-    "meta": 1493197055000,
-    "relativePath": "Script/GameView/GameLogic.js"
   },
   "f8e6b000-5643-4b86-9080-aa680ce1f599": {
     "asset": 1490776610000,
@@ -919,11 +899,6 @@
     "meta": 1493893396000,
     "relativePath": "Script/LoginView/OnPhoneRegisterLoad.js"
   },
-  "d4b55c2f-5e71-49b9-b423-e7a4504c01ec": {
-    "asset": 1494300890000,
-    "meta": 1494300958000,
-    "relativePath": "Script/Etc/etc.js"
-  },
   "ff910c9b-759d-4457-8d97-f9df1f3ac454": {
     "asset": 1494395811000,
     "meta": 1494395856000,
@@ -933,5 +908,30 @@
     "asset": 1494395850000,
     "meta": 1494395856000,
     "relativePath": "Script/MainView/OnTransferViewLoad.js"
+  },
+  "d4b55c2f-5e71-49b9-b423-e7a4504c01ec": {
+    "asset": 1494397185000,
+    "meta": 1494587516000,
+    "relativePath": "Script/Etc/etc.js"
+  },
+  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
+    "asset": 1494934832000,
+    "meta": 1494934868000,
+    "relativePath": "Script/GameView/GameLogic.js"
+  },
+  "baacd837-0428-4bf4-b2b0-da33b5f67d52": {
+    "asset": 1494935540000,
+    "meta": 1494935546000,
+    "relativePath": "Script/GMLayer/OnGmLayerLoad.js"
+  },
+  "655a1793-4dbf-452d-9a6c-e2d8f572041a": {
+    "asset": 1494935704000,
+    "meta": 1494935706000,
+    "relativePath": "Script/GMLayer/OnGmAddGoldLayerLoad.js"
+  },
+  "2c3095cc-6d1a-4399-87cf-54dbc2e45464": {
+    "asset": 1494936230000,
+    "meta": 1494936248000,
+    "relativePath": "Script/NetWork/msgdispatch.js"
   }
 }
