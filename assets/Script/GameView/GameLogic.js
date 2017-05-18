@@ -11,8 +11,6 @@ cc.Class({
         itemPreforb : cc.Prefab,
         goldPrefab : cc.Prefab,
 
-        goldBtnLsit: [cc.Button],
-
         bankerNameLabel : cc.Label,
         bankerGoldLabel : cc.Label,
         bankerTimesLabel : cc.Label,
@@ -42,6 +40,7 @@ cc.Class({
         _north_pool : new Array(),
 
         _select_gold : 0,
+        _gold_list : [cc.Integer],
         _can_bet_gold : 0, 
         _be_banker_list : [Object],
 
@@ -58,20 +57,20 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        this._select_gold = 0;
+        this._select_gold = 10000;
         var obj = {playerid: 0, gold : 0};
         this._south_pool.push( obj );
-
-        var btn = this.goldBtnLsit[0];
-        if( btn != null ){
-            var button = btn.getComponent(cc.Button);
-            var select_gold = parseInt(btn.node.name) * TuiBingConfig.LessGold;
-            var max = cc.ll.pMgr.main_role.gold;
-            if( select_gold <= max){
-                button.interactable = false;
-                this._select_gold = select_gold;
-            }
-        }
+        this._gold_list = [ 10000, 100000, 1000000, 5000000, 10000000 ];
+        // var btn = this.goldBtnLsit[0];
+        // if( btn != null ){
+        //     var button = btn.getComponent(cc.Button);
+        //     var select_gold = parseInt(btn.node.name) * TuiBingConfig.LessGold;
+        //     var max = cc.ll.pMgr.main_role.gold;
+        //     if( select_gold <= max){
+        //         button.interactable = false;
+        //         this._select_gold = select_gold;
+        //     }
+        // }
         for (var i = 1; i <= 4; i++) {
             var node = cc.find( "Canvas/GameBgLayer/MJList/group" + i);
             this._mj_old_pos[i-1] = node.getPosition();
@@ -313,15 +312,13 @@ cc.Class({
     },
 
     selectGoldBtn : function( key ) {
-        for (var i = this.goldBtnLsit.length - 1; i >= 0; i--) {
-            var btn = this.goldBtnLsit[i];
-            var button = btn.getComponent(cc.Button);
-            var num = parseInt(btn.node.name);
-            if (num == key) {
-                button.interactable = false;
-                this._select_gold = num * TuiBingConfig.LessGold;
-            } else {
-                button.interactable = true;
+        for(var i = 1; i <= 5; i++){
+            var node = cc.find( "Canvas/GameBgLayer/ButtumBg/toggleGroup/toggle" + i);
+            var toggle = node.getComponent(cc.Toggle);
+            if(i == key){
+                toggle.isChecked = true;
+            }else{
+                toggle.isChecked = false;
             }
         }
     },
@@ -329,22 +326,22 @@ cc.Class({
     onAutoSelectGold: function(){
         var max = cc.ll.pMgr.main_role.gold;
         var num = 0;
-        for (var i = this.goldBtnLsit.length - 1; i >= 0; i--) {
-            var btn = this.goldBtnLsit[i];
-            var button = btn.getComponent(cc.Button);
-            var select_num = parseInt(btn.node.name);
-            var select_gold =  select_num * TuiBingConfig.LessGold;
+        for(var i = this._gold_list.length -1; i >= 0; i--){
+            var select_gold = this._gold_list[i];
             if( select_gold <= this._can_bet_gold ){
                 if( select_gold <= max ){
-                    num = select_num;
+                    num = i+1;
                     break;
                 }
             }
         }
+        
         if(num == 0){
             this.selectGoldBtn( 1 );
+            this._select_gold = this._gold_list[0];
         }else{
             this.selectGoldBtn( num );
+            this._select_gold = this._gold_list[num-1];
         }
     },
 
@@ -378,7 +375,7 @@ cc.Class({
                 return; 
             }
         }
-        
+
         var p = new packet( "ReqTuiBingBet" );
         p.lpack.pos = parseInt(pos);
         p.lpack.gold = this._select_gold;
@@ -389,15 +386,15 @@ cc.Class({
         var max = cc.ll.pMgr.main_role.gold;
         var select_gold = parseInt(gold);
         if (select_gold > max) {
+            this.onAutoSelectGold();
             return;
         }
         
-        var node = event.target;
-        for (var i = 0; i < this.goldBtnLsit.length; i++) {
-            var btn = this.goldBtnLsit[i];
-            var button = btn.getComponent(cc.Button);
-            button.interactable = btn.node.name != node.name;
-        }
+        // for (var i = 0; i < this.goldBtnLsit.length; i++) {
+        //     var btn = this.goldBtnLsit[i];
+        //     var button = btn.getComponent(cc.Button);
+        //     button.interactable = btn.node.name != node.name;
+        // }
         this._select_gold = select_gold;
         cc.ll.sAudioMgr.playNormalBtnClick();
     },
@@ -500,12 +497,15 @@ cc.Class({
         }
         var move = function(){
             var id = 0;
-            var moveto = function(){
+            var nodemoveto = function(){
                 if(id > 3 || id < 0){
                     return;
                 }
                 var mj_key = list[id];
                 var node = cc.find( "Canvas/GameBgLayer/MJList/group" + self._mj_move_key );
+                if(node == null){
+                    return;
+                }
                 var pos = self.DealMajiangPos( node, mj_key );
                 function showmj(){
                     var majiangnode = self.maJiangList[mj_key-1];
@@ -519,13 +519,13 @@ cc.Class({
             }
             var queue = [];
             queue.push(
-                cc.callFunc( moveto ),
+                cc.callFunc( nodemoveto ),
                 cc.delayTime(0.5),
-                cc.callFunc( moveto ),
+                cc.callFunc( nodemoveto ),
                 cc.delayTime(0.5),
-                cc.callFunc( moveto ),
+                cc.callFunc( nodemoveto ),
                 cc.delayTime(0.5),
-                cc.callFunc( moveto ),
+                cc.callFunc( nodemoveto ),
                 cc.delayTime(0.5),
             );
             self.node.runAction( cc.sequence(queue) )

@@ -18,6 +18,11 @@ var NoticeBox = cc.Class({
 
             var msgnode = node.getChildByName("NoticeBg").getChildByName("NoticeLabel");
             var msglabel = msgnode.getComponent(cc.RichText);
+
+            if( typeof( msg ) == "number" ){
+                msg = msgcode[ msg ];
+            }
+            
             msglabel.string = msg;
 
             var onDestroy = function(){

@@ -104,12 +104,12 @@
     "__type__": "cc.Node",
     "_name": "BgSpr",
     "_objFlags": 0,
-    "_opacity": 160,
+    "_opacity": 220,
     "_color": {
       "__type__": "cc.Color",
-      "r": 160,
-      "g": 160,
-      "b": 160,
+      "r": 80,
+      "g": 80,
+      "b": 80,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,

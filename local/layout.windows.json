@@ -99,6 +99,32 @@
         "node-library",
         "timeline"
       ]
+    },
+    "window-1495023029864": {
+      "main": false,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": 700,
+      "y": 110,
+      "width": 500,
+      "height": 722,
+      "layout": {
+        "children": [
+          {
+            "active": 0,
+            "children": [
+              "builder"
+            ],
+            "height": 700,
+            "type": "panel",
+            "width": 500
+          }
+        ],
+        "type": "dock-v"
+      },
+      "panels": [
+        "builder"
+      ]
     }
   },
   "panels": {
@@ -121,8 +147,8 @@
       "height": 777
     },
     "project-settings": {
-      "x": 474,
-      "y": 58,
+      "x": 518,
+      "y": 181,
       "width": 584,
       "height": 548
     },

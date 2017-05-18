@@ -310,8 +310,8 @@
     "relativePath": "Script"
   },
   "32035d0e-3078-4262-b3f4-7a3dc38845e3": {
-    "asset": 1494936357000,
-    "meta": 1494936357000,
+    "asset": 1495015158000,
+    "meta": 1495015158000,
     "relativePath": "Scene/tuibingview.fire"
   },
   "079443ad-d3f2-4d66-876a-cfb1e48407cc": {
@@ -450,8 +450,8 @@
     "relativePath": "resources/res_common/LoadingAct.anim"
   },
   "35edd968-78e8-4123-92e1-cb521b7a3dd2": {
-    "asset": 1492478210000,
-    "meta": 1492606712000,
+    "asset": 1495030441000,
+    "meta": 1495030441000,
     "relativePath": "resources/profab/LoadingLayer.prefab"
   },
   "10e762cd-61bf-4e00-a953-57665071468f": {
@@ -540,8 +540,8 @@
     "relativePath": "resources/res_common/res_common.png"
   },
   "33954630-8f57-4316-a3d6-e563adf62f79": {
-    "asset": 1492755732000,
-    "meta": 1492755732000,
+    "asset": 1495030406000,
+    "meta": 1495030406000,
     "relativePath": "resources/profab/BeBankerDialog.prefab"
   },
   "4dfbd053-b57d-4182-8b27-50b729313a35": {
@@ -560,8 +560,8 @@
     "relativePath": "Script/Role/Player.js"
   },
   "a3a40aaf-16ca-4773-b152-956dd212c60b": {
-    "asset": 1493107608000,
-    "meta": 1493107608000,
+    "asset": 1495030423000,
+    "meta": 1495030423000,
     "relativePath": "resources/profab/GMAddGoldLayer.prefab"
   },
   "dcf35410-8625-47b7-917f-6bef93c0d430": {
@@ -574,30 +574,10 @@
     "meta": 1492611040000,
     "relativePath": "resources/erguotou/img_topview_bg.png"
   },
-  "fdd1762c-145e-442f-862f-7c72cc149ae1": {
-    "asset": 1492611826000,
-    "meta": 1492611831000,
-    "relativePath": "Script/LoadView/OnLoadingViewLoad.js"
-  },
-  "b9a5ff16-aa5b-4851-94f9-6a709860a3e4": {
-    "asset": 1492613478000,
-    "meta": 1492613508000,
-    "relativePath": "resources/erguotou/erguotou.plist"
-  },
-  "f3d9adc3-d343-4c30-b4f7-2852d4a5cb7f": {
-    "asset": 1492613478000,
-    "meta": 1492613508000,
-    "relativePath": "resources/erguotou/erguotou.png"
-  },
   "a181527d-7789-4dff-8f65-22c9bf3c7069": {
     "asset": 1492675856000,
     "meta": 1492675859000,
     "relativePath": "Script/GameView/OnBankerLayerLoad.js"
-  },
-  "331a2da0-5404-4a59-81ac-70bbc7c2f139": {
-    "asset": 1492754391000,
-    "meta": 1492754611000,
-    "relativePath": "Script/Common/Notice.js"
   },
   "00e1ce32-e6a0-4aec-945f-eef3239edab5": {
     "asset": 1492755513000,
@@ -605,8 +585,8 @@
     "relativePath": "resources/res_common/img_common_bg.png"
   },
   "008fbf3b-24e3-4f7a-87af-611d1b675baf": {
-    "asset": 1493210303000,
-    "meta": 1493210303000,
+    "asset": 1495030459000,
+    "meta": 1495030459000,
     "relativePath": "resources/profab/TradeLayer.prefab"
   },
   "cb6abf67-02b7-4251-a586-e4c63cc948de": {
@@ -909,16 +889,6 @@
     "meta": 1494395856000,
     "relativePath": "Script/MainView/OnTransferViewLoad.js"
   },
-  "d4b55c2f-5e71-49b9-b423-e7a4504c01ec": {
-    "asset": 1494397185000,
-    "meta": 1494587516000,
-    "relativePath": "Script/Etc/etc.js"
-  },
-  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
-    "asset": 1494934832000,
-    "meta": 1494934868000,
-    "relativePath": "Script/GameView/GameLogic.js"
-  },
   "baacd837-0428-4bf4-b2b0-da33b5f67d52": {
     "asset": 1494935540000,
     "meta": 1494935546000,
@@ -933,5 +903,35 @@
     "asset": 1494936230000,
     "meta": 1494936248000,
     "relativePath": "Script/NetWork/msgdispatch.js"
+  },
+  "331a2da0-5404-4a59-81ac-70bbc7c2f139": {
+    "asset": 1494937585000,
+    "meta": 1494937590000,
+    "relativePath": "Script/Common/Notice.js"
+  },
+  "cc30d082-8dee-49ff-a03a-e38a82ecc14c": {
+    "asset": 1495018434000,
+    "meta": 1495018436000,
+    "relativePath": "Script/GameView/GameLogic.js"
+  },
+  "fdd1762c-145e-442f-862f-7c72cc149ae1": {
+    "asset": 1495022656000,
+    "meta": 1495023022000,
+    "relativePath": "Script/LoadView/OnLoadingViewLoad.js"
+  },
+  "d4b55c2f-5e71-49b9-b423-e7a4504c01ec": {
+    "asset": 1495023252000,
+    "meta": 1495029885000,
+    "relativePath": "Script/Etc/etc.js"
+  },
+  "b9a5ff16-aa5b-4851-94f9-6a709860a3e4": {
+    "asset": 1495030218000,
+    "meta": 1495030270000,
+    "relativePath": "resources/erguotou/erguotou.plist"
+  },
+  "f3d9adc3-d343-4c30-b4f7-2852d4a5cb7f": {
+    "asset": 1495030218000,
+    "meta": 1495030270000,
+    "relativePath": "resources/erguotou/erguotou.png"
   }
 }

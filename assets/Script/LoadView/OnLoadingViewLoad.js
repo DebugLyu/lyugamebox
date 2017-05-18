@@ -31,6 +31,8 @@ cc.Class({
             cvs.fitHeight = true;
             cvs.fitWidth = true;
         }
+        cc.game.config['myversion']= etc.version;
+        cc.game.config['noCache']=true;
         // this.loadingBar.totalLength = this.loadingBar.node.width;
 
         cc.ll = {};
